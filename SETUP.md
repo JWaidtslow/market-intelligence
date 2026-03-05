@@ -12,7 +12,7 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/DITBRUGERNAVN/market-intelligence.git
+git remote add origin https://github.com/JWaidtslow/market-intelligence.git
 git push -u origin main
 ```
 
