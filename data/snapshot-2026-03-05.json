@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-03-05T20:54:40.782675",
+  "scraped_at": "2026-03-05T21:54:03.412701",
   "week": "10",
   "year": "2026",
   "operators": {
@@ -220,8 +220,8 @@
           "price_min": 7999.0,
           "price_max": 7999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 6180.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -230,8 +230,8 @@
           "price_min": 5199.0,
           "price_max": 5199.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3380.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -240,8 +240,8 @@
           "price_min": 8499.0,
           "price_max": 8499.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 6680.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -250,8 +250,8 @@
           "price_min": 8200.0,
           "price_max": 8200.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 6381.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -260,8 +260,8 @@
           "price_min": 6760.0,
           "price_max": 6760.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4941.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -270,8 +270,8 @@
           "price_min": 11999.0,
           "price_max": 11999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 10180.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -280,8 +280,8 @@
           "price_min": 8600.0,
           "price_max": 8600.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 6781.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -290,8 +290,8 @@
           "price_min": 14000.0,
           "price_max": 14000.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 12181.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -300,8 +300,8 @@
           "price_min": 2100.0,
           "price_max": 2100.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 281.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -310,8 +310,8 @@
           "price_min": 6599.0,
           "price_max": 6599.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4780.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -320,8 +320,8 @@
           "price_min": 3999.0,
           "price_max": 3999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2180.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -330,8 +330,8 @@
           "price_min": 8499.0,
           "price_max": 8499.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 6680.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -340,8 +340,8 @@
           "price_min": 9199.0,
           "price_max": 9199.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 7380.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -350,8 +350,8 @@
           "price_min": 9860.0,
           "price_max": 9860.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 8041.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -360,8 +360,8 @@
           "price_min": 1999.0,
           "price_max": 1999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 180.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -370,8 +370,8 @@
           "price_min": 1299.0,
           "price_max": 1299.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -520.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -380,8 +380,8 @@
           "price_min": 1980.0,
           "price_max": 1980.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 161.0,
+          "price_new": false
         },
         {
           "operator": "3",
@@ -391,7 +391,7 @@
           "price_max": 1819.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         }
       ],
       "vas": [
@@ -852,8 +852,8 @@
           "campaign_duration": null,
           "entertainment": [],
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 30.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -869,7 +869,7 @@
           ],
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -882,8 +882,8 @@
           "campaign_duration": null,
           "entertainment": [],
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 120.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -896,8 +896,8 @@
           "campaign_duration": null,
           "entertainment": [],
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 150.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -910,8 +910,8 @@
           "campaign_duration": null,
           "entertainment": [],
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 200.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -925,7 +925,7 @@
           "entertainment": [],
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         }
       ],
       "internet": [
@@ -1016,8 +1016,8 @@
           "price_min": 4399.0,
           "price_max": 4399.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3500.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1026,8 +1026,8 @@
           "price_min": 7499.0,
           "price_max": 7499.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 6600.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1036,8 +1036,8 @@
           "price_min": 5500.0,
           "price_max": 8813.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4601.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1046,8 +1046,8 @@
           "price_min": 4900.0,
           "price_max": 8393.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4001.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1056,8 +1056,8 @@
           "price_min": 2700.0,
           "price_max": 7093.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1801.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1066,8 +1066,8 @@
           "price_min": 999.0,
           "price_max": 2700.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 100.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1076,8 +1076,8 @@
           "price_min": 999.0,
           "price_max": 2700.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 100.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1086,8 +1086,8 @@
           "price_min": 1400.0,
           "price_max": 2899.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 501.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1096,8 +1096,8 @@
           "price_min": 1400.0,
           "price_max": 4213.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 501.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1106,8 +1106,8 @@
           "price_min": 1413.0,
           "price_max": 2700.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 514.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1116,8 +1116,8 @@
           "price_min": 1413.0,
           "price_max": 2700.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 514.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1126,8 +1126,8 @@
           "price_min": 2299.0,
           "price_max": 2299.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1400.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1136,8 +1136,8 @@
           "price_min": 2000.0,
           "price_max": 4093.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1101.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1146,8 +1146,8 @@
           "price_min": 1999.0,
           "price_max": 4000.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1100.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1156,8 +1156,8 @@
           "price_min": 1999.0,
           "price_max": 4000.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1100.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1166,8 +1166,8 @@
           "price_min": 2900.0,
           "price_max": 7893.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2001.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1176,8 +1176,8 @@
           "price_min": 4000.0,
           "price_max": 6393.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3101.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1186,8 +1186,8 @@
           "price_min": 4000.0,
           "price_max": 6393.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3101.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1196,8 +1196,8 @@
           "price_min": 3100.0,
           "price_max": 5193.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2201.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1206,8 +1206,8 @@
           "price_min": 2999.0,
           "price_max": 4313.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2100.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1216,8 +1216,8 @@
           "price_min": 4099.0,
           "price_max": 4099.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3200.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1226,8 +1226,8 @@
           "price_min": 3400.0,
           "price_max": 5893.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2501.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1236,8 +1236,8 @@
           "price_min": 1599.0,
           "price_max": 1599.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 700.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1246,8 +1246,8 @@
           "price_min": 1599.0,
           "price_max": 3393.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 700.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1256,8 +1256,8 @@
           "price_min": 2599.0,
           "price_max": 3913.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1700.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1266,8 +1266,8 @@
           "price_min": 2599.0,
           "price_max": 3913.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1700.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1276,8 +1276,8 @@
           "price_min": 600.0,
           "price_max": 3013.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -299.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1286,8 +1286,8 @@
           "price_min": 600.0,
           "price_max": 3013.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -299.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1296,8 +1296,8 @@
           "price_min": 5499.0,
           "price_max": 6813.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4600.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1306,8 +1306,8 @@
           "price_min": 5499.0,
           "price_max": 6813.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4600.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1316,8 +1316,8 @@
           "price_min": 1900.0,
           "price_max": 16393.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1001.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1326,8 +1326,8 @@
           "price_min": 1900.0,
           "price_max": 16393.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1001.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1336,8 +1336,8 @@
           "price_min": 1200.0,
           "price_max": 6893.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 301.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1346,8 +1346,8 @@
           "price_min": 1200.0,
           "price_max": 6893.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 301.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1356,8 +1356,8 @@
           "price_min": 600.0,
           "price_max": 10213.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -299.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1366,8 +1366,8 @@
           "price_min": 600.0,
           "price_max": 10213.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -299.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1376,8 +1376,8 @@
           "price_min": 1900.0,
           "price_max": 6893.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1001.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1386,8 +1386,8 @@
           "price_min": 1900.0,
           "price_max": 6893.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1001.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1396,8 +1396,8 @@
           "price_min": 1100.0,
           "price_max": 9693.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 201.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1406,8 +1406,8 @@
           "price_min": 1100.0,
           "price_max": 9693.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 201.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1416,8 +1416,8 @@
           "price_min": 4000.0,
           "price_max": 7813.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3101.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1426,8 +1426,8 @@
           "price_min": 4000.0,
           "price_max": 7813.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3101.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1436,8 +1436,8 @@
           "price_min": 700.0,
           "price_max": 8613.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -199.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1446,8 +1446,8 @@
           "price_min": 700.0,
           "price_max": 8613.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -199.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1456,8 +1456,8 @@
           "price_min": 3700.0,
           "price_max": 4299.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2801.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1466,8 +1466,8 @@
           "price_min": 3700.0,
           "price_max": 5613.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2801.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1476,8 +1476,8 @@
           "price_min": 800.0,
           "price_max": 4593.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -99.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1486,8 +1486,8 @@
           "price_min": 800.0,
           "price_max": 4593.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -99.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1496,8 +1496,8 @@
           "price_min": 2599.0,
           "price_max": 3913.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1700.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1506,8 +1506,8 @@
           "price_min": 2599.0,
           "price_max": 3913.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1700.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1516,8 +1516,8 @@
           "price_min": 1000.0,
           "price_max": 10313.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 101.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1526,8 +1526,8 @@
           "price_min": 1000.0,
           "price_max": 10313.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 101.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1536,8 +1536,8 @@
           "price_min": 600.0,
           "price_max": 7713.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -299.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1546,8 +1546,8 @@
           "price_min": 600.0,
           "price_max": 7713.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -299.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1556,8 +1556,8 @@
           "price_min": 700.0,
           "price_max": 10813.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -199.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1566,8 +1566,8 @@
           "price_min": 700.0,
           "price_max": 10813.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -199.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1576,8 +1576,8 @@
           "price_min": 1999.0,
           "price_max": 4500.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1100.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1586,8 +1586,8 @@
           "price_min": 1999.0,
           "price_max": 4500.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1100.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1596,8 +1596,8 @@
           "price_min": 1093.0,
           "price_max": 1093.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 194.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1606,8 +1606,8 @@
           "price_min": 1093.0,
           "price_max": 1093.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 194.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1616,8 +1616,8 @@
           "price_min": 700.0,
           "price_max": 4093.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -199.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1626,8 +1626,8 @@
           "price_min": 700.0,
           "price_max": 4093.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -199.0,
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1637,7 +1637,7 @@
           "price_max": 899.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "YouSee",
@@ -1647,7 +1647,7 @@
           "price_max": 899.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         }
       ],
       "vas": [
@@ -1792,9 +1792,10 @@
           "price": 200.0,
           "campaign_price": null,
           "campaign_duration": null,
+          "min_price": null,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         }
       ],
       "hardware": [
@@ -1805,8 +1806,8 @@
           "price_min": 3799.0,
           "price_max": 4672.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2400.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1815,8 +1816,8 @@
           "price_min": 5799.0,
           "price_max": 6672.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4400.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1825,8 +1826,8 @@
           "price_min": 4499.0,
           "price_max": 5372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1835,8 +1836,8 @@
           "price_min": 3299.0,
           "price_max": 4172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1900.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1845,8 +1846,8 @@
           "price_min": 5499.0,
           "price_max": 6372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1855,8 +1856,8 @@
           "price_min": 8299.0,
           "price_max": 9172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 6900.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1865,8 +1866,8 @@
           "price_min": 7299.0,
           "price_max": 8172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 5900.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1875,8 +1876,8 @@
           "price_min": 6499.0,
           "price_max": 7372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 5100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1885,8 +1886,8 @@
           "price_min": 2499.0,
           "price_max": 3372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1895,8 +1896,8 @@
           "price_min": 6299.0,
           "price_max": 7172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4900.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1905,8 +1906,8 @@
           "price_min": 4299.0,
           "price_max": 5172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2900.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1915,8 +1916,8 @@
           "price_min": 1172.0,
           "price_max": 1172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -227.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1925,8 +1926,8 @@
           "price_min": 2999.0,
           "price_max": 3872.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1600.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1935,8 +1936,8 @@
           "price_min": 899.0,
           "price_max": 1772.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -500.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1945,8 +1946,8 @@
           "price_min": 1999.0,
           "price_max": 2872.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 600.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1955,8 +1956,8 @@
           "price_min": 1299.0,
           "price_max": 2172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1965,8 +1966,8 @@
           "price_min": 4499.0,
           "price_max": 5372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1975,8 +1976,8 @@
           "price_min": 3499.0,
           "price_max": 4372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1985,8 +1986,8 @@
           "price_min": 6999.0,
           "price_max": 7872.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 5600.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -1995,8 +1996,8 @@
           "price_min": 1499.0,
           "price_max": 2372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2005,8 +2006,8 @@
           "price_min": 5299.0,
           "price_max": 6172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3900.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2015,8 +2016,8 @@
           "price_min": 11299.0,
           "price_max": 12172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 9900.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2025,8 +2026,8 @@
           "price_min": 3499.0,
           "price_max": 4372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2035,8 +2036,8 @@
           "price_min": 7499.0,
           "price_max": 8372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 6100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2045,8 +2046,8 @@
           "price_min": 5999.0,
           "price_max": 6872.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4600.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2055,8 +2056,8 @@
           "price_min": 1372.0,
           "price_max": 1372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -27.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2065,8 +2066,8 @@
           "price_min": 799.0,
           "price_max": 1672.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -600.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2075,8 +2076,8 @@
           "price_min": 3499.0,
           "price_max": 4372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2085,8 +2086,8 @@
           "price_min": 7999.0,
           "price_max": 8872.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 6600.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2095,8 +2096,8 @@
           "price_min": 8999.0,
           "price_max": 9872.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 7600.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2105,8 +2106,8 @@
           "price_min": 999.0,
           "price_max": 1872.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -400.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2115,8 +2116,8 @@
           "price_min": 6699.0,
           "price_max": 7572.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 5300.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2125,8 +2126,8 @@
           "price_min": 4899.0,
           "price_max": 5772.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3500.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2135,8 +2136,8 @@
           "price_min": 5499.0,
           "price_max": 6372.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4100.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2145,8 +2146,8 @@
           "price_min": 4299.0,
           "price_max": 5172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2900.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2155,8 +2156,8 @@
           "price_min": 1999.0,
           "price_max": 2872.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 600.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2165,8 +2166,8 @@
           "price_min": 5999.0,
           "price_max": 6872.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4600.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2175,8 +2176,8 @@
           "price_min": 1899.0,
           "price_max": 2772.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 500.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2185,8 +2186,8 @@
           "price_min": 874.0,
           "price_max": 874.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -525.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2195,8 +2196,8 @@
           "price_min": 2199.0,
           "price_max": 3072.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 800.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2205,8 +2206,8 @@
           "price_min": 1172.0,
           "price_max": 1172.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -227.0,
+          "price_new": false
         },
         {
           "operator": "Norlys",
@@ -2216,7 +2217,7 @@
           "price_max": 2272.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         }
       ],
       "vas": [
@@ -2231,8 +2232,8 @@
           "operator": "Norlys",
           "service": "Deezer",
           "category": "Musik",
-          "price": null,
-          "included": true
+          "price": 5799.0,
+          "included": false
         },
         {
           "operator": "Norlys",
@@ -2428,8 +2429,8 @@
           "price_min": 8499.0,
           "price_max": 9188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2438,8 +2439,8 @@
           "price_min": 6499.0,
           "price_max": 7188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2448,8 +2449,8 @@
           "price_min": 4999.0,
           "price_max": 5688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2458,8 +2459,8 @@
           "price_min": 3199.0,
           "price_max": 3888.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -3800.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2468,8 +2469,8 @@
           "price_min": 9299.0,
           "price_max": 9988.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2300.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2478,8 +2479,8 @@
           "price_min": 2299.0,
           "price_max": 2988.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -4700.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2488,8 +2489,8 @@
           "price_min": 1699.0,
           "price_max": 2388.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -5300.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2498,8 +2499,8 @@
           "price_min": 4199.0,
           "price_max": 4888.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2800.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2508,8 +2509,8 @@
           "price_min": 3999.0,
           "price_max": 4688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -3000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2518,8 +2519,8 @@
           "price_min": 799.0,
           "price_max": 4688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -6200.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2528,8 +2529,8 @@
           "price_min": 799.0,
           "price_max": 1488.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -6200.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2538,8 +2539,8 @@
           "price_min": 799.0,
           "price_max": 5999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -6200.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2548,8 +2549,8 @@
           "price_min": 5999.0,
           "price_max": 6688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2558,8 +2559,8 @@
           "price_min": 5999.0,
           "price_max": 10999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2568,8 +2569,8 @@
           "price_min": 10999.0,
           "price_max": 11688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2578,8 +2579,8 @@
           "price_min": 2999.0,
           "price_max": 11688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -4000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2588,8 +2589,8 @@
           "price_min": 2799.0,
           "price_max": 3688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -4200.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2598,8 +2599,8 @@
           "price_min": 2799.0,
           "price_max": 3688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -4200.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2608,8 +2609,8 @@
           "price_min": 2799.0,
           "price_max": 5999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -4200.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2618,8 +2619,8 @@
           "price_min": 2799.0,
           "price_max": 6688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -4200.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2628,8 +2629,8 @@
           "price_min": 5999.0,
           "price_max": 6688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2638,8 +2639,8 @@
           "price_min": 3799.0,
           "price_max": 6688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -3200.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2648,8 +2649,8 @@
           "price_min": 3799.0,
           "price_max": 4488.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -3200.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2658,8 +2659,8 @@
           "price_min": 1499.0,
           "price_max": 2188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -5500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2668,8 +2669,8 @@
           "price_min": 1499.0,
           "price_max": 6999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -5500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2679,7 +2680,7 @@
           "price_max": 9999.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2689,7 +2690,7 @@
           "price_max": 10688.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2698,8 +2699,8 @@
           "price_min": 7499.0,
           "price_max": 10688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2708,8 +2709,8 @@
           "price_min": 7499.0,
           "price_max": 10688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2718,8 +2719,8 @@
           "price_min": 7499.0,
           "price_max": 10499.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2728,8 +2729,8 @@
           "price_min": 9499.0,
           "price_max": 11188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2738,8 +2739,8 @@
           "price_min": 7999.0,
           "price_max": 10188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2749,7 +2750,7 @@
           "price_max": 8688.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2759,7 +2760,7 @@
           "price_max": 10499.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2768,8 +2769,8 @@
           "price_min": 10499.0,
           "price_max": 16499.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2778,8 +2779,8 @@
           "price_min": 10499.0,
           "price_max": 17188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2788,8 +2789,8 @@
           "price_min": 9499.0,
           "price_max": 17188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2798,8 +2799,8 @@
           "price_min": 9499.0,
           "price_max": 17188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2808,8 +2809,8 @@
           "price_min": 4299.0,
           "price_max": 10188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2700.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2818,8 +2819,8 @@
           "price_min": 4299.0,
           "price_max": 10188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2700.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2828,8 +2829,8 @@
           "price_min": 3699.0,
           "price_max": 4988.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -3300.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2838,8 +2839,8 @@
           "price_min": 3699.0,
           "price_max": 4988.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -3300.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2848,8 +2849,8 @@
           "price_min": 2299.0,
           "price_max": 4388.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -4700.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2858,8 +2859,8 @@
           "price_min": 2299.0,
           "price_max": 4499.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -4700.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2868,8 +2869,8 @@
           "price_min": 999.0,
           "price_max": 5188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -6000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2878,8 +2879,8 @@
           "price_min": 999.0,
           "price_max": 5999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -6000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2888,8 +2889,8 @@
           "price_min": 5999.0,
           "price_max": 6688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2898,8 +2899,8 @@
           "price_min": 5499.0,
           "price_max": 6988.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1500.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2908,8 +2909,8 @@
           "price_min": 4299.0,
           "price_max": 6188.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2700.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2918,8 +2919,8 @@
           "price_min": 2999.0,
           "price_max": 4988.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -4000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2928,8 +2929,8 @@
           "price_min": 2999.0,
           "price_max": 5999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -4000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2938,8 +2939,8 @@
           "price_min": 5999.0,
           "price_max": 6999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2948,8 +2949,8 @@
           "price_min": 5999.0,
           "price_max": 7688.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1000.0,
+          "price_new": false
         },
         {
           "operator": "CBB",
@@ -2959,7 +2960,7 @@
           "price_max": 7688.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         }
       ],
       "vas": [
@@ -3144,9 +3145,10 @@
           "price": 269.0,
           "campaign_price": null,
           "campaign_duration": null,
+          "min_price": null,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -20.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3157,9 +3159,10 @@
           "price": 289.0,
           "campaign_price": null,
           "campaign_duration": null,
+          "min_price": null,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         }
       ],
       "hardware": [
@@ -3170,8 +3173,8 @@
           "price_min": 1500.0,
           "price_max": 5793.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 947.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3180,8 +3183,8 @@
           "price_min": 6000.0,
           "price_max": 8793.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 5447.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3190,8 +3193,8 @@
           "price_min": 2500.0,
           "price_max": 7293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1947.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3200,8 +3203,8 @@
           "price_min": 1250.0,
           "price_max": 10543.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 697.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3210,8 +3213,8 @@
           "price_min": 999.0,
           "price_max": 2793.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 446.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3220,8 +3223,8 @@
           "price_min": 1800.0,
           "price_max": 4293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1247.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3230,8 +3233,8 @@
           "price_min": 2000.0,
           "price_max": 6793.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1447.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3240,8 +3243,8 @@
           "price_min": 2000.0,
           "price_max": 6293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1447.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3250,8 +3253,8 @@
           "price_min": 2700.0,
           "price_max": 8093.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2147.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3260,8 +3263,8 @@
           "price_min": 1993.0,
           "price_max": 2600.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1440.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3270,8 +3273,8 @@
           "price_min": 4999.0,
           "price_max": 6793.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4446.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3280,8 +3283,8 @@
           "price_min": 2000.0,
           "price_max": 6293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1447.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3290,8 +3293,8 @@
           "price_min": 2800.0,
           "price_max": 5293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2247.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3300,8 +3303,8 @@
           "price_min": 700.0,
           "price_max": 10093.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 147.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3310,8 +3313,8 @@
           "price_min": 1523.0,
           "price_max": 16770.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 970.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3320,8 +3323,8 @@
           "price_min": 1800.0,
           "price_max": 2293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1247.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3330,8 +3333,8 @@
           "price_min": 1200.0,
           "price_max": 6093.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 647.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3340,8 +3343,8 @@
           "price_min": 4000.0,
           "price_max": 8293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3447.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3350,8 +3353,8 @@
           "price_min": 1250.0,
           "price_max": 10043.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 697.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3360,8 +3363,8 @@
           "price_min": 1499.0,
           "price_max": 3293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 946.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3370,8 +3373,8 @@
           "price_min": 2500.0,
           "price_max": 6293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1947.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3380,8 +3383,8 @@
           "price_min": 1000.0,
           "price_max": 6793.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 447.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3390,8 +3393,8 @@
           "price_min": 700.0,
           "price_max": 4093.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 147.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3400,8 +3403,8 @@
           "price_min": 1000.0,
           "price_max": 8293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 447.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3410,8 +3413,8 @@
           "price_min": 1200.0,
           "price_max": 10593.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 647.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3420,8 +3423,8 @@
           "price_min": 750.0,
           "price_max": 12043.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 197.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3430,8 +3433,8 @@
           "price_min": 1000.0,
           "price_max": 6793.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 447.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3440,8 +3443,8 @@
           "price_min": 900.0,
           "price_max": 9493.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 347.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3450,8 +3453,8 @@
           "price_min": 700.0,
           "price_max": 11293.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 147.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3460,8 +3463,8 @@
           "price_min": 900.0,
           "price_max": 4493.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 347.0,
+          "price_new": false
         },
         {
           "operator": "Telmore",
@@ -3471,7 +3474,7 @@
           "price_max": 1356.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         }
       ],
       "vas": [
@@ -3792,8 +3795,8 @@
           "price_min": 3999.0,
           "price_max": 5022.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3802,8 +3805,8 @@
           "price_min": 3999.0,
           "price_max": 7999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3812,8 +3815,8 @@
           "price_min": 7999.0,
           "price_max": 8522.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3822,8 +3825,8 @@
           "price_min": 6499.0,
           "price_max": 8522.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3200.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3832,8 +3835,8 @@
           "price_min": 3599.0,
           "price_max": 7022.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3842,8 +3845,8 @@
           "price_min": 3599.0,
           "price_max": 5499.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3852,8 +3855,8 @@
           "price_min": 799.0,
           "price_max": 6022.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2500.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3862,8 +3865,8 @@
           "price_min": 799.0,
           "price_max": 1322.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2500.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3872,8 +3875,8 @@
           "price_min": 1299.0,
           "price_max": 2299.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2000.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3882,8 +3885,8 @@
           "price_min": 1299.0,
           "price_max": 2822.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2000.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3892,8 +3895,8 @@
           "price_min": 1299.0,
           "price_max": 2999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2000.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3902,8 +3905,8 @@
           "price_min": 2999.0,
           "price_max": 6999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3912,8 +3915,8 @@
           "price_min": 899.0,
           "price_max": 7522.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2400.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3922,8 +3925,8 @@
           "price_min": 899.0,
           "price_max": 3599.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2400.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3932,8 +3935,8 @@
           "price_min": 3599.0,
           "price_max": 5199.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3942,8 +3945,8 @@
           "price_min": 5199.0,
           "price_max": 6999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1900.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3952,8 +3955,8 @@
           "price_min": 3599.0,
           "price_max": 7522.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3962,8 +3965,8 @@
           "price_min": 3599.0,
           "price_max": 7399.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3972,8 +3975,8 @@
           "price_min": 7399.0,
           "price_max": 7922.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4100.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3982,8 +3985,8 @@
           "price_min": 7899.0,
           "price_max": 8899.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 4600.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -3992,8 +3995,8 @@
           "price_min": 999.0,
           "price_max": 9422.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4002,8 +4005,8 @@
           "price_min": 999.0,
           "price_max": 4899.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4012,8 +4015,8 @@
           "price_min": 4899.0,
           "price_max": 5899.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1600.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4022,8 +4025,8 @@
           "price_min": 5899.0,
           "price_max": 7099.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2600.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4032,8 +4035,8 @@
           "price_min": 3499.0,
           "price_max": 10599.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 200.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4042,8 +4045,8 @@
           "price_min": 5999.0,
           "price_max": 11122.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4052,8 +4055,8 @@
           "price_min": 3499.0,
           "price_max": 6522.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 200.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4062,8 +4065,8 @@
           "price_min": 1999.0,
           "price_max": 4022.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4072,8 +4075,8 @@
           "price_min": 1999.0,
           "price_max": 2522.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4082,8 +4085,8 @@
           "price_min": 1999.0,
           "price_max": 2522.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1300.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4092,8 +4095,8 @@
           "price_min": 922.0,
           "price_max": 922.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2377.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4102,8 +4105,8 @@
           "price_min": 722.0,
           "price_max": 1599.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2577.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4112,8 +4115,8 @@
           "price_min": 1599.0,
           "price_max": 9899.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -1700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4122,8 +4125,8 @@
           "price_min": 4999.0,
           "price_max": 10422.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4132,8 +4135,8 @@
           "price_min": 4999.0,
           "price_max": 10499.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4142,8 +4145,8 @@
           "price_min": 5999.0,
           "price_max": 11022.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4152,8 +4155,8 @@
           "price_min": 5999.0,
           "price_max": 6522.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4162,8 +4165,8 @@
           "price_min": 822.0,
           "price_max": 6999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2477.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4172,8 +4175,8 @@
           "price_min": 6999.0,
           "price_max": 9999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 3700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4182,8 +4185,8 @@
           "price_min": 9999.0,
           "price_max": 10147.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 6700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4192,8 +4195,8 @@
           "price_min": 1022.0,
           "price_max": 3499.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -2277.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4202,8 +4205,8 @@
           "price_min": 3499.0,
           "price_max": 4999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 200.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4212,8 +4215,8 @@
           "price_min": 4999.0,
           "price_max": 5999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4222,8 +4225,8 @@
           "price_min": 5999.0,
           "price_max": 9999.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 2700.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4232,8 +4235,8 @@
           "price_min": 3199.0,
           "price_max": 10522.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": -100.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4242,8 +4245,8 @@
           "price_min": 4499.0,
           "price_max": 5299.0,
           "notes": "",
-          "price_change": null,
-          "price_new": true
+          "price_change": 1200.0,
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4253,7 +4256,7 @@
           "price_max": 5822.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "CallMe",
@@ -4263,7 +4266,7 @@
           "price_max": 3822.0,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         }
       ],
       "vas": [
@@ -4311,5 +4314,6 @@
         }
       ]
     }
-  }
+  },
+  "news": []
 }
