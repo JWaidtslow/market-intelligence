@@ -319,16 +319,16 @@ def _build_html(data: dict, trends: dict = None) -> str:
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <style>
     :root {{
-      --bg: #0f1117;
-      --surface: #1a1d27;
-      --surface2: #242736;
-      --border: #2e3248;
-      --text: #e8eaf0;
-      --text-muted: #8890a8;
-      --accent: #4f7cff;
-      --accent2: #7c5cff;
-      --own: #ffd700;
-      --camp: #ff6b2b;
+      --bg: #F4F5F9;
+      --surface: #FFFFFF;
+      --surface2: #EEF0F8;
+      --border: #DDE0EC;
+      --text: #1A1D2E;
+      --text-muted: #6B7285;
+      --accent: #FF5400;
+      --accent2: #E1001A;
+      --own: #E1001A;
+      --camp: #FF5400;
       --radius: 10px;
     }}
     * {{ box-sizing: border-box; margin: 0; padding: 0; }}
@@ -336,7 +336,7 @@ def _build_html(data: dict, trends: dict = None) -> str:
 
     /* Layout */
     .layout {{ display: flex; min-height: 100vh; }}
-    .sidebar {{ width: 220px; background: var(--surface); border-right: 1px solid var(--border); padding: 1.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }}
+    .sidebar {{ width: 220px; background: var(--surface); border-right: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 1.5rem 1rem; display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; box-shadow: 2px 0 8px rgba(0,0,0,0.06); }}
     .main {{ flex: 1; padding: 2rem; overflow-x: hidden; }}
 
     /* Sidebar */
@@ -360,12 +360,12 @@ def _build_html(data: dict, trends: dict = None) -> str:
 
     /* Summary cards */
     .cards {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2rem; }}
-    .card {{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; }}
+    .card {{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }}
     .card-value {{ font-size: 2rem; font-weight: 700; color: var(--accent); }}
     .card-label {{ font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }}
 
     /* Chart */
-    .chart-wrap {{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; }}
+    .chart-wrap {{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }}
     .chart-wrap h2 {{ font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--text); }}
     .chart-container {{ position: relative; height: 260px; }}
 
@@ -392,9 +392,9 @@ def _build_html(data: dict, trends: dict = None) -> str:
     /* Badges */
     .op-badge {{ display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.78rem; font-weight: 600; white-space: nowrap; }}
     .camp-badge {{ display: inline-block; background: var(--camp)20; color: var(--camp); border: 1px solid var(--camp)40; border-radius: 4px; padding: 0.2rem 0.5rem; font-size: 0.75rem; white-space: nowrap; }}
-    .ent-badge {{ display: inline-block; background: var(--accent)15; color: var(--accent); border-radius: 3px; padding: 0.15rem 0.4rem; font-size: 0.7rem; margin: 0.1rem; white-space: nowrap; }}
+    .ent-badge {{ display: inline-block; background: #FF540015; color: #CC4400; border-radius: 3px; padding: 0.15rem 0.4rem; font-size: 0.7rem; margin: 0.1rem; white-space: nowrap; }}
     .incl-badge {{ background: #00a65025; color: #00a650; border: 1px solid #00a65040; border-radius: 4px; padding: 0.15rem 0.5rem; font-size: 0.75rem; }}
-    .avail-badge {{ background: #8890a820; color: #8890a8; border: 1px solid #8890a840; border-radius: 4px; padding: 0.15rem 0.5rem; font-size: 0.75rem; }}
+    .avail-badge {{ background: #6B728520; color: #6B7285; border: 1px solid #6B728540; border-radius: 4px; padding: 0.15rem 0.5rem; font-size: 0.75rem; }}
     .tech-badge {{ display: inline-block; border-radius: 4px; padding: 0.15rem 0.5rem; font-size: 0.75rem; font-weight: 600; }}
     .tech-5g {{ background: #00a65020; color: #00a650; }}
     .tech-4g {{ background: #0072c620; color: #0072c6; }}
@@ -403,7 +403,7 @@ def _build_html(data: dict, trends: dict = None) -> str:
     /* Price change indicators */
     .price-up   {{ color: #ff4c4c; font-size: 0.72rem; font-weight: 700; white-space: nowrap; }}
     .price-down {{ color: #2ecc71; font-size: 0.72rem; font-weight: 700; white-space: nowrap; }}
-    .new-badge  {{ background: #4f7cff20; color: #4f7cff; border: 1px solid #4f7cff50; border-radius: 3px; padding: 0.1rem 0.35rem; font-size: 0.65rem; font-weight: 700; vertical-align: middle; }}
+    .new-badge  {{ background: #FF540018; color: #FF5400; border: 1px solid #FF540040; border-radius: 3px; padding: 0.1rem 0.35rem; font-size: 0.65rem; font-weight: 700; vertical-align: middle; }}
 
     /* Hidden rows */
     tr.hidden {{ display: none; }}
@@ -684,13 +684,13 @@ const BASE = {{
   responsive: true, maintainAspectRatio: false,
   plugins: {{ legend: {{ display: false }} }},
   scales: {{
-    x: {{ ticks: {{ color: "#8890a8", maxRotation: 45 }}, grid: {{ color: "#2e3248" }} }},
-    y: {{ ticks: {{ color: "#8890a8", callback: v => v + " kr." }}, grid: {{ color: "#2e3248" }} }}
+    x: {{ ticks: {{ color: "#6B7285", maxRotation: 45 }}, grid: {{ color: "#DDE0EC" }} }},
+    y: {{ ticks: {{ color: "#6B7285", callback: v => v + " kr." }}, grid: {{ color: "#DDE0EC" }} }}
   }}
 }};
 const BASE_MONTHS = {{
   ...BASE,
-  scales: {{ ...BASE.scales, y: {{ ticks: {{ color: "#8890a8", callback: v => v + " mdr." }}, grid: {{ color: "#2e3248" }} }} }}
+  scales: {{ ...BASE.scales, y: {{ ticks: {{ color: "#6B7285", callback: v => v + " mdr." }}, grid: {{ color: "#DDE0EC" }} }} }}
 }};
 
 // ── Bar chart helper ──────────────────────────────────────────────────────────
@@ -741,10 +741,10 @@ function trendChart(canvasId, noteId, section) {{
     data: {{ labels: data.dates, datasets }},
     options: {{
       responsive: true, maintainAspectRatio: false,
-      plugins: {{ legend: {{ display: true, labels: {{ color: "#8890a8", boxWidth: 14, padding: 16 }} }} }},
+      plugins: {{ legend: {{ display: true, labels: {{ color: "#1A1D2E", boxWidth: 14, padding: 16 }} }} }},
       scales: {{
-        x: {{ ticks: {{ color: "#8890a8" }}, grid: {{ color: "#2e3248" }} }},
-        y: {{ ticks: {{ color: "#8890a8", callback: v => v + " kr." }}, grid: {{ color: "#2e3248" }} }}
+        x: {{ ticks: {{ color: "#6B7285" }}, grid: {{ color: "#DDE0EC" }} }},
+        y: {{ ticks: {{ color: "#6B7285", callback: v => v + " kr." }}, grid: {{ color: "#DDE0EC" }} }}
       }}
     }}
   }});
@@ -805,12 +805,12 @@ if (campOps.length > 0) {{
       labels: campOps.map(d => d.op + " " + d.normal + " kr."),
       datasets: [
         {{ label: "Normal pris",   data: campOps.map(d => d.normal),
-           backgroundColor: "#4f7cff55", borderColor: "#4f7cff", borderWidth: 2, borderRadius: 4 }},
+           backgroundColor: "#1A1D2E33", borderColor: "#1A1D2E", borderWidth: 2, borderRadius: 4 }},
         {{ label: "Kampagnepris",  data: campOps.map(d => d.camp),
-           backgroundColor: "#ff6b2b99", borderColor: "#ff6b2b", borderWidth: 2, borderRadius: 4 }}
+           backgroundColor: "#FF540099", borderColor: "#FF5400", borderWidth: 2, borderRadius: 4 }}
       ]
     }},
-    options: {{ ...BASE, plugins: {{ legend: {{ display: true, labels: {{ color: "#8890a8" }} }} }} }}
+    options: {{ ...BASE, plugins: {{ legend: {{ display: true, labels: {{ color: "#1A1D2E" }} }} }} }}
   }});
 }}
 
