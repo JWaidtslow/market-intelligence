@@ -50,3 +50,5 @@ git add .
 git commit -m "Opdatering"
 git push
 ```
+git remote set-url origin https://github.com/JWaidtslow/market-intelligence.git
+git push -u origin main

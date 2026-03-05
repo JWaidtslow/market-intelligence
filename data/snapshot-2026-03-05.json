@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-03-05T20:54:40.782675",
+  "scraped_at": "2026-03-05T21:48:26.432740",
   "week": "10",
   "year": "2026",
   "operators": {
@@ -212,188 +212,7 @@
           "price_new": false
         }
       ],
-      "hardware": [
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy S26 Ultra",
-          "storage": "",
-          "price_min": 7999.0,
-          "price_max": 7999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy S26",
-          "storage": "",
-          "price_min": 5199.0,
-          "price_max": 5199.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy S26 Plus",
-          "storage": "",
-          "price_min": 8499.0,
-          "price_max": 8499.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy Z Flip7",
-          "storage": "",
-          "price_min": 8200.0,
-          "price_max": 8200.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy Z Flip7 FE",
-          "storage": "",
-          "price_min": 6760.0,
-          "price_max": 6760.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy Z Fold7",
-          "storage": "",
-          "price_min": 11999.0,
-          "price_max": 11999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy S25 Edge",
-          "storage": "",
-          "price_min": 8600.0,
-          "price_max": 8600.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy Z Fold6",
-          "storage": "",
-          "price_min": 14000.0,
-          "price_max": 14000.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy A35 5G",
-          "storage": "",
-          "price_min": 2100.0,
-          "price_max": 2100.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy S25 Ultra",
-          "storage": "",
-          "price_min": 6599.0,
-          "price_max": 6599.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy S25",
-          "storage": "",
-          "price_min": 3999.0,
-          "price_max": 3999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy S25 Plus",
-          "storage": "",
-          "price_min": 8499.0,
-          "price_max": 8499.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy Z Flip6",
-          "storage": "",
-          "price_min": 9199.0,
-          "price_max": 9199.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy S24 Ultra",
-          "storage": "",
-          "price_min": 9860.0,
-          "price_max": 9860.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy S24",
-          "storage": "",
-          "price_min": 1999.0,
-          "price_max": 1999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy A16 5G",
-          "storage": "",
-          "price_min": 1299.0,
-          "price_max": 1299.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Samsung Galaxy XCover 7",
-          "storage": "",
-          "price_min": 1980.0,
-          "price_max": 1980.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "3",
-          "model": "Motorola G56",
-          "storage": "",
-          "price_min": 1819.0,
-          "price_max": 1819.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        }
-      ],
+      "hardware": [],
       "vas": [
         {
           "operator": "3",
@@ -843,89 +662,97 @@
       "subscriptions": [
         {
           "operator": "YouSee",
-          "name": "Fri Tale ?",
-          "talk": "Fri",
-          "data_gb": "?",
-          "coverage": "Verden",
-          "price": 129.0,
-          "campaign_price": null,
-          "campaign_duration": null,
-          "entertainment": [],
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "name": "Fri tale og sms i Danmark YouSee Musik",
+          "name": "Fri Tale 25GB",
           "talk": "Fri",
           "data_gb": 25,
           "coverage": "Verden",
-          "price": 179.0,
+          "price": 179,
           "campaign_price": null,
           "campaign_duration": null,
           "entertainment": [
-            "Yousee Musik"
+            "YouSee Musik"
           ],
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "YouSee",
-          "name": "Fri Tale ?",
+          "name": "Fri Tale 50GB",
           "talk": "Fri",
-          "data_gb": "?",
+          "data_gb": 50,
           "coverage": "Verden",
-          "price": 219.0,
+          "price": 219,
           "campaign_price": null,
           "campaign_duration": null,
-          "entertainment": [],
+          "entertainment": [
+            "YouSee Musik"
+          ],
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "YouSee",
-          "name": "Fri Tale ?",
+          "name": "Fri Tale 100GB",
           "talk": "Fri",
-          "data_gb": "?",
+          "data_gb": 100,
           "coverage": "Verden",
-          "price": 249.0,
+          "price": 249,
           "campaign_price": null,
           "campaign_duration": null,
-          "entertainment": [],
+          "entertainment": [
+            "YouSee Musik"
+          ],
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "YouSee",
-          "name": "Fri Tale ?",
+          "name": "Fri Tale FriGB",
           "talk": "Fri",
-          "data_gb": "?",
+          "data_gb": "Fri",
           "coverage": "Verden",
-          "price": 299.0,
+          "price": 299,
           "campaign_price": null,
           "campaign_duration": null,
-          "entertainment": [],
+          "entertainment": [
+            "YouSee Musik"
+          ],
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "YouSee",
-          "name": "Fri Tale ?",
+          "name": "Ekstrabruger",
           "talk": "Fri",
-          "data_gb": "?",
+          "data_gb": 0,
           "coverage": "Verden",
-          "price": 99.0,
+          "price": 129,
           "campaign_price": null,
           "campaign_duration": null,
-          "entertainment": [],
+          "entertainment": [
+            "YouSee Musik"
+          ],
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
+        },
+        {
+          "operator": "YouSee",
+          "name": "Børneabonnement",
+          "talk": "Fri",
+          "data_gb": 3,
+          "coverage": "EU",
+          "price": 79,
+          "campaign_price": 0,
+          "campaign_duration": null,
+          "entertainment": [],
+          "notes": "0 kr. Oprettelse",
+          "price_change": null,
+          "price_new": false
         }
       ],
       "internet": [
@@ -1008,655 +835,21 @@
           "price_new": false
         }
       ],
-      "hardware": [
-        {
-          "operator": "YouSee",
-          "model": "Apple Forsalg",
-          "storage": "",
-          "price_min": 4399.0,
-          "price_max": 4399.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Forsalg",
-          "storage": "",
-          "price_min": 7499.0,
-          "price_max": 7499.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy S26 Ultra",
-          "storage": "50GB",
-          "price_min": 5500.0,
-          "price_max": 8813.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy S26+",
-          "storage": "",
-          "price_min": 4900.0,
-          "price_max": 8393.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy S26",
-          "storage": "",
-          "price_min": 2700.0,
-          "price_max": 7093.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Tilbud",
-          "storage": "",
-          "price_min": 999.0,
-          "price_max": 2700.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy A56",
-          "storage": "50GB",
-          "price_min": 999.0,
-          "price_max": 2700.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Nyhed",
-          "storage": "",
-          "price_min": 1400.0,
-          "price_max": 2899.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Pixel 10a",
-          "storage": "50GB",
-          "price_min": 1400.0,
-          "price_max": 4213.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Motorola Moto G86 Power",
-          "storage": "50GB",
-          "price_min": 1413.0,
-          "price_max": 2700.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Moto G86 Power",
-          "storage": "50GB",
-          "price_min": 1413.0,
-          "price_max": 2700.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Restsalg",
-          "storage": "",
-          "price_min": 2299.0,
-          "price_max": 2299.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Pixel 9a",
-          "storage": "",
-          "price_min": 2000.0,
-          "price_max": 4093.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Tilbud",
-          "storage": "",
-          "price_min": 1999.0,
-          "price_max": 4000.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Edge 70",
-          "storage": "50GB",
-          "price_min": 1999.0,
-          "price_max": 4000.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Apple Tilbud",
-          "storage": "",
-          "price_min": 2900.0,
-          "price_max": 7893.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Tilbud",
-          "storage": "",
-          "price_min": 4000.0,
-          "price_max": 6393.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Pixel 10 Pro",
-          "storage": "",
-          "price_min": 4000.0,
-          "price_max": 6393.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Apple iPhone 15",
-          "storage": "",
-          "price_min": 3100.0,
-          "price_max": 5193.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Razr 60",
-          "storage": "50GB",
-          "price_min": 2999.0,
-          "price_max": 4313.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Apple Kun på yousee.dk",
-          "storage": "",
-          "price_min": 4099.0,
-          "price_max": 4099.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Apple iPhone 15 Plus",
-          "storage": "",
-          "price_min": 3400.0,
-          "price_max": 5893.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Kun på yousee.dk",
-          "storage": "",
-          "price_min": 1599.0,
-          "price_max": 1599.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Pixel 8a",
-          "storage": "",
-          "price_min": 1599.0,
-          "price_max": 3393.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Samsung Galaxy A36",
-          "storage": "50GB",
-          "price_min": 2599.0,
-          "price_max": 3913.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy A36",
-          "storage": "50GB",
-          "price_min": 2599.0,
-          "price_max": 3913.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Samsung Galaxy A26",
-          "storage": "50GB",
-          "price_min": 600.0,
-          "price_max": 3013.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy A26",
-          "storage": "50GB",
-          "price_min": 600.0,
-          "price_max": 3013.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Samsung Galaxy S25 FE",
-          "storage": "50GB",
-          "price_min": 5499.0,
-          "price_max": 6813.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy S25 FE",
-          "storage": "50GB",
-          "price_min": 5499.0,
-          "price_max": 6813.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Samsung Galaxy Z Fold7",
-          "storage": "",
-          "price_min": 1900.0,
-          "price_max": 16393.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy Z Fold7",
-          "storage": "",
-          "price_min": 1900.0,
-          "price_max": 16393.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Samsung Galaxy S24",
-          "storage": "",
-          "price_min": 1200.0,
-          "price_max": 6893.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy S24",
-          "storage": "",
-          "price_min": 1200.0,
-          "price_max": 6893.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Samsung Galaxy Z Flip7",
-          "storage": "50GB",
-          "price_min": 600.0,
-          "price_max": 10213.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy Z Flip7",
-          "storage": "50GB",
-          "price_min": 600.0,
-          "price_max": 10213.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Samsung Galaxy S25",
-          "storage": "",
-          "price_min": 1900.0,
-          "price_max": 6893.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy S25",
-          "storage": "",
-          "price_min": 1900.0,
-          "price_max": 6893.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Samsung Galaxy S25+",
-          "storage": "",
-          "price_min": 1100.0,
-          "price_max": 9693.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy S25+",
-          "storage": "",
-          "price_min": 1100.0,
-          "price_max": 9693.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Samsung Galaxy S25 Edge",
-          "storage": "50GB",
-          "price_min": 4000.0,
-          "price_max": 7813.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy S25 Edge",
-          "storage": "50GB",
-          "price_min": 4000.0,
-          "price_max": 7813.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Samsung Galaxy Z Flip7 FE",
-          "storage": "50GB",
-          "price_min": 700.0,
-          "price_max": 8613.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy Z Flip7 FE",
-          "storage": "50GB",
-          "price_min": 700.0,
-          "price_max": 8613.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Nyhed",
-          "storage": "",
-          "price_min": 3700.0,
-          "price_max": 4299.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Signature",
-          "storage": "50GB",
-          "price_min": 3700.0,
-          "price_max": 5613.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Motorola Edge 60",
-          "storage": "",
-          "price_min": 800.0,
-          "price_max": 4593.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Edge 60",
-          "storage": "",
-          "price_min": 800.0,
-          "price_max": 4593.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Motorola Moto G75",
-          "storage": "50GB",
-          "price_min": 2599.0,
-          "price_max": 3913.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Moto G75",
-          "storage": "50GB",
-          "price_min": 2599.0,
-          "price_max": 3913.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Kun på yousee.dk",
-          "storage": "",
-          "price_min": 1000.0,
-          "price_max": 10313.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Motorola Razr 60 Ultra",
-          "storage": "50GB",
-          "price_min": 1000.0,
-          "price_max": 10313.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Google Pixel 10",
-          "storage": "50GB",
-          "price_min": 600.0,
-          "price_max": 7713.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Pixel 10",
-          "storage": "50GB",
-          "price_min": 600.0,
-          "price_max": 7713.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Google Pixel 10 Pro XL",
-          "storage": "50GB",
-          "price_min": 700.0,
-          "price_max": 10813.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Google Pixel 10 Pro XL",
-          "storage": "50GB",
-          "price_min": 700.0,
-          "price_max": 10813.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Xiaomi Restsalg",
-          "storage": "",
-          "price_min": 1999.0,
-          "price_max": 4500.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Xiaomi 14T Pro Titan Black",
-          "storage": "",
-          "price_min": 1999.0,
-          "price_max": 4500.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Nokia God begyndermobil",
-          "storage": "3GB",
-          "price_min": 1093.0,
-          "price_max": 1093.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Nokia 3210 4G",
-          "storage": "3GB",
-          "price_min": 1093.0,
-          "price_max": 1093.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Kun på yousee.dk",
-          "storage": "",
-          "price_min": 700.0,
-          "price_max": 4093.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Samsung Galaxy Xcover 7 Enterprise edition Black",
-          "storage": "",
-          "price_min": 700.0,
-          "price_max": 4093.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Doro Doro 4100H 4G bordtelefon",
-          "storage": "",
-          "price_min": 899.0,
-          "price_max": 899.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "YouSee",
-          "model": "Doro 4100H 4G bordtelefon",
-          "storage": "",
-          "price_min": 899.0,
-          "price_max": 899.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        }
-      ],
+      "hardware": [],
       "vas": [
         {
           "operator": "YouSee",
-          "service": "Yousee Musik",
+          "service": "YouSee Musik",
           "category": "Musik",
           "price": null,
           "included": true
+        },
+        {
+          "operator": "YouSee",
+          "service": "YouSee Play",
+          "category": "Streaming",
+          "price": null,
+          "included": false
         }
       ]
     },
@@ -1785,468 +978,80 @@
       "internet": [
         {
           "operator": "Norlys",
-          "name": "Internet ?",
+          "name": "5G Internet Fri",
           "type": "Fast trådløs",
           "tech": "5G",
-          "data_gb": "?",
-          "price": 200.0,
+          "data_gb": "Fri",
+          "price": 299,
+          "campaign_price": 199,
+          "campaign_duration": "6 mdr.",
+          "notes": "TV2 Play gratis 3 mdr. + MAX + Podimo gratis 2 mdr. Inkl. Lånerouter",
+          "price_change": null,
+          "price_new": false
+        },
+        {
+          "operator": "Norlys",
+          "name": "Internet 1000 Basic",
+          "type": "Fast trådløs",
+          "tech": "Fiber",
+          "data_gb": "Fri",
+          "price": 369,
           "campaign_price": null,
           "campaign_duration": null,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
+        },
+        {
+          "operator": "Norlys",
+          "name": "Internet 1000",
+          "type": "Fast trådløs",
+          "tech": "Fiber",
+          "data_gb": "Fri",
+          "price": 419,
+          "campaign_price": null,
+          "campaign_duration": null,
+          "notes": "",
+          "price_change": null,
+          "price_new": false
         }
       ],
-      "hardware": [
-        {
-          "operator": "Norlys",
-          "model": "Apple iPhone 17e",
-          "storage": "",
-          "price_min": 3799.0,
-          "price_max": 4672.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Apple iPhone 17",
-          "storage": "",
-          "price_min": 5799.0,
-          "price_max": 6672.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Apple iPhone 16",
-          "storage": "",
-          "price_min": 4499.0,
-          "price_max": 5372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Apple iPhone 16e",
-          "storage": "",
-          "price_min": 3299.0,
-          "price_max": 4172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy S26",
-          "storage": "",
-          "price_min": 5499.0,
-          "price_max": 6372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy S26+",
-          "storage": "",
-          "price_min": 8299.0,
-          "price_max": 9172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy S26 Ultra",
-          "storage": "",
-          "price_min": 7299.0,
-          "price_max": 8172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Apple iPhone Air",
-          "storage": "",
-          "price_min": 6499.0,
-          "price_max": 7372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Google Pixel 10a",
-          "storage": "",
-          "price_min": 2499.0,
-          "price_max": 3372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Google Pixel 10 Pro XL 5G",
-          "storage": "",
-          "price_min": 6299.0,
-          "price_max": 7172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Motorola Signature",
-          "storage": "",
-          "price_min": 4299.0,
-          "price_max": 5172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Motorola G56",
-          "storage": "",
-          "price_min": 1172.0,
-          "price_max": 1172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "OnePlus Nord 5 5G",
-          "storage": "",
-          "price_min": 2999.0,
-          "price_max": 3872.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy A26 5G",
-          "storage": "",
-          "price_min": 899.0,
-          "price_max": 1772.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "OnePlus Nord CE 5 5G",
-          "storage": "",
-          "price_min": 1999.0,
-          "price_max": 2872.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Motorola G86 Power",
-          "storage": "",
-          "price_min": 1299.0,
-          "price_max": 2172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Motorola Edge 70 5G",
-          "storage": "",
-          "price_min": 4499.0,
-          "price_max": 5372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Apple iPhone 15",
-          "storage": "",
-          "price_min": 3499.0,
-          "price_max": 4372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy S25 Ultra 5G",
-          "storage": "",
-          "price_min": 6999.0,
-          "price_max": 7872.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy A56",
-          "storage": "",
-          "price_min": 1499.0,
-          "price_max": 2372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy Z Flip7",
-          "storage": "",
-          "price_min": 5299.0,
-          "price_max": 6172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy Z Fold7",
-          "storage": "",
-          "price_min": 11299.0,
-          "price_max": 12172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Google Pixel 9a 5G",
-          "storage": "",
-          "price_min": 3499.0,
-          "price_max": 4372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Google Pixel 10 Pro",
-          "storage": "",
-          "price_min": 7499.0,
-          "price_max": 8372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Google Pixel 10",
-          "storage": "",
-          "price_min": 5999.0,
-          "price_max": 6872.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Motorola Moto G75",
-          "storage": "",
-          "price_min": 1372.0,
-          "price_max": 1372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Motorola Edge 50 Neo 5G",
-          "storage": "",
-          "price_min": 799.0,
-          "price_max": 1672.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "OnePlus 15R",
-          "storage": "",
-          "price_min": 3499.0,
-          "price_max": 4372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Apple iPhone 17 Pro",
-          "storage": "",
-          "price_min": 7999.0,
-          "price_max": 8872.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Apple iPhone 17 Pro Max",
-          "storage": "",
-          "price_min": 8999.0,
-          "price_max": 9872.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Motorola Edge 60 5G",
-          "storage": "",
-          "price_min": 999.0,
-          "price_max": 1872.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy Z Flip7 FE",
-          "storage": "",
-          "price_min": 6699.0,
-          "price_max": 7572.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy S25 FE",
-          "storage": "",
-          "price_min": 4899.0,
-          "price_max": 5772.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Apple iPhone 16 Plus",
-          "storage": "",
-          "price_min": 5499.0,
-          "price_max": 6372.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy S25 5G",
-          "storage": "",
-          "price_min": 4299.0,
-          "price_max": 5172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy A36",
-          "storage": "",
-          "price_min": 1999.0,
-          "price_max": 2872.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy S25+ 5G",
-          "storage": "",
-          "price_min": 5999.0,
-          "price_max": 6872.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Samsung Galaxy Xcover7 5G",
-          "storage": "",
-          "price_min": 1899.0,
-          "price_max": 2772.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Doro Leva L11s",
-          "storage": "",
-          "price_min": 874.0,
-          "price_max": 874.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Apple Brugt iPhone 13",
-          "storage": "",
-          "price_min": 2199.0,
-          "price_max": 3072.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Doro Leva L31s",
-          "storage": "",
-          "price_min": 1172.0,
-          "price_max": 1172.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Norlys",
-          "model": "Doro Aurora A21 + WCS",
-          "storage": "",
-          "price_min": 1399.0,
-          "price_max": 2272.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        }
-      ],
+      "hardware": [],
       "vas": [
         {
           "operator": "Norlys",
-          "service": "Hbo Max",
+          "service": "Netflix",
           "category": "Streaming",
           "price": null,
-          "included": true
+          "included": false
         },
         {
           "operator": "Norlys",
-          "service": "Deezer",
-          "category": "Musik",
+          "service": "Max",
+          "category": "Streaming",
           "price": null,
-          "included": true
+          "included": false
+        },
+        {
+          "operator": "Norlys",
+          "service": "TV2 Play",
+          "category": "Streaming",
+          "price": null,
+          "included": false
+        },
+        {
+          "operator": "Norlys",
+          "service": "Viaplay",
+          "category": "Streaming",
+          "price": null,
+          "included": false
         },
         {
           "operator": "Norlys",
           "service": "Podimo",
           "category": "Streaming",
-          "price": 5799.0,
-          "included": false
-        },
-        {
-          "operator": "Norlys",
-          "service": "Tv 2 Play",
-          "category": "Streaming",
           "price": null,
-          "included": true
+          "included": false
         }
       ]
     },
@@ -2420,548 +1225,7 @@
           "price_new": false
         }
       ],
-      "hardware": [
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy S26 Ultra",
-          "storage": "",
-          "price_min": 8499.0,
-          "price_max": 9188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy S26",
-          "storage": "",
-          "price_min": 6499.0,
-          "price_max": 7188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Apple iPhone 17e",
-          "storage": "",
-          "price_min": 4999.0,
-          "price_max": 5688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy S25",
-          "storage": "512GB",
-          "price_min": 3199.0,
-          "price_max": 3888.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy S26+",
-          "storage": "",
-          "price_min": 9299.0,
-          "price_max": 9988.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Motorola Edge 60 Pro",
-          "storage": "",
-          "price_min": 2299.0,
-          "price_max": 2988.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Motorola Edge 60",
-          "storage": "",
-          "price_min": 1699.0,
-          "price_max": 2388.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "OnePlus 15R",
-          "storage": "",
-          "price_min": 4199.0,
-          "price_max": 4888.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Google Pixel 10",
-          "storage": "",
-          "price_min": 3999.0,
-          "price_max": 4688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Pixel 10",
-          "storage": "",
-          "price_min": 799.0,
-          "price_max": 4688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Motorola Motorola G56",
-          "storage": "",
-          "price_min": 799.0,
-          "price_max": 1488.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Motorola G56",
-          "storage": "",
-          "price_min": 799.0,
-          "price_max": 5999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Google Pixel 10 Pro",
-          "storage": "",
-          "price_min": 5999.0,
-          "price_max": 6688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Pixel 10 Pro",
-          "storage": "",
-          "price_min": 5999.0,
-          "price_max": 10999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Google Pixel 10 Pro Fold",
-          "storage": "",
-          "price_min": 10999.0,
-          "price_max": 11688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Pixel 10 Pro Fold",
-          "storage": "",
-          "price_min": 2999.0,
-          "price_max": 11688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Google Pixel 10A",
-          "storage": "",
-          "price_min": 2799.0,
-          "price_max": 3688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Pixel 10A",
-          "storage": "",
-          "price_min": 2799.0,
-          "price_max": 3688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Motorola Motorola G86 Power",
-          "storage": "",
-          "price_min": 2799.0,
-          "price_max": 5999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Motorola G86 Power",
-          "storage": "",
-          "price_min": 2799.0,
-          "price_max": 6688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Motorola Motorola Edge 70",
-          "storage": "",
-          "price_min": 5999.0,
-          "price_max": 6688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Motorola Edge 70",
-          "storage": "",
-          "price_min": 3799.0,
-          "price_max": 6688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Pixel 9",
-          "storage": "",
-          "price_min": 3799.0,
-          "price_max": 4488.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "OnePlus OnePlus Nord CE5",
-          "storage": "",
-          "price_min": 1499.0,
-          "price_max": 2188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "OnePlus Nord CE5",
-          "storage": "",
-          "price_min": 1499.0,
-          "price_max": 6999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Google Pixel 10 Pro XL",
-          "storage": "",
-          "price_min": 6999.0,
-          "price_max": 9999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Google Pixel 10 Pro XL",
-          "storage": "",
-          "price_min": 6999.0,
-          "price_max": 10688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Motorola Motorola Signature",
-          "storage": "",
-          "price_min": 7499.0,
-          "price_max": 10688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Motorola Signature",
-          "storage": "",
-          "price_min": 7499.0,
-          "price_max": 10688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "OnePlus OnePlus 15",
-          "storage": "",
-          "price_min": 7499.0,
-          "price_max": 10499.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Apple iPhone 17 Pro Max",
-          "storage": "",
-          "price_min": 9499.0,
-          "price_max": 11188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Apple iPhone 17 Pro",
-          "storage": "",
-          "price_min": 7999.0,
-          "price_max": 10188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Apple iPhone Air",
-          "storage": "",
-          "price_min": 6999.0,
-          "price_max": 8688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Apple iPhone 17",
-          "storage": "",
-          "price_min": 6999.0,
-          "price_max": 10499.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Samsung Galaxy S25 Edge",
-          "storage": "",
-          "price_min": 10499.0,
-          "price_max": 16499.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy S25 Edge",
-          "storage": "",
-          "price_min": 10499.0,
-          "price_max": 17188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Samsung Galaxy Z Fold 7",
-          "storage": "",
-          "price_min": 9499.0,
-          "price_max": 17188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy Z Fold 7",
-          "storage": "",
-          "price_min": 9499.0,
-          "price_max": 17188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Samsung Galaxy Z Flip7",
-          "storage": "",
-          "price_min": 4299.0,
-          "price_max": 10188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy Z Flip7",
-          "storage": "",
-          "price_min": 4299.0,
-          "price_max": 10188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "OnePlus OnePlus Nord 5",
-          "storage": "",
-          "price_min": 3699.0,
-          "price_max": 4988.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "OnePlus Nord 5",
-          "storage": "",
-          "price_min": 3699.0,
-          "price_max": 4988.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy A56 5G",
-          "storage": "",
-          "price_min": 2299.0,
-          "price_max": 4388.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy A26 5G",
-          "storage": "",
-          "price_min": 2299.0,
-          "price_max": 4499.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Apple iPhone 16e",
-          "storage": "",
-          "price_min": 999.0,
-          "price_max": 5188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Doro Leva 11s",
-          "storage": "",
-          "price_min": 999.0,
-          "price_max": 5999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy S24 FE",
-          "storage": "",
-          "price_min": 5999.0,
-          "price_max": 6688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Apple iPhone 16 Plus",
-          "storage": "",
-          "price_min": 5499.0,
-          "price_max": 6988.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Apple iPhone 16",
-          "storage": "",
-          "price_min": 4299.0,
-          "price_max": 6188.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Apple iPhone 15",
-          "storage": "",
-          "price_min": 2999.0,
-          "price_max": 4988.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy A36 5G",
-          "storage": "",
-          "price_min": 2999.0,
-          "price_max": 5999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Samsung Galaxy S25 FE",
-          "storage": "",
-          "price_min": 5999.0,
-          "price_max": 6999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy S25 FE",
-          "storage": "",
-          "price_min": 5999.0,
-          "price_max": 7688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CBB",
-          "model": "Samsung Galaxy S24",
-          "storage": "",
-          "price_min": 6999.0,
-          "price_max": 7688.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        }
-      ],
+      "hardware": [],
       "vas": [
         {
           "operator": "CBB",
@@ -3137,343 +1401,84 @@
       "internet": [
         {
           "operator": "Telmore",
-          "name": "5G internet",
-          "type": "Fast trådløs",
-          "tech": "5G",
-          "data_gb": "?",
-          "price": 269.0,
+          "name": "5GB Mobilt",
+          "type": "Mobilt bredbånd",
+          "tech": "4G",
+          "data_gb": 5,
+          "price": 49,
           "campaign_price": null,
           "campaign_duration": null,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
         },
         {
           "operator": "Telmore",
-          "name": "5G internet",
-          "type": "Fast trådløs",
-          "tech": "5G",
-          "data_gb": "?",
-          "price": 289.0,
+          "name": "40GB Mobilt",
+          "type": "Mobilt bredbånd",
+          "tech": "4G",
+          "data_gb": 40,
+          "price": 99,
           "campaign_price": null,
           "campaign_duration": null,
           "notes": "",
           "price_change": null,
-          "price_new": true
+          "price_new": false
+        },
+        {
+          "operator": "Telmore",
+          "name": "125GB Mobilt",
+          "type": "Mobilt bredbånd",
+          "tech": "4G",
+          "data_gb": 125,
+          "price": 149,
+          "campaign_price": null,
+          "campaign_duration": null,
+          "notes": "Inkl. Lånerouter",
+          "price_change": null,
+          "price_new": false
+        },
+        {
+          "operator": "Telmore",
+          "name": "250GB Mobilt",
+          "type": "Mobilt bredbånd",
+          "tech": "4G",
+          "data_gb": 250,
+          "price": 199,
+          "campaign_price": null,
+          "campaign_duration": null,
+          "notes": "Inkl. Lånerouter",
+          "price_change": null,
+          "price_new": false
+        },
+        {
+          "operator": "Telmore",
+          "name": "4G Internet Fri",
+          "type": "Fast trådløs",
+          "tech": "4G",
+          "data_gb": "Fri",
+          "price": 259,
+          "campaign_price": 99,
+          "campaign_duration": "3 mdr.",
+          "notes": "Inkl. Låne-router",
+          "price_change": null,
+          "price_new": false
+        },
+        {
+          "operator": "Telmore",
+          "name": "5G Internet Fri",
+          "type": "Fast trådløs",
+          "tech": "5G",
+          "data_gb": "Fri",
+          "price": 299,
+          "campaign_price": 99,
+          "campaign_duration": "3 mdr.",
+          "notes": "Inkl. Låne-router",
+          "price_change": null,
+          "price_new": false
         }
       ],
-      "hardware": [
-        {
-          "operator": "Telmore",
-          "model": "Apple iPhone 17e",
-          "storage": "",
-          "price_min": 1500.0,
-          "price_max": 5793.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy S26 Ultra",
-          "storage": "",
-          "price_min": 6000.0,
-          "price_max": 8793.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy S26",
-          "storage": "",
-          "price_min": 2500.0,
-          "price_max": 7293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy S26+",
-          "storage": "",
-          "price_min": 1250.0,
-          "price_max": 10543.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy A56",
-          "storage": "",
-          "price_min": 999.0,
-          "price_max": 2793.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Google Pixel 10a",
-          "storage": "",
-          "price_min": 1800.0,
-          "price_max": 4293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Google Pixel 10",
-          "storage": "",
-          "price_min": 2000.0,
-          "price_max": 6793.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Apple iPhone 16",
-          "storage": "",
-          "price_min": 2000.0,
-          "price_max": 6293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Apple iPhone Air",
-          "storage": "",
-          "price_min": 2700.0,
-          "price_max": 8093.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Motorola moto G86 Power",
-          "storage": "",
-          "price_min": 1993.0,
-          "price_max": 2600.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Motorola Razr 60 Ultra",
-          "storage": "",
-          "price_min": 4999.0,
-          "price_max": 6793.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Apple iPhone 15",
-          "storage": "",
-          "price_min": 2000.0,
-          "price_max": 6293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy S24",
-          "storage": "",
-          "price_min": 2800.0,
-          "price_max": 5293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy S25+",
-          "storage": "",
-          "price_min": 700.0,
-          "price_max": 10093.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy Z Fold7",
-          "storage": "",
-          "price_min": 1523.0,
-          "price_max": 16770.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy A26",
-          "storage": "",
-          "price_min": 1800.0,
-          "price_max": 2293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Apple iPhone 16e",
-          "storage": "",
-          "price_min": 1200.0,
-          "price_max": 6093.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy S25 Edge",
-          "storage": "",
-          "price_min": 4000.0,
-          "price_max": 8293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy Z Flip7",
-          "storage": "",
-          "price_min": 1250.0,
-          "price_max": 10043.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy A36",
-          "storage": "",
-          "price_min": 1499.0,
-          "price_max": 3293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy S25",
-          "storage": "",
-          "price_min": 2500.0,
-          "price_max": 6293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Motorola Edge 70",
-          "storage": "",
-          "price_min": 1000.0,
-          "price_max": 6793.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Motorola Moto G75",
-          "storage": "",
-          "price_min": 700.0,
-          "price_max": 4093.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Apple iPhone 17",
-          "storage": "",
-          "price_min": 1000.0,
-          "price_max": 8293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Apple iPhone 17 Pro",
-          "storage": "",
-          "price_min": 1200.0,
-          "price_max": 10593.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Apple iPhone 17 Pro Max",
-          "storage": "",
-          "price_min": 750.0,
-          "price_max": 12043.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Samsung Galaxy S25 FE",
-          "storage": "",
-          "price_min": 1000.0,
-          "price_max": 6793.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Google Pixel 10 Pro",
-          "storage": "",
-          "price_min": 900.0,
-          "price_max": 9493.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Google Pixel 10 Pro XL",
-          "storage": "",
-          "price_min": 700.0,
-          "price_max": 11293.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Motorola Edge 60",
-          "storage": "",
-          "price_min": 900.0,
-          "price_max": 4493.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "Telmore",
-          "model": "Nokia 3210",
-          "storage": "",
-          "price_min": 553.0,
-          "price_max": 1356.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        }
-      ],
+      "hardware": [],
       "vas": [
         {
           "operator": "Telmore",
@@ -3784,488 +1789,7 @@
           "price_new": false
         }
       ],
-      "hardware": [
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone 17e",
-          "storage": "200GB",
-          "price_min": 3999.0,
-          "price_max": 5022.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone 16e",
-          "storage": "200GB",
-          "price_min": 3999.0,
-          "price_max": 7999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy S26 Ultra",
-          "storage": "200GB",
-          "price_min": 7999.0,
-          "price_max": 8522.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy S26+",
-          "storage": "200GB",
-          "price_min": 6499.0,
-          "price_max": 8522.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy S26",
-          "storage": "200GB",
-          "price_min": 3599.0,
-          "price_max": 7022.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Google Pixel 10",
-          "storage": "200GB",
-          "price_min": 3599.0,
-          "price_max": 5499.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Google Pixel 10 Pro",
-          "storage": "200GB",
-          "price_min": 799.0,
-          "price_max": 6022.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Motorola G86 Power",
-          "storage": "200GB",
-          "price_min": 799.0,
-          "price_max": 1322.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Motorola Edge 60 5G",
-          "storage": "200GB",
-          "price_min": 1299.0,
-          "price_max": 2299.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Motorola Edge 70 5G",
-          "storage": "200GB",
-          "price_min": 1299.0,
-          "price_max": 2822.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "OnePlus Nord CE 5 5G",
-          "storage": "200GB",
-          "price_min": 1299.0,
-          "price_max": 2999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "OnePlus 15R",
-          "storage": "200GB",
-          "price_min": 2999.0,
-          "price_max": 6999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone Air",
-          "storage": "200GB",
-          "price_min": 899.0,
-          "price_max": 7522.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Motorola Edge 50 Neo 5G",
-          "storage": "200GB",
-          "price_min": 899.0,
-          "price_max": 3599.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Motorola G56",
-          "storage": "200GB",
-          "price_min": 3599.0,
-          "price_max": 5199.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone 15",
-          "storage": "200GB",
-          "price_min": 5199.0,
-          "price_max": 6999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone 17",
-          "storage": "200GB",
-          "price_min": 3599.0,
-          "price_max": 7522.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Google Pixel 9a 5G",
-          "storage": "200GB",
-          "price_min": 3599.0,
-          "price_max": 7399.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Google Pixel 10 Pro XL 5G",
-          "storage": "200GB",
-          "price_min": 7399.0,
-          "price_max": 7922.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy S25 Ultra 5G",
-          "storage": "200GB",
-          "price_min": 7899.0,
-          "price_max": 8899.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone 17 Pro",
-          "storage": "200GB",
-          "price_min": 999.0,
-          "price_max": 9422.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy A26 5G",
-          "storage": "200GB",
-          "price_min": 999.0,
-          "price_max": 4899.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy S25 5G",
-          "storage": "200GB",
-          "price_min": 4899.0,
-          "price_max": 5899.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone 16",
-          "storage": "200GB",
-          "price_min": 5899.0,
-          "price_max": 7099.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "OnePlus Nord 5 5G",
-          "storage": "200GB",
-          "price_min": 3499.0,
-          "price_max": 10599.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy Z Fold7",
-          "storage": "200GB",
-          "price_min": 5999.0,
-          "price_max": 11122.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy Z Flip7",
-          "storage": "200GB",
-          "price_min": 3499.0,
-          "price_max": 6522.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy S24 5G",
-          "storage": "200GB",
-          "price_min": 1999.0,
-          "price_max": 4022.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy A56",
-          "storage": "200GB",
-          "price_min": 1999.0,
-          "price_max": 2522.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy A36",
-          "storage": "200GB",
-          "price_min": 1999.0,
-          "price_max": 2522.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Doro Leva L31s",
-          "storage": "200GB",
-          "price_min": 922.0,
-          "price_max": 922.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Doro Leva L11s",
-          "storage": "200GB",
-          "price_min": 722.0,
-          "price_max": 1599.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Doro Aurora A21 + WCS",
-          "storage": "200GB",
-          "price_min": 1599.0,
-          "price_max": 9899.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone 17 Pro Max",
-          "storage": "200GB",
-          "price_min": 4999.0,
-          "price_max": 10422.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy S25 FE",
-          "storage": "200GB",
-          "price_min": 4999.0,
-          "price_max": 10499.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Google Pixel 10 Pro Fold",
-          "storage": "200GB",
-          "price_min": 5999.0,
-          "price_max": 11022.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone 16 Plus",
-          "storage": "200GB",
-          "price_min": 5999.0,
-          "price_max": 6522.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Motorola Moto G35",
-          "storage": "200GB",
-          "price_min": 822.0,
-          "price_max": 6999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy Z Flip7 FE",
-          "storage": "200GB",
-          "price_min": 6999.0,
-          "price_max": 9999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone 16 Pro Max",
-          "storage": "40GB",
-          "price_min": 9999.0,
-          "price_max": 10147.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Motorola Moto G75",
-          "storage": "200GB",
-          "price_min": 1022.0,
-          "price_max": 3499.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Google Pixel 9 5G",
-          "storage": "200GB",
-          "price_min": 3499.0,
-          "price_max": 4999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Google Pixel 9 Pro XL 5G",
-          "storage": "200GB",
-          "price_min": 4999.0,
-          "price_max": 5999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy S25+ 5G",
-          "storage": "200GB",
-          "price_min": 5999.0,
-          "price_max": 9999.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Samsung Galaxy Z Fold6 5G",
-          "storage": "200GB",
-          "price_min": 3199.0,
-          "price_max": 10522.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Motorola Signature",
-          "storage": "200GB",
-          "price_min": 4499.0,
-          "price_max": 5299.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Apple iPhone 14",
-          "storage": "200GB",
-          "price_min": 3299.0,
-          "price_max": 5822.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        },
-        {
-          "operator": "CallMe",
-          "model": "Google Pixel 10a",
-          "storage": "200GB",
-          "price_min": 3299.0,
-          "price_max": 3822.0,
-          "notes": "",
-          "price_change": null,
-          "price_new": true
-        }
-      ],
+      "hardware": [],
       "vas": [
         {
           "operator": "CallMe",
@@ -4276,14 +1800,7 @@
         },
         {
           "operator": "CallMe",
-          "service": "Hbo Max",
-          "category": "Streaming",
-          "price": null,
-          "included": true
-        },
-        {
-          "operator": "CallMe",
-          "service": " Max ",
+          "service": "Max",
           "category": "Streaming",
           "price": null,
           "included": true
@@ -4292,8 +1809,8 @@
           "operator": "CallMe",
           "service": "Deezer",
           "category": "Musik",
-          "price": 109.0,
-          "included": false
+          "price": null,
+          "included": true
         },
         {
           "operator": "CallMe",
@@ -4301,15 +1818,9 @@
           "category": "Streaming",
           "price": null,
           "included": true
-        },
-        {
-          "operator": "CallMe",
-          "service": "Tv 2 Play",
-          "category": "Streaming",
-          "price": null,
-          "included": true
         }
       ]
     }
-  }
+  },
+  "news": []
 }
