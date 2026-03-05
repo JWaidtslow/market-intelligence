@@ -31,6 +31,7 @@ from scraper import OperatorScraper
 from extractor import extract_subscriptions, extract_internet, extract_hardware, extract_vas
 from dashboard import generate_dashboard
 from baseline_data import BASELINE
+from news_scraper import fetch_all_news
 
 logging.basicConfig(
     level=logging.INFO,
@@ -256,12 +257,18 @@ def run(baseline_only: bool = False):
     else:
         log.info("Ingen tidligere snapshot fundet — prisændringer vises ved næste kørsel")
 
+    # Fetch news
+    log.info("Henter nyheder fra Google News…")
+    news = fetch_all_news()
+    log.info(f"Nyheder i alt: {len(news)} artikler")
+
     # Build final data package
     output_data = {
         "scraped_at": now.isoformat(),
         "week": week,
         "year": year,
         "operators": operator_data,
+        "news": news,
     }
 
     # Save snapshot (before building trends so this week is included)

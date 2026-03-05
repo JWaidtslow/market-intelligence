@@ -56,6 +56,7 @@ def _build_html(data: dict, trends: dict = None) -> str:
     all_internet = [s for op in operators.values() for s in op.get("internet", [])]
     all_vas      = [s for op in operators.values() for s in op.get("vas", [])]
     all_hardware = [s for op in operators.values() for s in op.get("hardware", [])]
+    all_news     = data.get("news", [])
 
     op_names = sorted(operators.keys(), key=lambda k: (operators[k].get("name", k) not in OWN_BRANDS, operators[k].get("name", k)))
     op_display_names = [operators[k].get("name", k) for k in op_names]
@@ -277,6 +278,28 @@ def _build_html(data: dict, trends: dict = None) -> str:
     if not hw_rows:
         hw_rows = '<tr><td colspan="6" style="text-align:center;color:#888;padding:2rem;">Hardware-data scraped ved næste kørsel</td></tr>'
 
+    # ── Newsroom cards ───────────────────────────────────────────────────────
+    news_cards = ""
+    for article in all_news:
+        op      = article.get("operator", "")
+        headline = article.get("headline", "").replace('"', '&quot;')
+        url     = article.get("url", "#")
+        pub     = article.get("published", "")
+        source  = article.get("source", "")
+        color   = OPERATOR_COLORS.get(op, "#888")
+        news_cards += f"""
+        <div class="news-card" data-operator="{op}">
+          <div class="news-meta">
+            {op_badge(op)}
+            <span class="news-date">{pub}</span>
+            <span class="news-source">{source}</span>
+          </div>
+          <a href="{url}" target="_blank" rel="noopener">{headline}</a>
+        </div>"""
+
+    if not news_cards:
+        news_cards = '<p style="color:var(--text-muted);padding:2rem 0;text-align:center;">Nyheder hentes ved næste kørsel</p>'
+
     # ── Internet KPI data (4 charts) ─────────────────────────────────────────
     def _months(dur):
         m = re.search(r'(\d+)', str(dur)) if dur else None
@@ -451,6 +474,17 @@ def _build_html(data: dict, trends: dict = None) -> str:
     .toggle-btn:hover {{ color: var(--text); border-color: var(--accent); }}
     .toggle-btn.active {{ background: var(--accent)25; border-color: var(--accent); color: var(--accent); font-weight: 600; }}
 
+    /* Newsroom */
+    .news-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; margin-top: 1.25rem; }}
+    .news-card {{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 0.5rem; transition: box-shadow 0.15s, border-color 0.15s; }}
+    .news-card:hover {{ box-shadow: 0 3px 12px rgba(0,0,0,0.1); border-color: var(--accent); }}
+    .news-card a {{ text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; line-height: 1.4; }}
+    .news-card a:hover {{ color: var(--accent); }}
+    .news-meta {{ display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }}
+    .news-date {{ font-size: 0.72rem; color: var(--text-muted); }}
+    .news-source {{ font-size: 0.72rem; color: var(--text-muted); background: var(--surface2); border-radius: 3px; padding: 0.1rem 0.4rem; }}
+    .news-card.hidden {{ display: none; }}
+
     /* Responsive */
     @media (max-width: 768px) {{
       .sidebar {{ display: none; }}
@@ -476,6 +510,7 @@ def _build_html(data: dict, trends: dict = None) -> str:
       <button class="nav-btn" onclick="showSection('internet')">🌐 Internet</button>
       <button class="nav-btn" onclick="showSection('hardware')">📲 Hardware</button>
       <button class="nav-btn" onclick="showSection('vas')">🎬 VAS</button>
+      <button class="nav-btn" onclick="showSection('newsroom')">📰 Newsroom</button>
     </div>
 
     <div class="own-note">★ Markeret = egne brands<br>(3, OiSTER, Flexii)</div>
@@ -730,6 +765,20 @@ def _build_html(data: dict, trends: dict = None) -> str:
       </div>
     </div>
 
+    <!-- ══ NEWSROOM ══════════════════════════════════════════════════════════ -->
+    <div id="section-newsroom" class="section">
+      <div class="page-header">
+        <h1>Newsroom</h1>
+        <p>Seneste nyheder fra operatørerne · Google News · opdateret ugentligt</p>
+      </div>
+      <div class="filters" id="news-filters">
+        {filter_btns}
+      </div>
+      <div class="news-grid" id="news-grid">
+        {news_cards}
+      </div>
+    </div>
+
   </main>
 </div>
 
@@ -973,6 +1022,13 @@ document.querySelectorAll(".filters").forEach(filterEl => {{
       tableEl.querySelectorAll(".data-row").forEach(row => {{
         row.classList.toggle("hidden", filter !== "all" && row.dataset.operator !== filter);
       }});
+      // Also filter news cards
+      const grid = filterEl.parentElement.querySelector(".news-grid");
+      if (grid) {{
+        grid.querySelectorAll(".news-card").forEach(card => {{
+          card.classList.toggle("hidden", filter !== "all" && card.dataset.operator !== filter);
+        }});
+      }}
     }});
   }});
 }});

@@ -123,6 +123,17 @@
     .toggle-btn:hover { color: var(--text); border-color: var(--accent); }
     .toggle-btn.active { background: var(--accent)25; border-color: var(--accent); color: var(--accent); font-weight: 600; }
 
+    /* Newsroom */
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+    .news-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 0.5rem; transition: box-shadow 0.15s, border-color 0.15s; }
+    .news-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.1); border-color: var(--accent); }
+    .news-card a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; line-height: 1.4; }
+    .news-card a:hover { color: var(--accent); }
+    .news-meta { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .news-date { font-size: 0.72rem; color: var(--text-muted); }
+    .news-source { font-size: 0.72rem; color: var(--text-muted); background: var(--surface2); border-radius: 3px; padding: 0.1rem 0.4rem; }
+    .news-card.hidden { display: none; }
+
     /* Responsive */
     @media (max-width: 768px) {
       .sidebar { display: none; }
@@ -148,12 +159,13 @@
       <button class="nav-btn" onclick="showSection('internet')">🌐 Internet</button>
       <button class="nav-btn" onclick="showSection('hardware')">📲 Hardware</button>
       <button class="nav-btn" onclick="showSection('vas')">🎬 VAS</button>
+      <button class="nav-btn" onclick="showSection('newsroom')">📰 Newsroom</button>
     </div>
 
     <div class="own-note">★ Markeret = egne brands<br>(3, OiSTER, Flexii)</div>
 
     <div style="margin-top:auto;color:var(--text-muted);font-size:0.7rem">
-      Opdateret:<br>2026-03-05 21:30
+      Opdateret:<br>2026-03-05 21:48
     </div>
   </nav>
 
@@ -1750,6 +1762,20 @@
       </div>
     </div>
 
+    <!-- ══ NEWSROOM ══════════════════════════════════════════════════════════ -->
+    <div id="section-newsroom" class="section">
+      <div class="page-header">
+        <h1>Newsroom</h1>
+        <p>Seneste nyheder fra operatørerne · Google News · opdateret ugentligt</p>
+      </div>
+      <div class="filters" id="news-filters">
+        <button class="filter-btn active" data-filter="all">Alle</button><button class="filter-btn" data-filter="3" style="--op-color:#FF6200">★ 3</button><button class="filter-btn" data-filter="Flexii" style="--op-color:#60A5FA">★ Flexii</button><button class="filter-btn" data-filter="OiSTER" style="--op-color:#7C3AED">★ OiSTER</button><button class="filter-btn" data-filter="CBB" style="--op-color:#D97706">CBB</button><button class="filter-btn" data-filter="CallMe" style="--op-color:#9F1239">CallMe</button><button class="filter-btn" data-filter="Eesy" style="--op-color:#0891B2">Eesy</button><button class="filter-btn" data-filter="Norlys" style="--op-color:#DC2626">Norlys</button><button class="filter-btn" data-filter="Telenor" style="--op-color:#1D4ED8">Telenor</button><button class="filter-btn" data-filter="Telmore" style="--op-color:#EC4899">Telmore</button><button class="filter-btn" data-filter="YouSee" style="--op-color:#16A34A">YouSee</button>
+      </div>
+      <div class="news-grid" id="news-grid">
+        <p style="color:var(--text-muted);padding:2rem 0;text-align:center;">Nyheder hentes ved næste kørsel</p>
+      </div>
+    </div>
+
   </main>
 </div>
 
@@ -1990,6 +2016,13 @@ document.querySelectorAll(".filters").forEach(filterEl => {
       tableEl.querySelectorAll(".data-row").forEach(row => {
         row.classList.toggle("hidden", filter !== "all" && row.dataset.operator !== filter);
       });
+      // Also filter news cards
+      const grid = filterEl.parentElement.querySelector(".news-grid");
+      if (grid) {
+        grid.querySelectorAll(".news-card").forEach(card => {
+          card.classList.toggle("hidden", filter !== "all" && card.dataset.operator !== filter);
+        });
+      }
     });
   });
 });
