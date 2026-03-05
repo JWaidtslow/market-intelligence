@@ -235,6 +235,10 @@ def _build_internet_record(ctx: str, price: float, operator: str) -> Optional[di
 
     campaign = _extract_campaign(ctx)
 
+    # Scrape "Mindstepris: X kr." directly from page if available
+    min_match = re.search(r"mindstepris[:\s]+(\d[\d\.,]+)\s*kr", ctx, re.IGNORECASE)
+    min_price = _parse_price(min_match.group(1)) if min_match else None
+
     return {
         "operator": operator,
         "name": _guess_internet_name(ctx, data_gb, is_unlimited),
@@ -244,6 +248,7 @@ def _build_internet_record(ctx: str, price: float, operator: str) -> Optional[di
         "price": price,
         "campaign_price": campaign.get("price"),
         "campaign_duration": campaign.get("duration"),
+        "min_price": min_price,
         "notes": "",
     }
 

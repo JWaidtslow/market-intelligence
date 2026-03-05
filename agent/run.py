@@ -9,6 +9,7 @@ Usage:
 """
 
 import json
+import re
 import sys
 import os
 import logging
@@ -200,11 +201,23 @@ def build_trend_data() -> dict:
 
                 if name not in result[section]["operators"]:
                     result[section]["operators"][name] = {
-                        "prices": [], "campaign_prices": [], "color": color
+                        "prices": [], "campaign_prices": [], "color": color,
+                        "min_prices": [], "intro_months": [],
                     }
 
                 result[section]["operators"][name]["prices"].append(min(prices) if prices else None)
                 result[section]["operators"][name]["campaign_prices"].append(min(camps) if camps else None)
+
+                # Internet-only: min_price (scraped Mindstepris) and intro_months
+                if section == "internet":
+                    mp = [i["min_price"] for i in items if isinstance(i.get("min_price"), (int, float))]
+                    result[section]["operators"][name]["min_prices"].append(min(mp) if mp else None)
+                    months = []
+                    for i in items:
+                        m = re.search(r'(\d+)', str(i.get("campaign_duration", ""))) if i.get("campaign_duration") else None
+                        if m:
+                            months.append(int(m.group(1)))
+                    result[section]["operators"][name]["intro_months"].append(max(months) if months else None)
 
     return result
 

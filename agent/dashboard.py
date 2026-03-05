@@ -11,16 +11,16 @@ from datetime import datetime
 
 OWN_BRANDS = {"3", "OiSTER", "Flexii"}
 OPERATOR_COLORS = {
-    "3":       "#E1001A",
-    "OiSTER":  "#FF6B00",
-    "Flexii":  "#7C3AED",
-    "Telenor": "#0072C6",
-    "YouSee":  "#C0003C",
-    "Norlys":  "#00A650",
-    "CBB":     "#FF0000",
-    "Telmore": "#00539F",
-    "Eesy":    "#FF6B6B",
-    "CallMe":  "#E63946",
+    "3":       "#FF6200",   # Orange
+    "OiSTER":  "#7C3AED",   # Lilla
+    "Flexii":  "#60A5FA",   # Baby blå
+    "Telenor": "#1D4ED8",   # Blå
+    "YouSee":  "#16A34A",   # Grøn
+    "Norlys":  "#DC2626",   # Rød
+    "CBB":     "#D97706",   # Gul
+    "Telmore": "#EC4899",   # Pink
+    "Eesy":    "#0891B2",   # Turkis
+    "CallMe":  "#9F1239",   # Ruby rød
 }
 OPERATOR_DOMAINS = {
     "3":       "3.dk",
@@ -131,6 +131,16 @@ def _build_html(data: dict, trends: dict = None) -> str:
         ring = ' style="outline: 2px solid gold; outline-offset:2px;"' if own else ""
         return f'<span class="op-badge"{ring} style="background:{color}20;color:{color};border:1px solid {color}40;">{logo}{op_name}{"★" if own else ""}</span>'
 
+    def _six_month_cost(price, camp_p, camp_d):
+        """Minimum total cost over 6-month binding period."""
+        if not isinstance(price, (int, float)):
+            return None
+        if isinstance(camp_p, (int, float)):
+            m = re.search(r'(\d+)', str(camp_d)) if camp_d else None
+            intro = min(int(m.group(1)) if m else 0, 6)
+            return int(intro * camp_p + (6 - intro) * price)
+        return int(6 * price)
+
     def change_indicator(delta):
         """Render a price change arrow. delta > 0 = increase (bad/red), < 0 = decrease (good/green)."""
         if delta is None or delta == 0:
@@ -207,6 +217,11 @@ def _build_html(data: dict, trends: dict = None) -> str:
         own    = op in OWN_BRANDS
 
         new_tag = ' <span class="new-badge">NY</span>' if is_new else ""
+        scraped_min = s.get("min_price")
+        six_mo = scraped_min if scraped_min else _six_month_cost(price, camp_p, camp_d)
+        src_note = '' if scraped_min else '<span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span>'
+        min_price_cell = f'<td class="price-cell"><strong>{int(six_mo)} kr.</strong>{src_note}</td>' if six_mo is not None else '<td class="price-cell">—</td>'
+        dur_str = f'<span style="font-size:0.75rem;color:var(--text-muted)">{camp_d}</span>' if camp_d else ''
         int_rows += f"""
         <tr class="data-row" data-operator="{op}" {"data-own='1'" if own else ""}>
           <td>{op_badge(op)}</td>
@@ -214,8 +229,9 @@ def _build_html(data: dict, trends: dict = None) -> str:
           <td class="center">{itype}</td>
           <td class="center"><span class="tech-badge tech-{tech.lower()}">{tech}</span></td>
           <td class="center">{data_str}</td>
+          {min_price_cell}
           {price_cell(price, delta)}
-          <td>{campaign_badge(camp_p, camp_d)}</td>
+          <td class="center">{dur_str}</td>
           <td class="notes">{notes}</td>
         </tr>"""
 
@@ -423,6 +439,12 @@ def _build_html(data: dict, trends: dict = None) -> str:
     /* Trend note */
     .trend-note {{ font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; text-align: center; }}
 
+    /* Window selector */
+    .window-select {{ display: flex; gap: 0.5rem; align-items: center; margin-left: auto; }}
+    .window-select span {{ font-size: 0.75rem; color: var(--text-muted); }}
+    .window-select select {{ background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; outline: none; transition: border-color 0.15s; }}
+    .window-select select:hover, .window-select select:focus {{ border-color: var(--accent); }}
+
     /* Chart toggle */
     .chart-toggle {{ display: flex; gap: 0.4rem; flex-shrink: 0; }}
     .toggle-btn {{ background: var(--surface2); border: 1px solid var(--border); color: var(--text-muted); padding: 0.35rem 0.8rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; transition: all 0.15s; white-space: nowrap; }}
@@ -534,7 +556,19 @@ def _build_html(data: dict, trends: dict = None) -> str:
         <p>Voice-abonnementer på tværs af operatører</p>
       </div>
       <div class="chart-wrap" id="sub-trend-wrap">
-        <h2>Prisudvikling — billigste abonnement pr. operatør</h2>
+        <div style="display:flex;align-items:center;margin-bottom:1rem">
+          <h2 style="margin-bottom:0">Prisudvikling — billigste abonnement pr. operatør</h2>
+          <div class="window-select">
+            <span>Periode:</span>
+            <select onchange="setTrendWindow(+this.value,'sub')">
+              <option value="1">Seneste uge</option>
+              <option value="4">Seneste måned</option>
+              <option value="13">Seneste kvartal</option>
+              <option value="26" selected>Seneste 6 mdr.</option>
+              <option value="52">Seneste 12 mdr.</option>
+            </select>
+          </div>
+        </div>
         <div class="chart-container" style="height:300px">
           <canvas id="subTrendChart"></canvas>
         </div>
@@ -564,50 +598,87 @@ def _build_html(data: dict, trends: dict = None) -> str:
 
     <!-- ══ INTERNET ══════════════════════════════════════════════════════════ -->
     <div id="section-internet" class="section">
-      <div class="page-header">
-        <h1>Internet</h1>
-        <p>Mobilt bredbånd og fast trådløs adgang</p>
-      </div>
-
-      <!-- 4 KPI charts in 2x2 grid -->
-      <div class="kpi-grid">
-        <div class="chart-wrap"><h2>📉 Lavest pris med introrabat</h2>
-          <div class="chart-container"><canvas id="intKpiCampChart"></canvas></div></div>
-        <div class="chart-wrap"><h2>💰 Lavest pris</h2>
-          <div class="chart-container"><canvas id="intKpiPriceChart"></canvas></div></div>
-        <div class="chart-wrap"><h2>📅 Længste introrabat-periode (mdr.)</h2>
-          <div class="chart-container"><canvas id="intKpiMonthsChart"></canvas></div></div>
-        <div class="chart-wrap"><h2>🔒 Lavest minimumspris (efter intro)</h2>
-          <div class="chart-container"><canvas id="intKpiAfterChart"></canvas></div></div>
-      </div>
-
-      <!-- Trend chart -->
-      <div class="chart-wrap" id="int-trend-wrap">
-        <h2>Prisudvikling — billigste internetpris pr. operatør</h2>
-        <div class="chart-container" style="height:300px">
-          <canvas id="intTrendChart"></canvas>
+      <div class="page-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+        <div>
+          <h1>Internet</h1>
+          <p>Mobilt bredbånd og fast trådløs adgang</p>
         </div>
-        <p class="trend-note" id="int-trend-note"></p>
+        <div class="chart-toggle" id="int-subtab-toggle">
+          <button class="toggle-btn active" onclick="showIntTab('overview',this)">📊 Overblik</button>
+          <button class="toggle-btn" onclick="showIntTab('trends',this)">📈 Tendenser</button>
+        </div>
       </div>
 
-      <div class="filters" id="int-filters">
-        {filter_btns}
-        <input type="text" class="search-input" placeholder="Søg…" oninput="filterSearch(this,'int-table')">
+      <!-- ── Overblik sub-tab ───────────────────────────────────────────── -->
+      <div id="int-tab-overview">
+        <div class="kpi-grid">
+          <div class="chart-wrap"><h2>📉 Lavest intropris</h2>
+            <div class="chart-container"><canvas id="intKpiCampChart"></canvas></div></div>
+          <div class="chart-wrap"><h2>💰 Lavest standardpris</h2>
+            <div class="chart-container"><canvas id="intKpiPriceChart"></canvas></div></div>
+          <div class="chart-wrap"><h2>📅 Længste introperiode (mdr.)</h2>
+            <div class="chart-container"><canvas id="intKpiMonthsChart"></canvas></div></div>
+          <div class="chart-wrap"><h2>🔒 Min. pris (6 mdr. binding)</h2>
+            <div class="chart-container"><canvas id="intKpiAfterChart"></canvas></div></div>
+        </div>
+        <div class="filters" id="int-filters">
+          {filter_btns}
+          <input type="text" class="search-input" placeholder="Søg…" oninput="filterSearch(this,'int-table')">
+        </div>
+        <div class="table-wrap">
+          <table id="int-table">
+            <thead><tr>
+              <th onclick="sortTable(this)">Operatør</th>
+              <th onclick="sortTable(this)">Produkt</th>
+              <th onclick="sortTable(this)" class="center">Type</th>
+              <th onclick="sortTable(this)" class="center">Teknologi</th>
+              <th onclick="sortTable(this)" class="center">Data</th>
+              <th onclick="sortTable(this)" class="center" title="Samlede omkostninger over 6 mdr. inkl. evt. introrabat">Min. pris (6 mdr.)</th>
+              <th onclick="sortTable(this)" class="center" title="Normal månedspris efter introperiode">Standard pris</th>
+              <th onclick="sortTable(this)" class="center">Intro periode</th>
+              <th>Noter</th>
+            </tr></thead>
+            <tbody>{int_rows}</tbody>
+          </table>
+        </div>
       </div>
-      <div class="table-wrap">
-        <table id="int-table">
-          <thead><tr>
-            <th onclick="sortTable(this)">Operatør</th>
-            <th onclick="sortTable(this)">Produkt</th>
-            <th onclick="sortTable(this)" class="center">Type</th>
-            <th onclick="sortTable(this)" class="center">Teknologi</th>
-            <th onclick="sortTable(this)" class="center">Data</th>
-            <th onclick="sortTable(this)" class="center">Pris</th>
-            <th>Kampagne</th>
-            <th>Noter</th>
-          </tr></thead>
-          <tbody>{int_rows}</tbody>
-        </table>
+
+      <!-- ── Tendenser sub-tab ──────────────────────────────────────────── -->
+      <div id="int-tab-trends" style="display:none">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:1rem">
+          <div class="window-select">
+            <span>Periode:</span>
+            <select onchange="setTrendWindow(+this.value,'int')">
+              <option value="1">Seneste uge</option>
+              <option value="4">Seneste måned</option>
+              <option value="13">Seneste kvartal</option>
+              <option value="26" selected>Seneste 6 mdr.</option>
+              <option value="52">Seneste 12 mdr.</option>
+            </select>
+          </div>
+        </div>
+        <div class="kpi-grid">
+          <div class="chart-wrap">
+            <h2>Intropris — udvikling pr. operatør</h2>
+            <div class="chart-container" style="height:280px"><canvas id="intTrendCamp"></canvas></div>
+            <p class="trend-note" id="int-trend-camp-note"></p>
+          </div>
+          <div class="chart-wrap">
+            <h2>Standardpris — udvikling pr. operatør</h2>
+            <div class="chart-container" style="height:280px"><canvas id="intTrendStd"></canvas></div>
+            <p class="trend-note" id="int-trend-std-note"></p>
+          </div>
+          <div class="chart-wrap">
+            <h2>Min. pris (6 mdr.) — udvikling pr. operatør</h2>
+            <div class="chart-container" style="height:280px"><canvas id="intTrendMin"></canvas></div>
+            <p class="trend-note" id="int-trend-min-note"></p>
+          </div>
+          <div class="chart-wrap">
+            <h2>Introperiode (mdr.) — udvikling pr. operatør</h2>
+            <div class="chart-container" style="height:280px"><canvas id="intTrendPeriod"></canvas></div>
+            <p class="trend-note" id="int-trend-period-note"></p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -716,38 +787,58 @@ function barChart(id, labels, values, colors, unit, names) {{
 }}
 
 // ── Trend line chart helper ───────────────────────────────────────────────────
-function trendChart(canvasId, noteId, section) {{
+const _trendInstances = {{}};  // canvasId → Chart instance
+
+function trendChart(canvasId, noteId, section, dataKey="prices", unit="kr", windowSize=26) {{
   const data = trendData[section];
   if (!data || data.dates.length < 2) {{
     const note = document.getElementById(noteId);
     if (note) note.textContent = "Trenddata vises fra og med anden kørsel (kræver mindst 2 ugers data)";
     return;
   }}
+  // Slice to last N data points
+  const n = Math.min(windowSize, data.dates.length);
+  const slicedDates = data.dates.slice(-n);
+  const suffix = unit === "mdr" ? " mdr." : " kr.";
   const datasets = Object.entries(data.operators)
-    .filter(([, d]) => d.prices.some(p => p !== null))
+    .filter(([, d]) => (d[dataKey] || []).some(p => p !== null))
     .map(([name, d]) => ({{
       label: name,
-      data: d.prices,
+      data: (d[dataKey] || []).slice(-n),
       borderColor: d.color,
       backgroundColor: "transparent",
       stepped: true,
       borderWidth: 2,
-      pointRadius: 4,
+      pointRadius: slicedDates.length > 20 ? 2 : 4,
       pointHoverRadius: 7,
       pointBackgroundColor: d.color,
     }}));
-  new Chart(document.getElementById(canvasId), {{
+  // Destroy existing instance if re-rendering
+  if (_trendInstances[canvasId]) {{ _trendInstances[canvasId].destroy(); }}
+  _trendInstances[canvasId] = new Chart(document.getElementById(canvasId), {{
     type: "line",
-    data: {{ labels: data.dates, datasets }},
+    data: {{ labels: slicedDates, datasets }},
     options: {{
       responsive: true, maintainAspectRatio: false,
       plugins: {{ legend: {{ display: true, labels: {{ color: "#1A1D2E", boxWidth: 14, padding: 16 }} }} }},
       scales: {{
-        x: {{ ticks: {{ color: "#6B7285" }}, grid: {{ color: "#DDE0EC" }} }},
-        y: {{ ticks: {{ color: "#6B7285", callback: v => v + " kr." }}, grid: {{ color: "#DDE0EC" }} }}
+        x: {{ ticks: {{ color: "#6B7285", maxRotation: 45, maxTicksLimit: 16 }}, grid: {{ color: "#DDE0EC" }} }},
+        y: {{ ticks: {{ color: "#6B7285", callback: v => v + suffix }}, grid: {{ color: "#DDE0EC" }} }}
       }}
     }}
   }});
+}}
+
+// ── Week-window selector ──────────────────────────────────────────────────────
+function setTrendWindow(n, group) {{
+  if (group === "sub") {{
+    trendChart("subTrendChart", "sub-trend-note", "subscriptions", "prices", "kr", n);
+  }} else {{
+    trendChart("intTrendCamp",   "int-trend-camp-note",   "internet", "campaign_prices", "kr",  n);
+    trendChart("intTrendStd",    "int-trend-std-note",    "internet", "prices",          "kr",  n);
+    trendChart("intTrendMin",    "int-trend-min-note",    "internet", "min_prices",      "kr",  n);
+    trendChart("intTrendPeriod", "int-trend-period-note", "internet", "intro_months",    "mdr", n);
+  }}
 }}
 
 // ── Render all charts ─────────────────────────────────────────────────────────
@@ -822,7 +913,21 @@ barChart("intKpiAfterChart",  kpiLabels, kpiMinAfter,  kpiColors, "kr");
 
 // Trend charts (renders when 2+ data points exist)
 trendChart("subTrendChart", "sub-trend-note", "subscriptions");
-trendChart("intTrendChart", "int-trend-note", "internet");
+
+// Internet trend charts (4 metrics)
+trendChart("intTrendCamp",   "int-trend-camp-note",   "internet", "campaign_prices", "kr");
+trendChart("intTrendStd",    "int-trend-std-note",    "internet", "prices",          "kr");
+trendChart("intTrendMin",    "int-trend-min-note",    "internet", "min_prices",      "kr");
+trendChart("intTrendPeriod", "int-trend-period-note", "internet", "intro_months",    "mdr");
+
+// Internet sub-tab toggle
+let _intTrendsRendered = false;
+function showIntTab(tab, btn) {{
+  document.getElementById("int-tab-overview").style.display = tab === "overview" ? "" : "none";
+  document.getElementById("int-tab-trends").style.display   = tab === "trends"   ? "" : "none";
+  document.querySelectorAll("#int-subtab-toggle .toggle-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+}}
 
 // ── Navigation ────────────────────────────────────────────────────────────────
 function showSection(name) {{

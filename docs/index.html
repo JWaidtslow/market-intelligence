@@ -111,6 +111,12 @@
     /* Trend note */
     .trend-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; text-align: center; }
 
+    /* Window selector */
+    .window-select { display: flex; gap: 0.5rem; align-items: center; margin-left: auto; }
+    .window-select span { font-size: 0.75rem; color: var(--text-muted); }
+    .window-select select { background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 0.3rem 0.6rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; outline: none; transition: border-color 0.15s; }
+    .window-select select:hover, .window-select select:focus { border-color: var(--accent); }
+
     /* Chart toggle */
     .chart-toggle { display: flex; gap: 0.4rem; flex-shrink: 0; }
     .toggle-btn { background: var(--surface2); border: 1px solid var(--border); color: var(--text-muted); padding: 0.35rem 0.8rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem; transition: all 0.15s; white-space: nowrap; }
@@ -147,7 +153,7 @@
     <div class="own-note">★ Markeret = egne brands<br>(3, OiSTER, Flexii)</div>
 
     <div style="margin-top:auto;color:var(--text-muted);font-size:0.7rem">
-      Opdateret:<br>2026-03-05 20:51
+      Opdateret:<br>2026-03-05 21:30
     </div>
   </nav>
 
@@ -222,14 +228,26 @@
         <p>Voice-abonnementer på tværs af operatører</p>
       </div>
       <div class="chart-wrap" id="sub-trend-wrap">
-        <h2>Prisudvikling — billigste abonnement pr. operatør</h2>
+        <div style="display:flex;align-items:center;margin-bottom:1rem">
+          <h2 style="margin-bottom:0">Prisudvikling — billigste abonnement pr. operatør</h2>
+          <div class="window-select">
+            <span>Periode:</span>
+            <select onchange="setTrendWindow(+this.value,'sub')">
+              <option value="1">Seneste uge</option>
+              <option value="4">Seneste måned</option>
+              <option value="13">Seneste kvartal</option>
+              <option value="26" selected>Seneste 6 mdr.</option>
+              <option value="52">Seneste 12 mdr.</option>
+            </select>
+          </div>
+        </div>
         <div class="chart-container" style="height:300px">
           <canvas id="subTrendChart"></canvas>
         </div>
         <p class="trend-note" id="sub-trend-note"></p>
       </div>
       <div class="filters" id="sub-filters">
-        <button class="filter-btn active" data-filter="all">Alle</button><button class="filter-btn" data-filter="3" style="--op-color:#E1001A">★ 3</button><button class="filter-btn" data-filter="Flexii" style="--op-color:#7C3AED">★ Flexii</button><button class="filter-btn" data-filter="OiSTER" style="--op-color:#FF6B00">★ OiSTER</button><button class="filter-btn" data-filter="CBB" style="--op-color:#FF0000">CBB</button><button class="filter-btn" data-filter="CallMe" style="--op-color:#E63946">CallMe</button><button class="filter-btn" data-filter="Eesy" style="--op-color:#FF6B6B">Eesy</button><button class="filter-btn" data-filter="Norlys" style="--op-color:#00A650">Norlys</button><button class="filter-btn" data-filter="Telenor" style="--op-color:#0072C6">Telenor</button><button class="filter-btn" data-filter="Telmore" style="--op-color:#00539F">Telmore</button><button class="filter-btn" data-filter="YouSee" style="--op-color:#C0003C">YouSee</button>
+        <button class="filter-btn active" data-filter="all">Alle</button><button class="filter-btn" data-filter="3" style="--op-color:#FF6200">★ 3</button><button class="filter-btn" data-filter="Flexii" style="--op-color:#60A5FA">★ Flexii</button><button class="filter-btn" data-filter="OiSTER" style="--op-color:#7C3AED">★ OiSTER</button><button class="filter-btn" data-filter="CBB" style="--op-color:#D97706">CBB</button><button class="filter-btn" data-filter="CallMe" style="--op-color:#9F1239">CallMe</button><button class="filter-btn" data-filter="Eesy" style="--op-color:#0891B2">Eesy</button><button class="filter-btn" data-filter="Norlys" style="--op-color:#DC2626">Norlys</button><button class="filter-btn" data-filter="Telenor" style="--op-color:#1D4ED8">Telenor</button><button class="filter-btn" data-filter="Telmore" style="--op-color:#EC4899">Telmore</button><button class="filter-btn" data-filter="YouSee" style="--op-color:#16A34A">YouSee</button>
         <input type="text" class="search-input" placeholder="Søg…" oninput="filterSearch(this,'sub-table')">
       </div>
       <div class="table-wrap">
@@ -247,7 +265,7 @@
           </tr></thead>
           <tbody>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>3Timer 3GB</td>
           <td class="center">3 timer</td>
           <td class="center">3 GB</td>
@@ -258,7 +276,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>8Timer 8GB</td>
           <td class="center">8 timer</td>
           <td class="center">8 GB</td>
@@ -269,7 +287,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>15Timer 15GB</td>
           <td class="center">15 timer</td>
           <td class="center">15 GB</td>
@@ -280,7 +298,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>Ekstrabruger</td>
           <td class="center">Fri</td>
           <td class="center">0 GB</td>
@@ -291,7 +309,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>Fri Tale 10GB</td>
           <td class="center">Fri</td>
           <td class="center">10 GB</td>
@@ -302,7 +320,7 @@
           <td class="notes">3LikeHome 100 lande</td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>Fri Tale 50GB</td>
           <td class="center">Fri</td>
           <td class="center">50 GB</td>
@@ -313,7 +331,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>Fri Tale 75GB</td>
           <td class="center">Fri</td>
           <td class="center">75 GB</td>
@@ -324,7 +342,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>Fri Tale 100GB</td>
           <td class="center">Fri</td>
           <td class="center">100 GB</td>
@@ -335,7 +353,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>Fri Tale FriGB</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -346,7 +364,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Fri Tale 50GB</td>
           <td class="center">Fri</td>
           <td class="center">50 GB</td>
@@ -357,7 +375,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Fri Tale 80GB</td>
           <td class="center">Fri</td>
           <td class="center">80 GB</td>
@@ -368,7 +386,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Fri Tale FriGB</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -379,7 +397,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Fri Tale 100GB + 2 tjenester</td>
           <td class="center">Fri</td>
           <td class="center">100 GB</td>
@@ -390,7 +408,7 @@
           <td class="notes">2 streamingtjenester</td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Fri Tale 200GB + 2 tjenester</td>
           <td class="center">Fri</td>
           <td class="center">200 GB</td>
@@ -401,7 +419,7 @@
           <td class="notes">2 streamingtjenester</td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Fri Tale FriGB + 2 tjenester</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -412,7 +430,7 @@
           <td class="notes">2 streamingtjenester</td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>2Timer 4GB</td>
           <td class="center">2 timer</td>
           <td class="center">4 GB</td>
@@ -423,7 +441,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>7Timer 14GB</td>
           <td class="center">7 timer</td>
           <td class="center">14 GB</td>
@@ -434,7 +452,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>Fri Tale 30GB</td>
           <td class="center">Fri</td>
           <td class="center">30 GB</td>
@@ -445,7 +463,7 @@
           <td class="notes">Gratis i 2 måneder</td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>Fri Tale 50GB</td>
           <td class="center">Fri</td>
           <td class="center">50 GB</td>
@@ -456,7 +474,7 @@
           <td class="notes">Gratis i 2 måneder</td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>Fri Tale 80GB EU</td>
           <td class="center">Fri</td>
           <td class="center">80 GB</td>
@@ -467,7 +485,7 @@
           <td class="notes">Gratis i 2 måneder</td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>Fri Tale 80GB Verden</td>
           <td class="center">Fri</td>
           <td class="center">80 GB</td>
@@ -478,7 +496,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>Fri Tale FriGB Dobbelt</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -489,7 +507,7 @@
           <td class="notes">V/ køb af to abonnementer 129 kr./md/pers</td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>Fri Tale FriGB</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -500,7 +518,7 @@
           <td class="notes">Gratis i 2 måneder</td>
         </tr>
         <tr class="data-row" data-operator="Eesy" >
-          <td><span class="op-badge" style="background:#FF6B6B20;color:#FF6B6B;border:1px solid #FF6B6B40;"><img src="https://www.google.com/s2/favicons?domain=eesy.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Eesy</span></td>
+          <td><span class="op-badge" style="background:#0891B220;color:#0891B2;border:1px solid #0891B240;"><img src="https://www.google.com/s2/favicons?domain=eesy.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Eesy</span></td>
           <td>Fri Tale 50GB</td>
           <td class="center">Fri</td>
           <td class="center">50 GB</td>
@@ -511,7 +529,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Eesy" >
-          <td><span class="op-badge" style="background:#FF6B6B20;color:#FF6B6B;border:1px solid #FF6B6B40;"><img src="https://www.google.com/s2/favicons?domain=eesy.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Eesy</span></td>
+          <td><span class="op-badge" style="background:#0891B220;color:#0891B2;border:1px solid #0891B240;"><img src="https://www.google.com/s2/favicons?domain=eesy.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Eesy</span></td>
           <td>Fri Tale 80GB</td>
           <td class="center">Fri</td>
           <td class="center">80 GB</td>
@@ -522,7 +540,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Eesy" >
-          <td><span class="op-badge" style="background:#FF6B6B20;color:#FF6B6B;border:1px solid #FF6B6B40;"><img src="https://www.google.com/s2/favicons?domain=eesy.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Eesy</span></td>
+          <td><span class="op-badge" style="background:#0891B220;color:#0891B2;border:1px solid #0891B240;"><img src="https://www.google.com/s2/favicons?domain=eesy.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Eesy</span></td>
           <td>Fri Tale FriGB</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -533,7 +551,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>Little One</td>
           <td class="center">Fri</td>
           <td class="center">3 GB</td>
@@ -544,7 +562,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>Little OneMore</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -555,7 +573,7 @@
           <td class="notes">Kræver ONE abonnement</td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>Smart20</td>
           <td class="center">Fri</td>
           <td class="center">20 GB</td>
@@ -566,7 +584,7 @@
           <td class="notes">1 valgfri tjeneste i 6 mdr.</td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>Smart60</td>
           <td class="center">Fri</td>
           <td class="center">60 GB</td>
@@ -577,7 +595,7 @@
           <td class="notes">1 valgfri tjeneste i 6 mdr.</td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>Smart200</td>
           <td class="center">Fri</td>
           <td class="center">200 GB</td>
@@ -588,7 +606,7 @@
           <td class="notes">1 valgfri tjeneste i 6 mdr.</td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>ONE</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -599,7 +617,7 @@
           <td class="notes">1 valgfri tjeneste i 12 mdr.</td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>Smart Netflix</td>
           <td class="center">Fri</td>
           <td class="center">60 GB</td>
@@ -610,7 +628,7 @@
           <td class="notes">1 valgfri tjeneste i 6 mdr.</td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>ONE Netflix</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -621,7 +639,7 @@
           <td class="notes">1 valgfri tjeneste i 12 mdr.</td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>5Timer 5GB</td>
           <td class="center">5 timer</td>
           <td class="center">5 GB</td>
@@ -632,7 +650,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>Fri Tale 3GB Senior</td>
           <td class="center">Fri</td>
           <td class="center">3 GB</td>
@@ -643,7 +661,7 @@
           <td class="notes">Til Seniorer</td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>5Timer 20GB Børn</td>
           <td class="center">5 timer</td>
           <td class="center">20 GB</td>
@@ -654,7 +672,7 @@
           <td class="notes">Til børn</td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>Fri Tale 35GB</td>
           <td class="center">Fri</td>
           <td class="center">35 GB</td>
@@ -665,7 +683,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>Fri Tale 70GB</td>
           <td class="center">Fri</td>
           <td class="center">70 GB</td>
@@ -676,7 +694,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>Fri Tale 85GB + Disney+</td>
           <td class="center">Fri</td>
           <td class="center">85 GB</td>
@@ -687,7 +705,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>Fri Tale 70GB + Viaplay</td>
           <td class="center">Fri</td>
           <td class="center">70 GB</td>
@@ -698,7 +716,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>Fri Tale FriGB</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -709,7 +727,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>Fri Tale 10GB Børn</td>
           <td class="center">Fri</td>
           <td class="center">10 GB</td>
@@ -720,7 +738,7 @@
           <td class="notes">Til børn under 13 år</td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>Fri Tale 30GB</td>
           <td class="center">Fri</td>
           <td class="center">30 GB</td>
@@ -731,7 +749,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>Fri Tale 120GB Ung</td>
           <td class="center">Fri</td>
           <td class="center">120 GB</td>
@@ -742,7 +760,7 @@
           <td class="notes">Til unge under 24 år</td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>Fri Tale 80GB</td>
           <td class="center">Fri</td>
           <td class="center">80 GB</td>
@@ -753,7 +771,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>Fri Tale 120GB</td>
           <td class="center">Fri</td>
           <td class="center">120 GB</td>
@@ -764,7 +782,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>Fri Tale FriGB Ung</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -775,7 +793,7 @@
           <td class="notes">Til unge under 24 år</td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>Fri Tale FriGB</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -786,7 +804,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>3Timer 2GB Børn</td>
           <td class="center">3 timer</td>
           <td class="center">2 GB</td>
@@ -797,7 +815,7 @@
           <td class="notes">Til børn</td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Fri Tale 50GB</td>
           <td class="center">Fri</td>
           <td class="center">50 GB</td>
@@ -808,7 +826,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Fri Tale 100GB</td>
           <td class="center">Fri</td>
           <td class="center">100 GB</td>
@@ -819,7 +837,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Fri Tale 100GB + Telmore Musik</td>
           <td class="center">Fri</td>
           <td class="center">100 GB</td>
@@ -830,7 +848,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Fri Tale FriGB</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -841,7 +859,7 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Fri Tale FriGB + 3 tjenester</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -852,7 +870,7 @@
           <td class="notes">3 valgfrie streamingtjenester</td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Fri Tale FriGB + 4 tjenester</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -863,7 +881,7 @@
           <td class="notes">4 valgfrie streamingtjenester</td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Fri Tale FriGB + 5 tjenester</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
@@ -874,8 +892,8 @@
           <td class="notes">5 valgfrie streamingtjenester</td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
-          <td>Børneabonnement <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td>Børneabonnement</td>
           <td class="center">Fri</td>
           <td class="center">3 GB</td>
           <td class="center">EU</td>
@@ -885,8 +903,8 @@
           <td class="notes">0 kr. Oprettelse</td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
-          <td>Ekstrabruger <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td>Ekstrabruger</td>
           <td class="center">Fri</td>
           <td class="center">0 GB</td>
           <td class="center">Verden</td>
@@ -896,8 +914,8 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
-          <td>Fri Tale 25GB <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td>Fri Tale 25GB</td>
           <td class="center">Fri</td>
           <td class="center">25 GB</td>
           <td class="center">Verden</td>
@@ -907,8 +925,8 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
-          <td>Fri Tale 50GB <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td>Fri Tale 50GB</td>
           <td class="center">Fri</td>
           <td class="center">50 GB</td>
           <td class="center">Verden</td>
@@ -918,8 +936,8 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
-          <td>Fri Tale 100GB <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td>Fri Tale 100GB</td>
           <td class="center">Fri</td>
           <td class="center">100 GB</td>
           <td class="center">Verden</td>
@@ -929,8 +947,8 @@
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
-          <td>Fri Tale FriGB <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td>Fri Tale FriGB</td>
           <td class="center">Fri</td>
           <td class="center">Fri</td>
           <td class="center">Verden</td>
@@ -945,460 +963,538 @@
 
     <!-- ══ INTERNET ══════════════════════════════════════════════════════════ -->
     <div id="section-internet" class="section">
-      <div class="page-header">
-        <h1>Internet</h1>
-        <p>Mobilt bredbånd og fast trådløs adgang</p>
-      </div>
-
-      <!-- 4 KPI charts in 2x2 grid -->
-      <div class="kpi-grid">
-        <div class="chart-wrap"><h2>📉 Lavest pris med introrabat</h2>
-          <div class="chart-container"><canvas id="intKpiCampChart"></canvas></div></div>
-        <div class="chart-wrap"><h2>💰 Lavest pris</h2>
-          <div class="chart-container"><canvas id="intKpiPriceChart"></canvas></div></div>
-        <div class="chart-wrap"><h2>📅 Længste introrabat-periode (mdr.)</h2>
-          <div class="chart-container"><canvas id="intKpiMonthsChart"></canvas></div></div>
-        <div class="chart-wrap"><h2>🔒 Lavest minimumspris (efter intro)</h2>
-          <div class="chart-container"><canvas id="intKpiAfterChart"></canvas></div></div>
-      </div>
-
-      <!-- Trend chart -->
-      <div class="chart-wrap" id="int-trend-wrap">
-        <h2>Prisudvikling — billigste internetpris pr. operatør</h2>
-        <div class="chart-container" style="height:300px">
-          <canvas id="intTrendChart"></canvas>
+      <div class="page-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+        <div>
+          <h1>Internet</h1>
+          <p>Mobilt bredbånd og fast trådløs adgang</p>
         </div>
-        <p class="trend-note" id="int-trend-note"></p>
+        <div class="chart-toggle" id="int-subtab-toggle">
+          <button class="toggle-btn active" onclick="showIntTab('overview',this)">📊 Overblik</button>
+          <button class="toggle-btn" onclick="showIntTab('trends',this)">📈 Tendenser</button>
+        </div>
       </div>
 
-      <div class="filters" id="int-filters">
-        <button class="filter-btn active" data-filter="all">Alle</button><button class="filter-btn" data-filter="3" style="--op-color:#E1001A">★ 3</button><button class="filter-btn" data-filter="Flexii" style="--op-color:#7C3AED">★ Flexii</button><button class="filter-btn" data-filter="OiSTER" style="--op-color:#FF6B00">★ OiSTER</button><button class="filter-btn" data-filter="CBB" style="--op-color:#FF0000">CBB</button><button class="filter-btn" data-filter="CallMe" style="--op-color:#E63946">CallMe</button><button class="filter-btn" data-filter="Eesy" style="--op-color:#FF6B6B">Eesy</button><button class="filter-btn" data-filter="Norlys" style="--op-color:#00A650">Norlys</button><button class="filter-btn" data-filter="Telenor" style="--op-color:#0072C6">Telenor</button><button class="filter-btn" data-filter="Telmore" style="--op-color:#00539F">Telmore</button><button class="filter-btn" data-filter="YouSee" style="--op-color:#C0003C">YouSee</button>
-        <input type="text" class="search-input" placeholder="Søg…" oninput="filterSearch(this,'int-table')">
-      </div>
-      <div class="table-wrap">
-        <table id="int-table">
-          <thead><tr>
-            <th onclick="sortTable(this)">Operatør</th>
-            <th onclick="sortTable(this)">Produkt</th>
-            <th onclick="sortTable(this)" class="center">Type</th>
-            <th onclick="sortTable(this)" class="center">Teknologi</th>
-            <th onclick="sortTable(this)" class="center">Data</th>
-            <th onclick="sortTable(this)" class="center">Pris</th>
-            <th>Kampagne</th>
-            <th>Noter</th>
-          </tr></thead>
-          <tbody>
+      <!-- ── Overblik sub-tab ───────────────────────────────────────────── -->
+      <div id="int-tab-overview">
+        <div class="kpi-grid">
+          <div class="chart-wrap"><h2>📉 Lavest intropris</h2>
+            <div class="chart-container"><canvas id="intKpiCampChart"></canvas></div></div>
+          <div class="chart-wrap"><h2>💰 Lavest standardpris</h2>
+            <div class="chart-container"><canvas id="intKpiPriceChart"></canvas></div></div>
+          <div class="chart-wrap"><h2>📅 Længste introperiode (mdr.)</h2>
+            <div class="chart-container"><canvas id="intKpiMonthsChart"></canvas></div></div>
+          <div class="chart-wrap"><h2>🔒 Min. pris (6 mdr. binding)</h2>
+            <div class="chart-container"><canvas id="intKpiAfterChart"></canvas></div></div>
+        </div>
+        <div class="filters" id="int-filters">
+          <button class="filter-btn active" data-filter="all">Alle</button><button class="filter-btn" data-filter="3" style="--op-color:#FF6200">★ 3</button><button class="filter-btn" data-filter="Flexii" style="--op-color:#60A5FA">★ Flexii</button><button class="filter-btn" data-filter="OiSTER" style="--op-color:#7C3AED">★ OiSTER</button><button class="filter-btn" data-filter="CBB" style="--op-color:#D97706">CBB</button><button class="filter-btn" data-filter="CallMe" style="--op-color:#9F1239">CallMe</button><button class="filter-btn" data-filter="Eesy" style="--op-color:#0891B2">Eesy</button><button class="filter-btn" data-filter="Norlys" style="--op-color:#DC2626">Norlys</button><button class="filter-btn" data-filter="Telenor" style="--op-color:#1D4ED8">Telenor</button><button class="filter-btn" data-filter="Telmore" style="--op-color:#EC4899">Telmore</button><button class="filter-btn" data-filter="YouSee" style="--op-color:#16A34A">YouSee</button>
+          <input type="text" class="search-input" placeholder="Søg…" oninput="filterSearch(this,'int-table')">
+        </div>
+        <div class="table-wrap">
+          <table id="int-table">
+            <thead><tr>
+              <th onclick="sortTable(this)">Operatør</th>
+              <th onclick="sortTable(this)">Produkt</th>
+              <th onclick="sortTable(this)" class="center">Type</th>
+              <th onclick="sortTable(this)" class="center">Teknologi</th>
+              <th onclick="sortTable(this)" class="center">Data</th>
+              <th onclick="sortTable(this)" class="center" title="Samlede omkostninger over 6 mdr. inkl. evt. introrabat">Min. pris (6 mdr.)</th>
+              <th onclick="sortTable(this)" class="center" title="Normal månedspris efter introperiode">Standard pris</th>
+              <th onclick="sortTable(this)" class="center">Intro periode</th>
+              <th>Noter</th>
+            </tr></thead>
+            <tbody>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>10GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">10 GB</td>
+          <td class="price-cell"><strong>360 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>60 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>20GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">20 GB</td>
+          <td class="price-cell"><strong>600 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>100 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>50GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">50 GB</td>
+          <td class="price-cell"><strong>960 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>160 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>200GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">200 GB</td>
+          <td class="price-cell"><strong>1260 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>210 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="3" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>3Internet 5G</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>894 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>299 kr.</strong></td>
-          <td><span class="camp-badge">🏷 149 kr / 6 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">6 mdr.</span></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>7GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">7 GB</td>
+          <td class="price-cell"><strong>354 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>59 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>40GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">40 GB</td>
+          <td class="price-cell"><strong>594 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>99 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>75GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">75 GB</td>
+          <td class="price-cell"><strong>774 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>129 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>175GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">175 GB</td>
+          <td class="price-cell"><strong>954 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>159 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>300GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">300 GB</td>
+          <td class="price-cell"><strong>1194 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>199 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CBB" >
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>5G Internet Fri</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>1284 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>299 kr.</strong></td>
-          <td><span class="camp-badge">🏷 129 kr / 3 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">3 mdr.</span></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>100GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">100 GB</td>
+          <td class="price-cell"><strong>954 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>159 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>5G Internet 500GB</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">500 GB</td>
+          <td class="price-cell"><strong>1194 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>199 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>1000GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">1000 GB</td>
+          <td class="price-cell"><strong>1374 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>229 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="CallMe" >
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>5G Internet 1000GB</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">1000 GB</td>
+          <td class="price-cell"><strong>1674 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>279 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Eesy" >
-          <td><span class="op-badge" style="background:#FF6B6B20;color:#FF6B6B;border:1px solid #FF6B6B40;"><img src="https://www.google.com/s2/favicons?domain=eesy.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Eesy</span></td>
+          <td><span class="op-badge" style="background:#0891B220;color:#0891B2;border:1px solid #0891B240;"><img src="https://www.google.com/s2/favicons?domain=eesy.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Eesy</span></td>
           <td>5G Internet Fri</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>1164 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>299 kr.</strong></td>
-          <td><span class="camp-badge">🏷 89 kr / 3 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">3 mdr.</span></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
-          <td>5G Internet Fri <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td>5G Internet Fri</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>1194 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>299 kr.</strong></td>
-          <td><span class="camp-badge">🏷 199 kr / 6 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">6 mdr.</span></td>
           <td class="notes">TV2 Play gratis 3 mdr. + MAX + Podimo gratis 2 mdr. Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
-          <td>Internet 1000 Basic <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td>Internet 1000 Basic</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-fiber">Fiber</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>2214 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>369 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Norlys" >
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
-          <td>Internet 1000 <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td>Internet 1000</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-fiber">Fiber</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>2514 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>419 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>50GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">50 GB</td>
+          <td class="price-cell"><strong>594 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>99 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>200GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">200 GB</td>
+          <td class="price-cell"><strong>894 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>149 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>1000GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">1000 GB</td>
+          <td class="price-cell"><strong>1194 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>199 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>4G Internet 2000GB</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">2000 GB</td>
+          <td class="price-cell"><strong>954 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>239 kr.</strong></td>
-          <td><span class="camp-badge">🏷 159 kr / 10 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">10 mdr.</span></td>
           <td class="notes">Inkl. Norton Antivirus + 4G Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="OiSTER" data-own='1'>
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>5G Internet Fri</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>1074 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>269 kr.</strong></td>
-          <td><span class="camp-badge">🏷 179 kr / 10 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">10 mdr.</span></td>
           <td class="notes">Inkl. Disney+ + 5G Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>30GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">30 GB</td>
+          <td class="price-cell"><strong>774 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>129 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. SafeSurf</td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>80GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">80 GB</td>
+          <td class="price-cell"><strong>1134 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>189 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. SafeSurf</td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>250GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">250 GB</td>
+          <td class="price-cell"><strong>1374 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>229 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. SafeSurf</td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>5G Internet Fri</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>774 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>299 kr.</strong></td>
-          <td><span class="camp-badge">🏷 129 kr / 6 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">6 mdr.</span></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telenor" >
-          <td><span class="op-badge" style="background:#0072C620;color:#0072C6;border:1px solid #0072C640;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
+          <td><span class="op-badge" style="background:#1D4ED820;color:#1D4ED8;border:1px solid #1D4ED840;"><img src="https://www.google.com/s2/favicons?domain=telenor.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telenor</span></td>
           <td>Fibernet 1000/1000</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-fiber">Fiber</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>594 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>319 kr.</strong></td>
-          <td><span class="camp-badge">🏷 99 kr / 6 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">6 mdr.</span></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
-          <td>5GB Mobilt <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td>5GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">5 GB</td>
+          <td class="price-cell"><strong>294 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>49 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
-          <td>40GB Mobilt <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td>40GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">40 GB</td>
+          <td class="price-cell"><strong>594 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>99 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
-          <td>125GB Mobilt <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td>125GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">125 GB</td>
+          <td class="price-cell"><strong>894 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>149 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
-          <td>250GB Mobilt <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td>250GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">250 GB</td>
+          <td class="price-cell"><strong>1194 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>199 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
-          <td>4G Internet Fri <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td>4G Internet Fri</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>1074 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>259 kr.</strong></td>
-          <td><span class="camp-badge">🏷 99 kr / 3 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">3 mdr.</span></td>
           <td class="notes">Inkl. Låne-router</td>
         </tr>
         <tr class="data-row" data-operator="Telmore" >
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
-          <td>5G Internet Fri <span class="new-badge">NY</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td>5G Internet Fri</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>1194 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>299 kr.</strong></td>
-          <td><span class="camp-badge">🏷 99 kr / 3 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">3 mdr.</span></td>
           <td class="notes">Inkl. Låne-router</td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
           <td>30GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">30 GB</td>
+          <td class="price-cell"><strong>714 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>119 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
           <td>200GB Mobilt</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-4g">4G</span></td>
           <td class="center">200 GB</td>
+          <td class="price-cell"><strong>1314 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>219 kr.</strong></td>
-          <td></td>
+          <td class="center"></td>
           <td class="notes">Inkl. Lånerouter</td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
           <td>Mobilt 5G Internet Fri</td>
           <td class="center">Mobilt bredbånd</td>
           <td class="center"><span class="tech-badge tech-5g">5G</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>1480 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>329 kr.</strong></td>
-          <td><span class="camp-badge">🏷 164.5 kr / 3 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">3 mdr.</span></td>
           <td class="notes">Eksl. Lånerouter (200 kr. engangsgebyr)</td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
           <td>Internet 100/100</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-fiber">Fiber</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>1494 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>349 kr.</strong></td>
-          <td><span class="camp-badge">🏷 249 kr / 6 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">6 mdr.</span></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
           <td>Internet 200/200</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-fiber">Fiber</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>1674 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>379 kr.</strong></td>
-          <td><span class="camp-badge">🏷 279 kr / 6 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">6 mdr.</span></td>
           <td class="notes"></td>
         </tr>
         <tr class="data-row" data-operator="YouSee" >
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
           <td>Internet 1000/1000</td>
           <td class="center">Fast trådløs</td>
           <td class="center"><span class="tech-badge tech-fiber">Fiber</span></td>
           <td class="center">Fri</td>
+          <td class="price-cell"><strong>1854 kr.</strong><span title="Beregnet: intro × kampagnepris + rest × standardpris" style="font-size:0.7rem;color:var(--text-muted);margin-left:3px">~</span></td>
           <td class="price-cell"><strong>409 kr.</strong></td>
-          <td><span class="camp-badge">🏷 309 kr / 6 mdr.</span></td>
+          <td class="center"><span style="font-size:0.75rem;color:var(--text-muted)">6 mdr.</span></td>
           <td class="notes"></td>
         </tr></tbody>
-        </table>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── Tendenser sub-tab ──────────────────────────────────────────── -->
+      <div id="int-tab-trends" style="display:none">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:1rem">
+          <div class="window-select">
+            <span>Periode:</span>
+            <select onchange="setTrendWindow(+this.value,'int')">
+              <option value="1">Seneste uge</option>
+              <option value="4">Seneste måned</option>
+              <option value="13">Seneste kvartal</option>
+              <option value="26" selected>Seneste 6 mdr.</option>
+              <option value="52">Seneste 12 mdr.</option>
+            </select>
+          </div>
+        </div>
+        <div class="kpi-grid">
+          <div class="chart-wrap">
+            <h2>Intropris — udvikling pr. operatør</h2>
+            <div class="chart-container" style="height:280px"><canvas id="intTrendCamp"></canvas></div>
+            <p class="trend-note" id="int-trend-camp-note"></p>
+          </div>
+          <div class="chart-wrap">
+            <h2>Standardpris — udvikling pr. operatør</h2>
+            <div class="chart-container" style="height:280px"><canvas id="intTrendStd"></canvas></div>
+            <p class="trend-note" id="int-trend-std-note"></p>
+          </div>
+          <div class="chart-wrap">
+            <h2>Min. pris (6 mdr.) — udvikling pr. operatør</h2>
+            <div class="chart-container" style="height:280px"><canvas id="intTrendMin"></canvas></div>
+            <p class="trend-note" id="int-trend-min-note"></p>
+          </div>
+          <div class="chart-wrap">
+            <h2>Introperiode (mdr.) — udvikling pr. operatør</h2>
+            <div class="chart-container" style="height:280px"><canvas id="intTrendPeriod"></canvas></div>
+            <p class="trend-note" id="int-trend-period-note"></p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1409,7 +1505,7 @@
         <p>Device-priser på tværs af operatører</p>
       </div>
       <div class="filters" id="hw-filters">
-        <button class="filter-btn active" data-filter="all">Alle</button><button class="filter-btn" data-filter="3" style="--op-color:#E1001A">★ 3</button><button class="filter-btn" data-filter="Flexii" style="--op-color:#7C3AED">★ Flexii</button><button class="filter-btn" data-filter="OiSTER" style="--op-color:#FF6B00">★ OiSTER</button><button class="filter-btn" data-filter="CBB" style="--op-color:#FF0000">CBB</button><button class="filter-btn" data-filter="CallMe" style="--op-color:#E63946">CallMe</button><button class="filter-btn" data-filter="Eesy" style="--op-color:#FF6B6B">Eesy</button><button class="filter-btn" data-filter="Norlys" style="--op-color:#00A650">Norlys</button><button class="filter-btn" data-filter="Telenor" style="--op-color:#0072C6">Telenor</button><button class="filter-btn" data-filter="Telmore" style="--op-color:#00539F">Telmore</button><button class="filter-btn" data-filter="YouSee" style="--op-color:#C0003C">YouSee</button>
+        <button class="filter-btn active" data-filter="all">Alle</button><button class="filter-btn" data-filter="3" style="--op-color:#FF6200">★ 3</button><button class="filter-btn" data-filter="Flexii" style="--op-color:#60A5FA">★ Flexii</button><button class="filter-btn" data-filter="OiSTER" style="--op-color:#7C3AED">★ OiSTER</button><button class="filter-btn" data-filter="CBB" style="--op-color:#D97706">CBB</button><button class="filter-btn" data-filter="CallMe" style="--op-color:#9F1239">CallMe</button><button class="filter-btn" data-filter="Eesy" style="--op-color:#0891B2">Eesy</button><button class="filter-btn" data-filter="Norlys" style="--op-color:#DC2626">Norlys</button><button class="filter-btn" data-filter="Telenor" style="--op-color:#1D4ED8">Telenor</button><button class="filter-btn" data-filter="Telmore" style="--op-color:#EC4899">Telmore</button><button class="filter-btn" data-filter="YouSee" style="--op-color:#16A34A">YouSee</button>
         <input type="text" class="search-input" placeholder="Søg model…" oninput="filterSearch(this,'hw-table')">
       </div>
       <div class="table-wrap">
@@ -1434,7 +1530,7 @@
         <p>Underholdningstjenester og tilbudte services</p>
       </div>
       <div class="filters" id="vas-filters">
-        <button class="filter-btn active" data-filter="all">Alle</button><button class="filter-btn" data-filter="3" style="--op-color:#E1001A">★ 3</button><button class="filter-btn" data-filter="Flexii" style="--op-color:#7C3AED">★ Flexii</button><button class="filter-btn" data-filter="OiSTER" style="--op-color:#FF6B00">★ OiSTER</button><button class="filter-btn" data-filter="CBB" style="--op-color:#FF0000">CBB</button><button class="filter-btn" data-filter="CallMe" style="--op-color:#E63946">CallMe</button><button class="filter-btn" data-filter="Eesy" style="--op-color:#FF6B6B">Eesy</button><button class="filter-btn" data-filter="Norlys" style="--op-color:#00A650">Norlys</button><button class="filter-btn" data-filter="Telenor" style="--op-color:#0072C6">Telenor</button><button class="filter-btn" data-filter="Telmore" style="--op-color:#00539F">Telmore</button><button class="filter-btn" data-filter="YouSee" style="--op-color:#C0003C">YouSee</button>
+        <button class="filter-btn active" data-filter="all">Alle</button><button class="filter-btn" data-filter="3" style="--op-color:#FF6200">★ 3</button><button class="filter-btn" data-filter="Flexii" style="--op-color:#60A5FA">★ Flexii</button><button class="filter-btn" data-filter="OiSTER" style="--op-color:#7C3AED">★ OiSTER</button><button class="filter-btn" data-filter="CBB" style="--op-color:#D97706">CBB</button><button class="filter-btn" data-filter="CallMe" style="--op-color:#9F1239">CallMe</button><button class="filter-btn" data-filter="Eesy" style="--op-color:#0891B2">Eesy</button><button class="filter-btn" data-filter="Norlys" style="--op-color:#DC2626">Norlys</button><button class="filter-btn" data-filter="Telenor" style="--op-color:#1D4ED8">Telenor</button><button class="filter-btn" data-filter="Telmore" style="--op-color:#EC4899">Telmore</button><button class="filter-btn" data-filter="YouSee" style="--op-color:#16A34A">YouSee</button>
         <input type="text" class="search-input" placeholder="Søg…" oninput="filterSearch(this,'vas-table')">
       </div>
       <div class="table-wrap">
@@ -1447,205 +1543,205 @@
           </tr></thead>
           <tbody>
         <tr class="data-row" data-operator="Telmore">
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Saxo</td>
           <td class="center">Bøger/magasiner</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="3">
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>Wype</td>
           <td class="center">Bøger/magasiner</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="3">
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>Deezer</td>
           <td class="center">Musik</td>
           <td class="center"><span class="incl-badge">Inkluderet</span></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER">
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>Deezer</td>
           <td class="center">Musik</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="CBB">
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Deezer</td>
           <td class="center">Musik</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="CallMe">
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>Deezer</td>
           <td class="center">Musik</td>
           <td class="center"><span class="incl-badge">Inkluderet</span></td>
         </tr>
         <tr class="data-row" data-operator="Telmore">
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Telmore Musik</td>
           <td class="center">Musik</td>
           <td class="center"><span class="incl-badge">Inkluderet</span></td>
         </tr>
         <tr class="data-row" data-operator="YouSee">
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
           <td>YouSee Musik</td>
           <td class="center">Musik</td>
           <td class="center"><span class="incl-badge">Inkluderet</span></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER">
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>Disney+</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="incl-badge">Inkluderet</span></td>
         </tr>
         <tr class="data-row" data-operator="Telmore">
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Disney+</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="Norlys">
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>Max</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="CBB">
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Max</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="Telmore">
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Max</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="CallMe">
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>Max</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="incl-badge">Inkluderet</span></td>
         </tr>
         <tr class="data-row" data-operator="CBB">
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Mofibo</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="Norlys">
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>Netflix</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="Telmore">
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Netflix</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="CBB">
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Nordisk Film+</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER">
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>Podimo</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="Norlys">
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>Podimo</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="CBB">
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Podimo</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="CallMe">
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>Podimo</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="incl-badge">Inkluderet</span></td>
         </tr>
         <tr class="data-row" data-operator="3">
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>TV2 Play</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER">
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>TV2 Play</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="Norlys">
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>TV2 Play</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="CBB">
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>TV2 Play</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="Telmore">
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>TV2 Play</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="3">
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#E1001A20;color:#E1001A;border:1px solid #E1001A40;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF620020;color:#FF6200;border:1px solid #FF620040;"><img src="https://www.google.com/s2/favicons?domain=3.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">3★</span></td>
           <td>Viaplay</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="OiSTER">
-          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#FF6B0020;color:#FF6B00;border:1px solid #FF6B0040;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
+          <td><span class="op-badge" style="outline: 2px solid gold; outline-offset:2px;" style="background:#7C3AED20;color:#7C3AED;border:1px solid #7C3AED40;"><img src="https://www.google.com/s2/favicons?domain=oister.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">OiSTER★</span></td>
           <td>Viaplay</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="Norlys">
-          <td><span class="op-badge" style="background:#00A65020;color:#00A650;border:1px solid #00A65040;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
+          <td><span class="op-badge" style="background:#DC262620;color:#DC2626;border:1px solid #DC262640;"><img src="https://www.google.com/s2/favicons?domain=norlys.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Norlys</span></td>
           <td>Viaplay</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="CBB">
-          <td><span class="op-badge" style="background:#FF000020;color:#FF0000;border:1px solid #FF000040;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
+          <td><span class="op-badge" style="background:#D9770620;color:#D97706;border:1px solid #D9770640;"><img src="https://www.google.com/s2/favicons?domain=cbb.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CBB</span></td>
           <td>Viaplay</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="Telmore">
-          <td><span class="op-badge" style="background:#00539F20;color:#00539F;border:1px solid #00539F40;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
+          <td><span class="op-badge" style="background:#EC489920;color:#EC4899;border:1px solid #EC489940;"><img src="https://www.google.com/s2/favicons?domain=telmore.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">Telmore</span></td>
           <td>Viaplay</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
         </tr>
         <tr class="data-row" data-operator="CallMe">
-          <td><span class="op-badge" style="background:#E6394620;color:#E63946;border:1px solid #E6394640;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
+          <td><span class="op-badge" style="background:#9F123920;color:#9F1239;border:1px solid #9F123940;"><img src="https://www.google.com/s2/favicons?domain=callme.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">CallMe</span></td>
           <td>Viaplay</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="incl-badge">Inkluderet</span></td>
         </tr>
         <tr class="data-row" data-operator="YouSee">
-          <td><span class="op-badge" style="background:#C0003C20;color:#C0003C;border:1px solid #C0003C40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
+          <td><span class="op-badge" style="background:#16A34A20;color:#16A34A;border:1px solid #16A34A40;"><img src="https://www.google.com/s2/favicons?domain=yousee.dk&sz=32" style="width:16px;height:16px;vertical-align:middle;margin-right:5px;border-radius:3px;" onerror="this.style.display='none'">YouSee</span></td>
           <td>YouSee Play</td>
           <td class="center">Streaming</td>
           <td class="center"><span class="avail-badge">Tilgængelig</span></td>
@@ -1659,12 +1755,12 @@
 
 <script>
 // ── Embedded data ─────────────────────────────────────────────────────────────
-const cheapestData    = { labels: ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"],     values: [60, 59, 169, 129, 59, 129, 149, 119, 49],     colors: ["#E1001A", "#FF6B00", "#0072C6", "#C0003C", "#00A650", "#FF0000", "#00539F", "#FF6B6B", "#E63946"],     names: ["3Timer 3GB", "5Timer 5GB", "Fri Tale 30GB", "Ekstrabruger", "Little One", "Fri Tale 50GB", "Fri Tale 50GB", "Fri Tale 50GB", "2Timer 4GB"] };
-const cheapestDataAll = { labels: ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"], values: [60, 59, 129, 79, 59, 129, 79, 119, 49], colors: ["#E1001A", "#FF6B00", "#0072C6", "#C0003C", "#00A650", "#FF0000", "#00539F", "#FF6B6B", "#E63946"], names: ["3Timer 3GB", "5Timer 5GB", "Fri Tale 10GB B\u00f8rn", "B\u00f8rneabonnement", "Little One", "Fri Tale 50GB", "3Timer 2GB B\u00f8rn", "Fri Tale 50GB", "2Timer 4GB"] };
-const cheapestIntData = { labels: ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"], values: [60, 99, 129, 119, 299, 59, 49, 299, 159], colors: ["#E1001A", "#FF6B00", "#0072C6", "#C0003C", "#00A650", "#FF0000", "#00539F", "#FF6B6B", "#E63946"], names: ["10GB Mobilt", "50GB Mobilt", "30GB Mobilt", "30GB Mobilt", "5G Internet Fri", "7GB Mobilt", "5GB Mobilt", "5G Internet Fri", "100GB Mobilt"] };
-const trendData    = {"subscriptions": {"dates": ["2026-03-05"], "operators": {"3": {"prices": [60], "campaign_prices": [175], "color": "#E1001A"}, "OiSTER": {"prices": [59], "campaign_prices": [49], "color": "#FF6B00"}, "Flexii": {"prices": [null], "campaign_prices": [null], "color": "#7C3AED"}, "Telenor": {"prices": [129], "campaign_prices": [null], "color": "#0072C6"}, "YouSee": {"prices": [79], "campaign_prices": [0], "color": "#C0003C"}, "Norlys": {"prices": [59], "campaign_prices": [null], "color": "#00A650"}, "CBB": {"prices": [129], "campaign_prices": [39], "color": "#FF0000"}, "Telmore": {"prices": [79], "campaign_prices": [39], "color": "#00539F"}, "Eesy": {"prices": [119], "campaign_prices": [39], "color": "#FF6B6B"}, "CallMe": {"prices": [49], "campaign_prices": [64], "color": "#E63946"}}}, "internet": {"dates": ["2026-03-05"], "operators": {"3": {"prices": [60], "campaign_prices": [149], "color": "#E1001A"}, "OiSTER": {"prices": [99], "campaign_prices": [159], "color": "#FF6B00"}, "Flexii": {"prices": [null], "campaign_prices": [null], "color": "#7C3AED"}, "Telenor": {"prices": [129], "campaign_prices": [99], "color": "#0072C6"}, "YouSee": {"prices": [119], "campaign_prices": [164.5], "color": "#C0003C"}, "Norlys": {"prices": [299], "campaign_prices": [199], "color": "#00A650"}, "CBB": {"prices": [59], "campaign_prices": [129], "color": "#FF0000"}, "Telmore": {"prices": [49], "campaign_prices": [99], "color": "#00539F"}, "Eesy": {"prices": [299], "campaign_prices": [89], "color": "#FF6B6B"}, "CallMe": {"prices": [159], "campaign_prices": [null], "color": "#E63946"}}}};
+const cheapestData    = { labels: ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"],     values: [60, 59, 169, 129, 59, 129, 149, 119, 49],     colors: ["#FF6200", "#7C3AED", "#1D4ED8", "#16A34A", "#DC2626", "#D97706", "#EC4899", "#0891B2", "#9F1239"],     names: ["3Timer 3GB", "5Timer 5GB", "Fri Tale 30GB", "Ekstrabruger", "Little One", "Fri Tale 50GB", "Fri Tale 50GB", "Fri Tale 50GB", "2Timer 4GB"] };
+const cheapestDataAll = { labels: ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"], values: [60, 59, 129, 79, 59, 129, 79, 119, 49], colors: ["#FF6200", "#7C3AED", "#1D4ED8", "#16A34A", "#DC2626", "#D97706", "#EC4899", "#0891B2", "#9F1239"], names: ["3Timer 3GB", "5Timer 5GB", "Fri Tale 10GB B\u00f8rn", "B\u00f8rneabonnement", "Little One", "Fri Tale 50GB", "3Timer 2GB B\u00f8rn", "Fri Tale 50GB", "2Timer 4GB"] };
+const cheapestIntData = { labels: ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"], values: [60, 99, 129, 119, 299, 59, 49, 299, 159], colors: ["#FF6200", "#7C3AED", "#1D4ED8", "#16A34A", "#DC2626", "#D97706", "#EC4899", "#0891B2", "#9F1239"], names: ["10GB Mobilt", "50GB Mobilt", "30GB Mobilt", "30GB Mobilt", "5G Internet Fri", "7GB Mobilt", "5GB Mobilt", "5G Internet Fri", "100GB Mobilt"] };
+const trendData    = {"subscriptions": {"dates": ["2026-03-05"], "operators": {"3": {"prices": [60], "campaign_prices": [175], "color": "#E1001A", "min_prices": [], "intro_months": []}, "OiSTER": {"prices": [59], "campaign_prices": [49], "color": "#FF6B00", "min_prices": [], "intro_months": []}, "Flexii": {"prices": [null], "campaign_prices": [null], "color": "#7C3AED", "min_prices": [], "intro_months": []}, "Telenor": {"prices": [129], "campaign_prices": [null], "color": "#0072C6", "min_prices": [], "intro_months": []}, "YouSee": {"prices": [79], "campaign_prices": [0], "color": "#C0003C", "min_prices": [], "intro_months": []}, "Norlys": {"prices": [59], "campaign_prices": [null], "color": "#00A650", "min_prices": [], "intro_months": []}, "CBB": {"prices": [129], "campaign_prices": [39], "color": "#FF0000", "min_prices": [], "intro_months": []}, "Telmore": {"prices": [79], "campaign_prices": [39], "color": "#00539F", "min_prices": [], "intro_months": []}, "Eesy": {"prices": [119], "campaign_prices": [39], "color": "#FF6B6B", "min_prices": [], "intro_months": []}, "CallMe": {"prices": [49], "campaign_prices": [64], "color": "#E63946", "min_prices": [], "intro_months": []}}}, "internet": {"dates": ["2026-03-05"], "operators": {"3": {"prices": [60], "campaign_prices": [149], "color": "#E1001A", "min_prices": [null], "intro_months": [6]}, "OiSTER": {"prices": [99], "campaign_prices": [159], "color": "#FF6B00", "min_prices": [null], "intro_months": [10]}, "Flexii": {"prices": [null], "campaign_prices": [null], "color": "#7C3AED", "min_prices": [null], "intro_months": [null]}, "Telenor": {"prices": [129], "campaign_prices": [99], "color": "#0072C6", "min_prices": [null], "intro_months": [6]}, "YouSee": {"prices": [119], "campaign_prices": [164.5], "color": "#C0003C", "min_prices": [null], "intro_months": [6]}, "Norlys": {"prices": [299], "campaign_prices": [199], "color": "#00A650", "min_prices": [null], "intro_months": [6]}, "CBB": {"prices": [59], "campaign_prices": [129], "color": "#FF0000", "min_prices": [null], "intro_months": [3]}, "Telmore": {"prices": [49], "campaign_prices": [99], "color": "#00539F", "min_prices": [null], "intro_months": [3]}, "Eesy": {"prices": [299], "campaign_prices": [89], "color": "#FF6B6B", "min_prices": [null], "intro_months": [3]}, "CallMe": {"prices": [159], "campaign_prices": [null], "color": "#E63946", "min_prices": [null], "intro_months": [null]}}}};
 const kpiLabels    = ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"];
-const kpiColors    = ["#E1001A", "#FF6B00", "#0072C6", "#C0003C", "#00A650", "#FF0000", "#00539F", "#FF6B6B", "#E63946"];
+const kpiColors    = ["#FF6200", "#7C3AED", "#1D4ED8", "#16A34A", "#DC2626", "#D97706", "#EC4899", "#0891B2", "#9F1239"];
 const kpiMinPrice  = [60, 99, 129, 119, 299, 59, 49, 299, 159];
 const kpiMinCamp   = [149, 159, 99, 164.5, 199, 129, 99, 89, 0];
 const kpiMaxMonths = [6, 10, 6, 6, 6, 3, 3, 3, 0];
@@ -1708,38 +1804,58 @@ function barChart(id, labels, values, colors, unit, names) {
 }
 
 // ── Trend line chart helper ───────────────────────────────────────────────────
-function trendChart(canvasId, noteId, section) {
+const _trendInstances = {};  // canvasId → Chart instance
+
+function trendChart(canvasId, noteId, section, dataKey="prices", unit="kr", windowSize=26) {
   const data = trendData[section];
   if (!data || data.dates.length < 2) {
     const note = document.getElementById(noteId);
     if (note) note.textContent = "Trenddata vises fra og med anden kørsel (kræver mindst 2 ugers data)";
     return;
   }
+  // Slice to last N data points
+  const n = Math.min(windowSize, data.dates.length);
+  const slicedDates = data.dates.slice(-n);
+  const suffix = unit === "mdr" ? " mdr." : " kr.";
   const datasets = Object.entries(data.operators)
-    .filter(([, d]) => d.prices.some(p => p !== null))
+    .filter(([, d]) => (d[dataKey] || []).some(p => p !== null))
     .map(([name, d]) => ({
       label: name,
-      data: d.prices,
+      data: (d[dataKey] || []).slice(-n),
       borderColor: d.color,
       backgroundColor: "transparent",
       stepped: true,
       borderWidth: 2,
-      pointRadius: 4,
+      pointRadius: slicedDates.length > 20 ? 2 : 4,
       pointHoverRadius: 7,
       pointBackgroundColor: d.color,
     }));
-  new Chart(document.getElementById(canvasId), {
+  // Destroy existing instance if re-rendering
+  if (_trendInstances[canvasId]) { _trendInstances[canvasId].destroy(); }
+  _trendInstances[canvasId] = new Chart(document.getElementById(canvasId), {
     type: "line",
-    data: { labels: data.dates, datasets },
+    data: { labels: slicedDates, datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: true, labels: { color: "#1A1D2E", boxWidth: 14, padding: 16 } } },
       scales: {
-        x: { ticks: { color: "#6B7285" }, grid: { color: "#DDE0EC" } },
-        y: { ticks: { color: "#6B7285", callback: v => v + " kr." }, grid: { color: "#DDE0EC" } }
+        x: { ticks: { color: "#6B7285", maxRotation: 45, maxTicksLimit: 16 }, grid: { color: "#DDE0EC" } },
+        y: { ticks: { color: "#6B7285", callback: v => v + suffix }, grid: { color: "#DDE0EC" } }
       }
     }
   });
+}
+
+// ── Week-window selector ──────────────────────────────────────────────────────
+function setTrendWindow(n, group) {
+  if (group === "sub") {
+    trendChart("subTrendChart", "sub-trend-note", "subscriptions", "prices", "kr", n);
+  } else {
+    trendChart("intTrendCamp",   "int-trend-camp-note",   "internet", "campaign_prices", "kr",  n);
+    trendChart("intTrendStd",    "int-trend-std-note",    "internet", "prices",          "kr",  n);
+    trendChart("intTrendMin",    "int-trend-min-note",    "internet", "min_prices",      "kr",  n);
+    trendChart("intTrendPeriod", "int-trend-period-note", "internet", "intro_months",    "mdr", n);
+  }
 }
 
 // ── Render all charts ─────────────────────────────────────────────────────────
@@ -1814,7 +1930,21 @@ barChart("intKpiAfterChart",  kpiLabels, kpiMinAfter,  kpiColors, "kr");
 
 // Trend charts (renders when 2+ data points exist)
 trendChart("subTrendChart", "sub-trend-note", "subscriptions");
-trendChart("intTrendChart", "int-trend-note", "internet");
+
+// Internet trend charts (4 metrics)
+trendChart("intTrendCamp",   "int-trend-camp-note",   "internet", "campaign_prices", "kr");
+trendChart("intTrendStd",    "int-trend-std-note",    "internet", "prices",          "kr");
+trendChart("intTrendMin",    "int-trend-min-note",    "internet", "min_prices",      "kr");
+trendChart("intTrendPeriod", "int-trend-period-note", "internet", "intro_months",    "mdr");
+
+// Internet sub-tab toggle
+let _intTrendsRendered = false;
+function showIntTab(tab, btn) {
+  document.getElementById("int-tab-overview").style.display = tab === "overview" ? "" : "none";
+  document.getElementById("int-tab-trends").style.display   = tab === "trends"   ? "" : "none";
+  document.querySelectorAll("#int-subtab-toggle .toggle-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+}
 
 // ── Navigation ────────────────────────────────────────────────────────────────
 function showSection(name) {
