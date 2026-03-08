@@ -281,33 +281,35 @@ def fetch_press_pages(days: int = MAX_DAYS) -> list[dict]:
 
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
 
-    # JS snippet: extract article-like links from the page.
-    # Looks for <a> tags inside <article>, <main>, or elements with "news/press" in class.
+    # JS: only collect links whose URL contains a news/press path segment,
+    # and whose title doesn't look like navigation or a product name.
     EXTRACT_JS = """() => {
-        const isContent = el => {
-            const tag = el.tagName.toLowerCase();
-            const cls = (el.getAttribute('class') || '').toLowerCase();
-            return ['article','main','section'].includes(tag)
-                || cls.includes('news') || cls.includes('presse')
-                || cls.includes('article') || cls.includes('feed');
-        };
-        const containers = [...document.querySelectorAll('*')].filter(isContent);
+        const NEWS_PATHS = /\\/(presse|news|nyhed|artikel|pressemeddelelse|blog|announce|release)\\//i;
+        const NAV_TITLES = /^(søg|gå til|se alle|om |fordele|guide:|log ind|kontakt|find|køb|bestil|tilmeld|læs mere|back|forside|menu|hjem)/i;
         const links = [];
         const seen = new Set();
-        for (const c of containers) {
-            for (const a of c.querySelectorAll('a[href]')) {
-                const href = a.href;
-                const text = a.innerText.trim();
-                if (text.length < 15 || text.length > 200) continue;
-                if (seen.has(href)) continue;
-                seen.add(href);
-                links.push({title: text, href});
-                if (links.length >= 20) break;
-            }
-            if (links.length >= 20) break;
-        }
-        return links;
+        document.querySelectorAll('a[href]').forEach(a => {
+            const href = a.href || '';
+            const text = (a.innerText || '').replace(/\\s+/g, ' ').trim();
+            if (!href.startsWith('http')) return;
+            if (!NEWS_PATHS.test(href)) return;
+            if (text.length < 20 || text.length > 180) return;
+            if (NAV_TITLES.test(text)) return;
+            if (seen.has(href)) return;
+            seen.add(href);
+            links.push({title: text, href});
+        });
+        return links.slice(0, 25);
     }"""
+
+    # Python-side blocklist for titles that slip through
+    JUNK_PATTERNS = re.compile(
+        r'^(søg|gå til|se alle|om |fordele|guide:|log ind|kontakt|find|køb|'
+        r'bestil|tilmeld|læs mere|back|forside|menu|hjem|'
+        r'mobilabonnement|mobilt bredbånd|populære mærker|se forbrug|'
+        r'erhvervsinternet|medarbejderbredbånd|kom godt i gang)',
+        re.IGNORECASE
+    )
 
     try:
         with sync_playwright() as pw:
@@ -326,16 +328,21 @@ def fetch_press_pages(days: int = MAX_DAYS) -> list[dict]:
                     page.wait_for_timeout(1500)
                     links = page.evaluate(EXTRACT_JS)
                     page.close()
+                    added = 0
                     for lnk in links:
+                        headline = lnk["title"].replace("\n", " ").strip()
+                        if JUNK_PATTERNS.match(headline):
+                            continue
                         articles.append({
                             "operator":  operator,
-                            "headline":  lnk["title"].replace("\n", " ").strip(),
+                            "headline":  headline,
                             "url":       lnk["href"],
                             "published": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
                             "source":    f"{operator} Presse",
                             "snippet":   "",
                         })
-                    log.info(f"  {operator} presserum: {len(links)} links")
+                        added += 1
+                    log.info(f"  {operator} presserum: {added} artikler (af {len(links)} links)")
                 except Exception as e:
                     log.warning(f"  Playwright fejl for {operator} ({url}): {e}")
             browser.close()

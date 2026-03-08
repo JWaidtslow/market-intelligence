@@ -1052,12 +1052,14 @@ document.querySelectorAll(".filters").forEach(filterEl => {{
       this.classList.add("active");
       document.getElementById("global-search").value = "";
       const filter = this.dataset.filter;
+      // Filter table rows (subscriptions, internet, etc.)
       const tableEl = filterEl.parentElement.querySelector("table");
-      if (!tableEl) return;
-      tableEl.querySelectorAll(".data-row").forEach(row => {{
-        row.classList.toggle("hidden", filter !== "all" && row.dataset.operator !== filter);
-      }});
-      // Also filter news cards
+      if (tableEl) {{
+        tableEl.querySelectorAll(".data-row").forEach(row => {{
+          row.classList.toggle("hidden", filter !== "all" && row.dataset.operator !== filter);
+        }});
+      }}
+      // Filter news cards
       const grid = filterEl.parentElement.querySelector(".news-grid");
       if (grid) {{
         grid.querySelectorAll(".news-card").forEach(card => {{
