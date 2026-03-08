@@ -32,16 +32,16 @@ DANISH_FEEDS = [
 
 # Keywords to match per operator (lowercase, checked in title+description)
 OPERATOR_KEYWORDS = {
-    "3":       ["3 danmark", "hi3g", "three dk"],
+    "3":       ["hi3g", "3 danmark", "3's", " 3 mobil", "teleselskabet 3"],
     "OiSTER":  ["oister"],
     "Flexii":  ["flexii"],
     "Telenor": ["telenor"],
-    "YouSee":  ["yousee", "you see"],
+    "YouSee":  ["yousee", "you see", "tdc"],
     "Norlys":  ["norlys"],
-    "CBB":     ["cbb mobil", "cbb"],
+    "CBB":     ["cbb"],
     "Telmore": ["telmore"],
     "Eesy":    ["eesy"],
-    "CallMe":  ["callme", "call me"],
+    "CallMe":  ["callme"],
 }
 
 # ── Operator press pages ──────────────────────────────────────────────────────
@@ -85,25 +85,81 @@ def _clean_title(title: str) -> str:
     return re.sub(r'\s*[-–]\s*[^-–]{3,40}$', '', title).strip()
 
 
-def _fetch_rss_items(url: str) -> list:
-    """Fetch an RSS feed and return all <item> elements."""
+def _fetch_articles(url: str) -> list[dict]:
+    """
+    Fetch an RSS or Atom feed and return normalised article dicts.
+    Handles RSS 2.0 (<item>) and Atom (<entry>) formats.
+    Falls back to feedparser if standard XML parsing fails.
+    """
     req  = Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; MarketIntelBot/1.0)"})
     resp = urlopen(req, timeout=15)
-    root = ET.fromstring(resp.read())
-    return root.findall(".//item")
+    raw  = resp.read()
+
+    # Try standard XML first
+    try:
+        root  = ET.fromstring(raw)
+        ns    = {"atom": "http://www.w3.org/2005/Atom"}
+
+        # RSS 2.0
+        items = root.findall(".//item")
+        if items:
+            return [
+                {
+                    "title":   i.findtext("title", "").strip(),
+                    "link":    i.findtext("link", "").strip(),
+                    "pubDate": i.findtext("pubDate", ""),
+                    "text":    (i.findtext("title", "") + " " + i.findtext("description", "")).lower(),
+                }
+                for i in items
+            ]
+
+        # Atom
+        entries = root.findall(".//atom:entry", ns) or root.findall(".//entry")
+        if entries:
+            def _atom_link(e):
+                link_el = e.find("atom:link[@rel='alternate']", ns) or e.find("atom:link", ns) or e.find("link")
+                if link_el is not None:
+                    return link_el.get("href", link_el.text or "")
+                return ""
+            def _atom_date(e):
+                return (e.findtext("atom:updated", "", ns) or e.findtext("atom:published", "", ns)
+                        or e.findtext("updated", "") or e.findtext("published", ""))
+            return [
+                {
+                    "title":   (e.findtext("atom:title", "", ns) or e.findtext("title", "")).strip(),
+                    "link":    _atom_link(e),
+                    "pubDate": _atom_date(e),
+                    "text":    ((e.findtext("atom:title", "", ns) or e.findtext("title", "")) + " " +
+                                (e.findtext("atom:summary", "", ns) or e.findtext("summary", "") or
+                                 e.findtext("atom:content", "", ns) or e.findtext("content", ""))).lower(),
+                }
+                for e in entries
+            ]
+    except ET.ParseError:
+        pass
+
+    # Fallback: feedparser (handles malformed / unusual feeds)
+    try:
+        import feedparser
+        feed = feedparser.parse(raw)
+        return [
+            {
+                "title":   e.get("title", "").strip(),
+                "link":    e.get("link", ""),
+                "pubDate": e.get("published", e.get("updated", "")),
+                "text":    (e.get("title", "") + " " + e.get("summary", "")).lower(),
+            }
+            for e in feed.entries
+        ]
+    except Exception:
+        pass
+
+    return []
 
 
-def _item_text(item) -> str:
-    """Combine title + description for keyword matching."""
-    return " ".join([
-        item.findtext("title", ""),
-        item.findtext("description", ""),
-    ]).lower()
-
-
-def _matches(item, keywords: list[str]) -> bool:
-    text = _item_text(item)
-    return any(kw in text for kw in keywords)
+def _matches(article: dict, keywords: list[str]) -> bool:
+    """Check if article text contains any of the operator keywords."""
+    return any(kw in article["text"] for kw in keywords)
 
 
 def _deduplicate(articles: list[dict]) -> list[dict]:
@@ -122,33 +178,33 @@ def _deduplicate(articles: list[dict]) -> list[dict]:
 
 def fetch_danish_media_news(days: int = MAX_DAYS) -> list[dict]:
     """
-    Fetch all Danish media RSS feeds once and return articles tagged by operator.
-    More efficient than fetching per-operator.
+    Fetch all Danish media RSS/Atom feeds and return articles tagged by operator.
     """
     cutoff   = datetime.now(timezone.utc) - timedelta(days=days)
     articles = []
 
     for source_name, feed_url in DANISH_FEEDS:
         try:
-            items = _fetch_rss_items(feed_url)
-            log.info(f"  {source_name}: {len(items)} artikler hentet")
+            raw_articles = _fetch_articles(feed_url)
+            log.info(f"  {source_name}: {len(raw_articles)} artikler hentet")
         except Exception as e:
             log.warning(f"  {source_name} RSS fejl: {e}")
             continue
 
-        for item in items:
-            pub_dt = _parse_date(item.findtext("pubDate", ""))
+        matched = 0
+        for art in raw_articles:
+            pub_dt = _parse_date(art["pubDate"])
             if pub_dt and pub_dt < cutoff:
                 continue
 
-            title = item.findtext("title", "").strip()
-            link  = item.findtext("link", "").strip()
+            title = art["title"]
+            link  = art["link"]
             if not title or not link:
                 continue
 
-            # Tag with matching operator(s) — one article can match multiple
+            # Tag with all matching operators
             for operator, keywords in OPERATOR_KEYWORDS.items():
-                if _matches(item, keywords):
+                if _matches(art, keywords):
                     articles.append({
                         "operator":  operator,
                         "headline":  title,
@@ -157,8 +213,11 @@ def fetch_danish_media_news(days: int = MAX_DAYS) -> list[dict]:
                         "source":    source_name,
                         "snippet":   "",
                     })
+                    matched += 1
 
-    log.info(f"  Danske medier: {len(articles)} operator-matchede artikler")
+        log.info(f"  {source_name}: {matched} operatør-matches")
+
+    log.info(f"  Danske medier total: {len(articles)} artikler")
     return articles
 
 

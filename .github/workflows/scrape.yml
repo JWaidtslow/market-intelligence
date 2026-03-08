@@ -24,7 +24,7 @@ jobs:
 
       - name: Installer afhængigheder
         run: |
-          pip install playwright beautifulsoup4 pandas
+          pip install playwright beautifulsoup4 pandas feedparser
           playwright install chromium
           playwright install-deps chromium
 
