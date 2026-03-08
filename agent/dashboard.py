@@ -300,6 +300,24 @@ def _build_html(data: dict, trends: dict = None) -> str:
     if not news_cards:
         news_cards = '<p style="color:var(--text-muted);padding:2rem 0;text-align:center;">Nyheder hentes ved næste kørsel</p>'
 
+    # ── News pill badges (top 5, for header bar) ─────────────────────────────
+    news_pills_html = ""
+    for article in all_news[:5]:
+        op       = article.get("operator", "")
+        headline = article.get("headline", "")
+        color    = OPERATOR_COLORS.get(op, "#888")
+        label    = f"{op}: {headline}"
+        if len(label) > 50:
+            label = label[:47] + "…"
+        op_esc = op.replace("'", "\\'")
+        hl_esc = headline.replace('"', '&quot;')
+        news_pills_html += (
+            f'<button class="news-pill" style="--pill-color:{color}" '
+            f'onclick="goToNewsroom(\'{op_esc}\')" title="{hl_esc}">{label}</button>'
+        )
+    if not news_pills_html:
+        news_pills_html = '<span style="color:var(--text-muted);font-size:0.8rem">Nyheder hentes ved næste kørsel</span>'
+
     # ── Internet KPI data (4 charts) ─────────────────────────────────────────
     def _months(dur):
         m = re.search(r'(\d+)', str(dur)) if dur else None
@@ -485,6 +503,14 @@ def _build_html(data: dict, trends: dict = None) -> str:
     .news-source {{ font-size: 0.72rem; color: var(--text-muted); background: var(--surface2); border-radius: 3px; padding: 0.1rem 0.4rem; }}
     .news-card.hidden {{ display: none; }}
 
+    /* News pills bar */
+    .news-pills-bar {{ display: flex; align-items: center; gap: 0.75rem; padding: 0.55rem 1.25rem; background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }}
+    .news-pills-label {{ font-size: 0.68rem; font-weight: 700; color: var(--accent); letter-spacing: 0.07em; white-space: nowrap; text-transform: uppercase; }}
+    .news-pills-scroll {{ display: flex; gap: 0.45rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; flex: 1; }}
+    .news-pills-scroll::-webkit-scrollbar {{ display: none; }}
+    .news-pill {{ background: var(--pill-color, #888)18; border: 1px solid var(--pill-color, #888)45; color: var(--pill-color, #444); padding: 0.28rem 0.7rem; border-radius: 20px; font-size: 0.77rem; white-space: nowrap; cursor: pointer; transition: all 0.15s; font-family: inherit; }}
+    .news-pill:hover {{ background: var(--pill-color, #888)30; transform: translateY(-1px); box-shadow: 0 2px 8px var(--pill-color, #888)30; }}
+
     /* Responsive */
     @media (max-width: 768px) {{
       .sidebar {{ display: none; }}
@@ -522,6 +548,15 @@ def _build_html(data: dict, trends: dict = None) -> str:
 
   <!-- Main content -->
   <main class="main">
+
+    <!-- ══ NEWS PILLS BAR ════════════════════════════════════════════════════ -->
+    <div class="news-pills-bar">
+      <span class="news-pills-label">📰 Nyheder</span>
+      <div class="news-pills-scroll">
+        {news_pills_html}
+      </div>
+    </div>
+
     <!-- ══ GLOBAL SEARCH ══════════════════════════════════════════════════════ -->
     <div class="global-search-wrap">
       <span class="search-icon">⌕</span>
@@ -1032,6 +1067,19 @@ document.querySelectorAll(".filters").forEach(filterEl => {{
     }});
   }});
 }});
+
+// ── News pill → Newsroom ─────────────────────────────────────────────────────
+function goToNewsroom(op) {{
+  showSection('newsroom');
+  const filtersEl = document.getElementById('news-filters');
+  if (!filtersEl) return;
+  filtersEl.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  const target = op
+    ? filtersEl.querySelector(`.filter-btn[data-filter="${{op}}"]`)
+    : filtersEl.querySelector('.filter-btn[data-filter="all"]');
+  const btn = target || filtersEl.querySelector('.filter-btn[data-filter="all"]');
+  if (btn) btn.click();
+}}
 
 // ── In-section search ──────────────────────────────────────────────────────────
 function filterSearch(input, tableId) {{
