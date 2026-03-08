@@ -23,16 +23,26 @@ MAX_PER_OP  = 8    # max articles per operator in total output
 # ── Danish media RSS feeds ────────────────────────────────────────────────────
 # These cover Danish IT, business and telecom news.
 DANISH_FEEDS = [
-    ("Computerworld", "https://www.computerworld.dk/rss"),
-    ("Version2",      "https://www.version2.dk/rss"),
-    ("Finans",        "https://finans.dk/rss"),
+    ("Computerworld", "https://www.computerworld.dk/rss/articles"),
+    ("Version2",      "https://www.version2.dk/rss/articles"),
+    ("Finans",        "https://finans.dk/rss/seneste"),
     ("Børsen",        "https://borsen.dk/rss"),
-    ("TV2 Business",  "https://nyheder.tv2.dk/rss?category=business"),
+    ("TV2 Business",  "https://nyheder.tv2.dk/feeds/rss"),
+]
+
+# Mynewsdesk RSS — official press releases from operators directly
+MYNEWSDESK_FEEDS = [
+    ("3",       "https://www.mynewsdesk.com/dk/hi3g-denmark/pressreleases.rss"),
+    ("Telenor", "https://www.mynewsdesk.com/dk/telenor/pressreleases.rss"),
+    ("YouSee",  "https://www.mynewsdesk.com/dk/tdc/pressreleases.rss"),
+    ("Norlys",  "https://www.mynewsdesk.com/dk/norlys/pressreleases.rss"),
+    ("CBB",     "https://www.mynewsdesk.com/dk/cbb-mobil/pressreleases.rss"),
+    ("Telmore", "https://www.mynewsdesk.com/dk/telmore/pressreleases.rss"),
 ]
 
 # Keywords to match per operator (lowercase, checked in title+description)
 OPERATOR_KEYWORDS = {
-    "3":       ["hi3g", "3 danmark", "3's", " 3 mobil", "teleselskabet 3"],
+    "3":       ["hi3g", "3 danmark", "3's", "3 mobil", "teleselskabet 3"],
     "OiSTER":  ["oister"],
     "Flexii":  ["flexii"],
     "Telenor": ["telenor"],
@@ -221,7 +231,44 @@ def fetch_danish_media_news(days: int = MAX_DAYS) -> list[dict]:
     return articles
 
 
-# ── Source 2: Operator press pages via Playwright ─────────────────────────────
+# ── Source 2: Mynewsdesk RSS (operator press releases) ───────────────────────
+
+def fetch_mynewsdesk_news(days: int = MAX_DAYS) -> list[dict]:
+    """
+    Fetch operator press releases from Mynewsdesk RSS feeds.
+    Each feed belongs to a single operator — no keyword matching needed.
+    """
+    cutoff   = datetime.now(timezone.utc) - timedelta(days=days)
+    articles = []
+
+    for operator, feed_url in MYNEWSDESK_FEEDS:
+        try:
+            raw = _fetch_articles(feed_url)
+            count = 0
+            for art in raw:
+                pub_dt = _parse_date(art["pubDate"])
+                if pub_dt and pub_dt < cutoff:
+                    continue
+                if not art["title"] or not art["link"]:
+                    continue
+                articles.append({
+                    "operator":  operator,
+                    "headline":  art["title"],
+                    "url":       art["link"],
+                    "published": pub_dt.strftime("%Y-%m-%d") if pub_dt else "",
+                    "source":    "Mynewsdesk",
+                    "snippet":   "",
+                })
+                count += 1
+            log.info(f"  Mynewsdesk {operator}: {count} pressemeddelelser")
+        except Exception as e:
+            log.warning(f"  Mynewsdesk fejl for {operator}: {e}")
+
+    log.info(f"  Mynewsdesk total: {len(articles)} artikler")
+    return articles
+
+
+# ── Source 3: Operator press pages via Playwright ─────────────────────────────
 
 def fetch_press_pages(days: int = MAX_DAYS) -> list[dict]:
     """Scrape operator press pages with Playwright. Returns article list."""
@@ -239,7 +286,7 @@ def fetch_press_pages(days: int = MAX_DAYS) -> list[dict]:
     EXTRACT_JS = """() => {
         const isContent = el => {
             const tag = el.tagName.toLowerCase();
-            const cls = (el.className || '').toLowerCase();
+            const cls = (el.getAttribute('class') || '').toLowerCase();
             return ['article','main','section'].includes(tag)
                 || cls.includes('news') || cls.includes('presse')
                 || cls.includes('article') || cls.includes('feed');
@@ -354,7 +401,7 @@ def fetch_all_news() -> list[dict]:
     """
     all_articles = []
 
-    # Source 1: Danish media RSS (bulk, then filter)
+    # Source 1: Danish media RSS (bulk, then keyword-filter)
     try:
         log.info("Henter nyheder fra danske medier…")
         danish = fetch_danish_media_news()
@@ -364,17 +411,27 @@ def fetch_all_news() -> list[dict]:
         log.error(f"fetch_danish_media_news fejlede: {e}")
         print(f"[NEWS-1] FEJL danske medier: {e}", flush=True)
 
-    # Source 2: Operator press pages
+    # Source 2: Mynewsdesk operator press releases (most reliable)
+    try:
+        log.info("Henter pressemeddelelser fra Mynewsdesk…")
+        mnd = fetch_mynewsdesk_news()
+        all_articles.extend(mnd)
+        print(f"[NEWS-2] Mynewsdesk: {len(mnd)} artikler", flush=True)
+    except Exception as e:
+        log.error(f"fetch_mynewsdesk_news fejlede: {e}")
+        print(f"[NEWS-2] FEJL Mynewsdesk: {e}", flush=True)
+
+    # Source 3: Operator press pages via Playwright
     try:
         log.info("Henter nyheder fra operatørers presserum…")
         press = fetch_press_pages()
         all_articles.extend(press)
-        print(f"[NEWS-2] Presserum: {len(press)} artikler", flush=True)
+        print(f"[NEWS-3] Presserum (Playwright): {len(press)} artikler", flush=True)
     except Exception as e:
         log.error(f"fetch_press_pages fejlede: {e}")
-        print(f"[NEWS-2] FEJL presserum: {e}", flush=True)
+        print(f"[NEWS-3] FEJL presserum: {e}", flush=True)
 
-    # Source 3: Google News (fallback)
+    # Source 4: Google News (fallback)
     log.info("Henter nyheder fra Google News (fallback)…")
     google_total = 0
     for operator in NEWS_QUERIES:
@@ -384,7 +441,7 @@ def fetch_all_news() -> list[dict]:
             google_total += len(arts)
         except Exception as e:
             log.error(f"fetch_google_news fejlede for {operator}: {e}")
-    print(f"[NEWS-3] Google News: {google_total} artikler i alt", flush=True)
+    print(f"[NEWS-4] Google News: {google_total} artikler i alt", flush=True)
 
     # Deduplicate and cap per operator
     all_articles = _deduplicate(all_articles)
