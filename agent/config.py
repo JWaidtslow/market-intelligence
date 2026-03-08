@@ -7,7 +7,7 @@ OPERATORS = {
     "3": {
         "name": "3",
         "own_brand": True,
-        "color": "#E1001A",
+        "color": "#FF6200",
         "urls": {
             "subscriptions": "https://www.3.dk/abonnementer/",
             "internet": "https://www.3.dk/internet/",
@@ -17,7 +17,7 @@ OPERATORS = {
     "oister": {
         "name": "OiSTER",
         "own_brand": True,
-        "color": "#FF6B00",
+        "color": "#7C3AED",
         "urls": {
             "subscriptions": "https://oister.dk/abonnementer/",
             "internet": "https://oister.dk/internet/",
@@ -27,7 +27,7 @@ OPERATORS = {
     "flexii": {
         "name": "Flexii",
         "own_brand": True,
-        "color": "#7C3AED",
+        "color": "#60A5FA",
         "urls": {
             "subscriptions": "https://flexii.dk/abonnementer/",
             "internet": "https://flexii.dk/internet/",
@@ -37,7 +37,7 @@ OPERATORS = {
     "telenor": {
         "name": "Telenor",
         "own_brand": False,
-        "color": "#0072C6",
+        "color": "#1D4ED8",
         "urls": {
             "subscriptions": "https://www.telenor.dk/mobilabonnement/",
             "internet": "https://www.telenor.dk/internet/mobilt-bredbaand/",
@@ -47,7 +47,7 @@ OPERATORS = {
     "yousee": {
         "name": "YouSee",
         "own_brand": False,
-        "color": "#C0003C",
+        "color": "#16A34A",
         "urls": {
             "subscriptions": "https://yousee.dk/mobil/abonnementer/",
             "internet": "https://yousee.dk/internet/mobilt/",
@@ -57,7 +57,7 @@ OPERATORS = {
     "norlys": {
         "name": "Norlys",
         "own_brand": False,
-        "color": "#00A650",
+        "color": "#DC2626",
         "urls": {
             "subscriptions": "https://norlys.dk/mobil/",
             "internet": "https://norlys.dk/internet/",
@@ -67,7 +67,7 @@ OPERATORS = {
     "cbb": {
         "name": "CBB",
         "own_brand": False,
-        "color": "#FF0000",
+        "color": "#D97706",
         "urls": {
             "subscriptions": "https://www.cbb.dk/abonnementer/",
             "internet": "https://www.cbb.dk/internet/",
@@ -77,7 +77,7 @@ OPERATORS = {
     "telmore": {
         "name": "Telmore",
         "own_brand": False,
-        "color": "#00539F",
+        "color": "#EC4899",
         "urls": {
             "subscriptions": "https://www.telmore.dk/abonnementer/",
             "internet": "https://www.telmore.dk/internet/",
@@ -87,7 +87,7 @@ OPERATORS = {
     "eesy": {
         "name": "Eesy",
         "own_brand": False,
-        "color": "#FF6B6B",
+        "color": "#0891B2",
         "urls": {
             "subscriptions": "https://eesy.dk/abonnementer/",
             "internet": "https://eesy.dk/internet/",
@@ -97,7 +97,7 @@ OPERATORS = {
     "callme": {
         "name": "CallMe",
         "own_brand": False,
-        "color": "#E63946",
+        "color": "#9F1239",
         "urls": {
             "subscriptions": "https://callme.dk/abonnementer/",
             "internet": "https://callme.dk/internet/",

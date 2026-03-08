@@ -29,7 +29,7 @@ sys.path.insert(0, str(AGENT_DIR))
 from config import OPERATORS
 from scraper import OperatorScraper
 from extractor import extract_subscriptions, extract_internet, extract_hardware, extract_vas
-from dashboard import generate_dashboard
+from dashboard import generate_dashboard, OPERATOR_COLORS
 from baseline_data import BASELINE
 from news_scraper import fetch_all_news
 
@@ -194,7 +194,7 @@ def build_trend_data() -> dict:
 
             for op_data in snap.get("operators", {}).values():
                 name  = op_data.get("name", "")
-                color = op_data.get("color", "#888")
+                color = OPERATOR_COLORS.get(name, op_data.get("color", "#888"))
                 items = op_data.get(section, [])
 
                 prices = [i["price"] for i in items if isinstance(i.get("price"), (int, float))]
