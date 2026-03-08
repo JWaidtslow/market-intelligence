@@ -28,20 +28,51 @@ jobs:
           playwright install chromium
           playwright install-deps chromium
 
+      - name: Test RSS-feeds (debug)
+        run: |
+          python3 - <<'EOF'
+          import sys
+          sys.path.insert(0, 'agent')
+          from urllib.request import urlopen, Request
+          from urllib.error import URLError
+          import xml.etree.ElementTree as ET
+
+          feeds = [
+              ("Computerworld", "https://www.computerworld.dk/rss"),
+              ("Version2",      "https://www.version2.dk/rss"),
+              ("Finans",        "https://finans.dk/rss"),
+              ("Børsen",        "https://borsen.dk/rss"),
+              ("TV2 Business",  "https://nyheder.tv2.dk/rss?category=business"),
+              ("Google News",   "https://news.google.com/rss/search?q=Telenor+Danmark&hl=da&gl=DK&ceid=DK:da"),
+          ]
+          for name, url in feeds:
+              try:
+                  req  = Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                  resp = urlopen(req, timeout=10)
+                  root = ET.fromstring(resp.read())
+                  items = root.findall(".//item")
+                  first = items[0].findtext("title","")[:60] if items else "-"
+                  print(f"  OK  {name}: {len(items)} artikler  |  '{first}'")
+              except Exception as e:
+                  print(f"  ERR {name}: {e}")
+          EOF
+
       - name: Kør scraper
         run: python3 agent/run.py
+
+      - name: Vis agent log (debug)
+        if: always()
+        run: cat agent.log 2>/dev/null || echo "(ingen agent.log)"
 
       - name: Kopiér dashboard til docs/ (GitHub Pages)
         run: |
           mkdir -p docs
-          # Kopiér seneste dashboard som index.html så URL'en er fast
           cp "Claude Outputs/"*.html docs/index.html
 
       - name: Commit og push resultater
         run: |
           git config user.name "MarketIntel Bot"
           git config user.email "actions@github.com"
-          git add "Claude Outputs/" data/ docs/
-          # Commit kun hvis der er ændringer
+          git add "Claude Outputs/" data/ docs/ agent.log
           git diff --staged --quiet || git commit -m "Uge $(date +%V) $(date +%Y) — automatisk scrape [skip ci]"
           git push
