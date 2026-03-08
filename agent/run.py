@@ -36,9 +36,10 @@ from news_scraper import fetch_all_news
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
+    force=True,   # override any handlers set by imported modules
     handlers=[
         logging.StreamHandler(),
-        logging.FileHandler(ROOT / "agent.log", encoding="utf-8"),
+        logging.FileHandler(ROOT / "agent.log", mode="w", encoding="utf-8"),
     ],
 )
 log = logging.getLogger(__name__)
@@ -259,11 +260,14 @@ def run(baseline_only: bool = False):
 
     # Fetch news
     log.info("Henter nyheder…")
+    print("[NEWS] Starter nyhedshentning…", flush=True)
     try:
         news = fetch_all_news()
         log.info(f"Nyheder i alt: {len(news)} artikler")
+        print(f"[NEWS] Færdig: {len(news)} artikler hentet", flush=True)
     except Exception as e:
         log.error(f"Nyhedshentning fejlede helt: {e}")
+        print(f"[NEWS] FEJL: {e}", flush=True)
         news = []
 
     # Build final data package

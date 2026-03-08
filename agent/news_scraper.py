@@ -357,24 +357,34 @@ def fetch_all_news() -> list[dict]:
     # Source 1: Danish media RSS (bulk, then filter)
     try:
         log.info("Henter nyheder fra danske medier…")
-        all_articles.extend(fetch_danish_media_news())
+        danish = fetch_danish_media_news()
+        all_articles.extend(danish)
+        print(f"[NEWS-1] Danske medier: {len(danish)} artikler", flush=True)
     except Exception as e:
         log.error(f"fetch_danish_media_news fejlede: {e}")
+        print(f"[NEWS-1] FEJL danske medier: {e}", flush=True)
 
     # Source 2: Operator press pages
     try:
         log.info("Henter nyheder fra operatørers presserum…")
-        all_articles.extend(fetch_press_pages())
+        press = fetch_press_pages()
+        all_articles.extend(press)
+        print(f"[NEWS-2] Presserum: {len(press)} artikler", flush=True)
     except Exception as e:
         log.error(f"fetch_press_pages fejlede: {e}")
+        print(f"[NEWS-2] FEJL presserum: {e}", flush=True)
 
     # Source 3: Google News (fallback)
     log.info("Henter nyheder fra Google News (fallback)…")
+    google_total = 0
     for operator in NEWS_QUERIES:
         try:
-            all_articles.extend(fetch_google_news(operator))
+            arts = fetch_google_news(operator)
+            all_articles.extend(arts)
+            google_total += len(arts)
         except Exception as e:
             log.error(f"fetch_google_news fejlede for {operator}: {e}")
+    print(f"[NEWS-3] Google News: {google_total} artikler i alt", flush=True)
 
     # Deduplicate and cap per operator
     all_articles = _deduplicate(all_articles)
