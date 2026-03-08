@@ -24,9 +24,10 @@ MAX_PER_OP  = 8    # max articles per operator in total output
 # These cover Danish IT, business and telecom news.
 DANISH_FEEDS = [
     ("Computerworld", "https://www.computerworld.dk/rss"),
-    ("Version2",      "https://www.version2.dk/feed"),
-    ("Finans",        "https://finans.dk/rss/alle"),
-    ("Børsen",        "https://borsen.dk/rss/nyheder"),
+    ("Version2",      "https://www.version2.dk/rss"),
+    ("Finans",        "https://finans.dk/rss"),
+    ("Børsen",        "https://borsen.dk/rss"),
+    ("TV2 Business",  "https://nyheder.tv2.dk/rss?category=business"),
 ]
 
 # Keywords to match per operator (lowercase, checked in title+description)
