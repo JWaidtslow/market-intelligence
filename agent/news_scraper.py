@@ -262,38 +262,38 @@ def fetch_press_pages(days: int = MAX_DAYS) -> list[dict]:
         return links;
     }"""
 
-    with sync_playwright() as pw:
-        browser = pw.chromium.launch(
-            headless=True,
-            args=["--no-sandbox", "--disable-dev-shm-usage"],
-        )
-        for operator, url in PRESS_PAGES.items():
-            try:
-                page = browser.new_page()
-                page.set_extra_http_headers({"User-Agent":
-                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) "
-                    "Chrome/124.0.0.0 Safari/537.36"})
-                page.goto(url, timeout=25000, wait_until="domcontentloaded")
-                page.wait_for_timeout(1500)
-
-                links = page.evaluate(EXTRACT_JS)
-                page.close()
-                color = ""
-                for lnk in links:
-                    articles.append({
-                        "operator":  operator,
-                        "headline":  lnk["title"].replace("\n", " ").strip(),
-                        "url":       lnk["href"],
-                        "published": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-                        "source":    f"{operator} Presse",
-                        "snippet":   "",
-                    })
-                log.info(f"  {operator} presserum: {len(links)} links")
-            except Exception as e:
-                log.warning(f"  Playwright fejl for {operator} ({url}): {e}")
-
-        browser.close()
+    try:
+        with sync_playwright() as pw:
+            browser = pw.chromium.launch(
+                headless=True,
+                args=["--no-sandbox", "--disable-dev-shm-usage"],
+            )
+            for operator, url in PRESS_PAGES.items():
+                try:
+                    page = browser.new_page()
+                    page.set_extra_http_headers({"User-Agent":
+                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                        "AppleWebKit/537.36 (KHTML, like Gecko) "
+                        "Chrome/124.0.0.0 Safari/537.36"})
+                    page.goto(url, timeout=25000, wait_until="domcontentloaded")
+                    page.wait_for_timeout(1500)
+                    links = page.evaluate(EXTRACT_JS)
+                    page.close()
+                    for lnk in links:
+                        articles.append({
+                            "operator":  operator,
+                            "headline":  lnk["title"].replace("\n", " ").strip(),
+                            "url":       lnk["href"],
+                            "published": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+                            "source":    f"{operator} Presse",
+                            "snippet":   "",
+                        })
+                    log.info(f"  {operator} presserum: {len(links)} links")
+                except Exception as e:
+                    log.warning(f"  Playwright fejl for {operator} ({url}): {e}")
+            browser.close()
+    except Exception as e:
+        log.error(f"  Playwright browser fejlede helt: {e}")
 
     return articles
 
@@ -350,22 +350,31 @@ def fetch_google_news(operator: str, days: int = MAX_DAYS) -> list[dict]:
 def fetch_all_news() -> list[dict]:
     """
     Fetch news from all sources, deduplicate, and return sorted newest-first.
-    Per-operator cap of MAX_PER_OP applied before returning.
+    Each source is isolated — one failure never blocks the others.
     """
     all_articles = []
 
     # Source 1: Danish media RSS (bulk, then filter)
-    log.info("Henter nyheder fra danske medier…")
-    all_articles.extend(fetch_danish_media_news())
+    try:
+        log.info("Henter nyheder fra danske medier…")
+        all_articles.extend(fetch_danish_media_news())
+    except Exception as e:
+        log.error(f"fetch_danish_media_news fejlede: {e}")
 
     # Source 2: Operator press pages
-    log.info("Henter nyheder fra operatørers presserum…")
-    all_articles.extend(fetch_press_pages())
+    try:
+        log.info("Henter nyheder fra operatørers presserum…")
+        all_articles.extend(fetch_press_pages())
+    except Exception as e:
+        log.error(f"fetch_press_pages fejlede: {e}")
 
-    # Source 3: Google News (fallback — adds whatever wasn't covered above)
+    # Source 3: Google News (fallback)
     log.info("Henter nyheder fra Google News (fallback)…")
     for operator in NEWS_QUERIES:
-        all_articles.extend(fetch_google_news(operator))
+        try:
+            all_articles.extend(fetch_google_news(operator))
+        except Exception as e:
+            log.error(f"fetch_google_news fejlede for {operator}: {e}")
 
     # Deduplicate and cap per operator
     all_articles = _deduplicate(all_articles)

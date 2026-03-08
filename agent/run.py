@@ -258,9 +258,13 @@ def run(baseline_only: bool = False):
         log.info("Ingen tidligere snapshot fundet — prisændringer vises ved næste kørsel")
 
     # Fetch news
-    log.info("Henter nyheder fra Google News…")
-    news = fetch_all_news()
-    log.info(f"Nyheder i alt: {len(news)} artikler")
+    log.info("Henter nyheder…")
+    try:
+        news = fetch_all_news()
+        log.info(f"Nyheder i alt: {len(news)} artikler")
+    except Exception as e:
+        log.error(f"Nyhedshentning fejlede helt: {e}")
+        news = []
 
     # Build final data package
     output_data = {
