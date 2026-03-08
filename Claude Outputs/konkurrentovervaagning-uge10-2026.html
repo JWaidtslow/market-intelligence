@@ -134,6 +134,14 @@
     .news-source { font-size: 0.72rem; color: var(--text-muted); background: var(--surface2); border-radius: 3px; padding: 0.1rem 0.4rem; }
     .news-card.hidden { display: none; }
 
+    /* News pills bar */
+    .news-pills-bar { display: flex; align-items: center; gap: 0.75rem; padding: 0.55rem 1.25rem; background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
+    .news-pills-label { font-size: 0.68rem; font-weight: 700; color: var(--accent); letter-spacing: 0.07em; white-space: nowrap; text-transform: uppercase; }
+    .news-pills-scroll { display: flex; gap: 0.45rem; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; flex: 1; }
+    .news-pills-scroll::-webkit-scrollbar { display: none; }
+    .news-pill { background: var(--pill-color, #888)18; border: 1px solid var(--pill-color, #888)45; color: var(--pill-color, #444); padding: 0.28rem 0.7rem; border-radius: 20px; font-size: 0.77rem; white-space: nowrap; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .news-pill:hover { background: var(--pill-color, #888)30; transform: translateY(-1px); box-shadow: 0 2px 8px var(--pill-color, #888)30; }
+
     /* Responsive */
     @media (max-width: 768px) {
       .sidebar { display: none; }
@@ -171,6 +179,15 @@
 
   <!-- Main content -->
   <main class="main">
+
+    <!-- ══ NEWS PILLS BAR ════════════════════════════════════════════════════ -->
+    <div class="news-pills-bar">
+      <span class="news-pills-label">📰 Nyheder</span>
+      <div class="news-pills-scroll">
+        <span style="color:var(--text-muted);font-size:0.8rem">Nyheder hentes ved næste kørsel</span>
+      </div>
+    </div>
+
     <!-- ══ GLOBAL SEARCH ══════════════════════════════════════════════════════ -->
     <div class="global-search-wrap">
       <span class="search-icon">⌕</span>
@@ -1784,7 +1801,7 @@
 const cheapestData    = { labels: ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"],     values: [60, 59, 169, 129, 59, 129, 149, 119, 49],     colors: ["#FF6200", "#7C3AED", "#1D4ED8", "#16A34A", "#DC2626", "#D97706", "#EC4899", "#0891B2", "#9F1239"],     names: ["3Timer 3GB", "5Timer 5GB", "Fri Tale 30GB", "Ekstrabruger", "Little One", "Fri Tale 50GB", "Fri Tale 50GB", "Fri Tale 50GB", "2Timer 4GB"] };
 const cheapestDataAll = { labels: ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"], values: [60, 59, 129, 79, 59, 129, 79, 119, 49], colors: ["#FF6200", "#7C3AED", "#1D4ED8", "#16A34A", "#DC2626", "#D97706", "#EC4899", "#0891B2", "#9F1239"], names: ["3Timer 3GB", "5Timer 5GB", "Fri Tale 10GB B\u00f8rn", "B\u00f8rneabonnement", "Little One", "Fri Tale 50GB", "3Timer 2GB B\u00f8rn", "Fri Tale 50GB", "2Timer 4GB"] };
 const cheapestIntData = { labels: ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"], values: [60, 99, 129, 119, 299, 59, 49, 299, 159], colors: ["#FF6200", "#7C3AED", "#1D4ED8", "#16A34A", "#DC2626", "#D97706", "#EC4899", "#0891B2", "#9F1239"], names: ["10GB Mobilt", "50GB Mobilt", "30GB Mobilt", "30GB Mobilt", "5G Internet Fri", "7GB Mobilt", "5GB Mobilt", "5G Internet Fri", "100GB Mobilt"] };
-const trendData    = {"subscriptions": {"dates": ["2026-03-05"], "operators": {"3": {"prices": [60], "campaign_prices": [175], "color": "#E1001A", "min_prices": [], "intro_months": []}, "OiSTER": {"prices": [59], "campaign_prices": [49], "color": "#FF6B00", "min_prices": [], "intro_months": []}, "Flexii": {"prices": [null], "campaign_prices": [null], "color": "#7C3AED", "min_prices": [], "intro_months": []}, "Telenor": {"prices": [129], "campaign_prices": [null], "color": "#0072C6", "min_prices": [], "intro_months": []}, "YouSee": {"prices": [79], "campaign_prices": [0], "color": "#C0003C", "min_prices": [], "intro_months": []}, "Norlys": {"prices": [59], "campaign_prices": [null], "color": "#00A650", "min_prices": [], "intro_months": []}, "CBB": {"prices": [129], "campaign_prices": [39], "color": "#FF0000", "min_prices": [], "intro_months": []}, "Telmore": {"prices": [79], "campaign_prices": [39], "color": "#00539F", "min_prices": [], "intro_months": []}, "Eesy": {"prices": [119], "campaign_prices": [39], "color": "#FF6B6B", "min_prices": [], "intro_months": []}, "CallMe": {"prices": [49], "campaign_prices": [64], "color": "#E63946", "min_prices": [], "intro_months": []}}}, "internet": {"dates": ["2026-03-05"], "operators": {"3": {"prices": [60], "campaign_prices": [149], "color": "#E1001A", "min_prices": [null], "intro_months": [6]}, "OiSTER": {"prices": [99], "campaign_prices": [159], "color": "#FF6B00", "min_prices": [null], "intro_months": [10]}, "Flexii": {"prices": [null], "campaign_prices": [null], "color": "#7C3AED", "min_prices": [null], "intro_months": [null]}, "Telenor": {"prices": [129], "campaign_prices": [99], "color": "#0072C6", "min_prices": [null], "intro_months": [6]}, "YouSee": {"prices": [119], "campaign_prices": [164.5], "color": "#C0003C", "min_prices": [null], "intro_months": [6]}, "Norlys": {"prices": [299], "campaign_prices": [199], "color": "#00A650", "min_prices": [null], "intro_months": [6]}, "CBB": {"prices": [59], "campaign_prices": [129], "color": "#FF0000", "min_prices": [null], "intro_months": [3]}, "Telmore": {"prices": [49], "campaign_prices": [99], "color": "#00539F", "min_prices": [null], "intro_months": [3]}, "Eesy": {"prices": [299], "campaign_prices": [89], "color": "#FF6B6B", "min_prices": [null], "intro_months": [3]}, "CallMe": {"prices": [159], "campaign_prices": [null], "color": "#E63946", "min_prices": [null], "intro_months": [null]}}}};
+const trendData    = {"subscriptions": {"dates": ["2026-03-05"], "operators": {"3": {"prices": [60], "campaign_prices": [175], "color": "#FF6200", "min_prices": [], "intro_months": []}, "OiSTER": {"prices": [59], "campaign_prices": [49], "color": "#7C3AED", "min_prices": [], "intro_months": []}, "Flexii": {"prices": [null], "campaign_prices": [null], "color": "#60A5FA", "min_prices": [], "intro_months": []}, "Telenor": {"prices": [129], "campaign_prices": [null], "color": "#1D4ED8", "min_prices": [], "intro_months": []}, "YouSee": {"prices": [79], "campaign_prices": [0], "color": "#16A34A", "min_prices": [], "intro_months": []}, "Norlys": {"prices": [59], "campaign_prices": [null], "color": "#DC2626", "min_prices": [], "intro_months": []}, "CBB": {"prices": [129], "campaign_prices": [39], "color": "#D97706", "min_prices": [], "intro_months": []}, "Telmore": {"prices": [79], "campaign_prices": [39], "color": "#EC4899", "min_prices": [], "intro_months": []}, "Eesy": {"prices": [119], "campaign_prices": [39], "color": "#0891B2", "min_prices": [], "intro_months": []}, "CallMe": {"prices": [49], "campaign_prices": [64], "color": "#9F1239", "min_prices": [], "intro_months": []}}}, "internet": {"dates": ["2026-03-05"], "operators": {"3": {"prices": [60], "campaign_prices": [149], "color": "#FF6200", "min_prices": [null], "intro_months": [6]}, "OiSTER": {"prices": [99], "campaign_prices": [159], "color": "#7C3AED", "min_prices": [null], "intro_months": [10]}, "Flexii": {"prices": [null], "campaign_prices": [null], "color": "#60A5FA", "min_prices": [null], "intro_months": [null]}, "Telenor": {"prices": [129], "campaign_prices": [99], "color": "#1D4ED8", "min_prices": [null], "intro_months": [6]}, "YouSee": {"prices": [119], "campaign_prices": [164.5], "color": "#16A34A", "min_prices": [null], "intro_months": [6]}, "Norlys": {"prices": [299], "campaign_prices": [199], "color": "#DC2626", "min_prices": [null], "intro_months": [6]}, "CBB": {"prices": [59], "campaign_prices": [129], "color": "#D97706", "min_prices": [null], "intro_months": [3]}, "Telmore": {"prices": [49], "campaign_prices": [99], "color": "#EC4899", "min_prices": [null], "intro_months": [3]}, "Eesy": {"prices": [299], "campaign_prices": [89], "color": "#0891B2", "min_prices": [null], "intro_months": [3]}, "CallMe": {"prices": [159], "campaign_prices": [null], "color": "#9F1239", "min_prices": [null], "intro_months": [null]}}}};
 const kpiLabels    = ["3", "OiSTER", "Telenor", "YouSee", "Norlys", "CBB", "Telmore", "Eesy", "CallMe"];
 const kpiColors    = ["#FF6200", "#7C3AED", "#1D4ED8", "#16A34A", "#DC2626", "#D97706", "#EC4899", "#0891B2", "#9F1239"];
 const kpiMinPrice  = [60, 99, 129, 119, 299, 59, 49, 299, 159];
@@ -2026,6 +2043,19 @@ document.querySelectorAll(".filters").forEach(filterEl => {
     });
   });
 });
+
+// ── News pill → Newsroom ─────────────────────────────────────────────────────
+function goToNewsroom(op) {
+  showSection('newsroom');
+  const filtersEl = document.getElementById('news-filters');
+  if (!filtersEl) return;
+  filtersEl.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  const target = op
+    ? filtersEl.querySelector(`.filter-btn[data-filter="${op}"]`)
+    : filtersEl.querySelector('.filter-btn[data-filter="all"]');
+  const btn = target || filtersEl.querySelector('.filter-btn[data-filter="all"]');
+  if (btn) btn.click();
+}
 
 // ── In-section search ──────────────────────────────────────────────────────────
 function filterSearch(input, tableId) {
