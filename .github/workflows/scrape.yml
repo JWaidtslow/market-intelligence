@@ -67,7 +67,11 @@ jobs:
       - name: Kopiér dashboard til docs/ (GitHub Pages)
         run: |
           mkdir -p docs
-          cp "Claude Outputs/"*.html docs/index.html
+          # Kopier nyeste HTML-fil og slet ældre versioner så glob aldrig fejler
+          LATEST=$(ls -t "Claude Outputs/"*.html | head -1)
+          cp "$LATEST" docs/index.html
+          # Behold kun den nyeste fil i Claude Outputs/
+          ls -t "Claude Outputs/"*.html | tail -n +2 | xargs -r rm
 
       - name: Commit og push resultater
         run: |
