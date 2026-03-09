@@ -71,7 +71,7 @@ jobs:
           LATEST=$(ls -t "Claude Outputs/"*.html | head -1)
           cp "$LATEST" docs/index.html
           # Behold kun den nyeste fil i Claude Outputs/
-          ls -t "Claude Outputs/"*.html | tail -n +2 | xargs -r rm
+          ls -t "Claude Outputs/"*.html | tail -n +2 | xargs -r -d '\n' rm
 
       - name: Commit og push resultater
         run: |
