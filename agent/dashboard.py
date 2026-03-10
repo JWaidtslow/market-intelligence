@@ -6,7 +6,17 @@ filterable tables, and campaign highlights.
 
 import json
 import re
+import sys
+import os
 from datetime import datetime
+
+# EU/EØS-antal til roaming-total (importeres fra roaming_scraper hvis muligt)
+try:
+    sys.path.insert(0, os.path.dirname(__file__))
+    from roaming_scraper import EU_EEA_COUNTRIES as _EU_EEA
+    _EU_EEA_COUNT = len(_EU_EEA)
+except Exception:
+    _EU_EEA_COUNT = 40  # fallback
 
 
 OWN_BRANDS = {"3", "OiSTER", "Flexii"}
@@ -313,8 +323,9 @@ def _build_html(data: dict, trends: dict = None) -> str:
         notes    = plan.get("notes", "")
         color    = OPERATOR_COLORS.get(op, "#888")
 
-        data_str = "Ubegrænset" if data_gb == 999 else (f"{data_gb} GB" if data_gb else "—")
+        data_str  = "Ubegrænset" if data_gb == 999 else (f"{data_gb} GB" if data_gb else "—")
         price_str = f"{price} kr/md" if price else "—"
+        total_countries = _EU_EEA_COUNT + len(extras)
 
         extra_html = " ".join(roaming_country_badge(c, op) for c in extras) if extras else '<span style="color:var(--text-muted);font-size:0.8rem">Kun EU/EØS</span>'
 
@@ -324,12 +335,13 @@ def _build_html(data: dict, trends: dict = None) -> str:
           <td style="font-weight:600">{sub}</td>
           <td style="color:{color};font-weight:700">{price_str}</td>
           <td style="text-align:center">{data_str}</td>
+          <td style="text-align:center;font-weight:700;font-size:1rem">{total_countries}</td>
           <td><span class="roam-zone-badge">{zone}</span></td>
           <td class="roam-countries-cell">{extra_html}</td>
         </tr>"""
 
     if not roaming_rows:
-        roaming_rows = '<tr><td colspan="6" style="text-align:center;color:#888;padding:2rem">Roaming-data hentes ved næste kørsel</td></tr>'
+        roaming_rows = '<tr><td colspan="7" style="text-align:center;color:#888;padding:2rem">Roaming-data hentes ved næste kørsel</td></tr>'
 
     # Filter-knapper til roaming (kun de 4 operatører)
     roaming_filter_btns = '<button class="filter-btn active" data-filter="all">Alle</button>'
@@ -892,6 +904,7 @@ def _build_html(data: dict, trends: dict = None) -> str:
               <th>Abonnement</th>
               <th>Pris/md</th>
               <th style="text-align:center">Data i EU</th>
+              <th style="text-align:center">Antal lande</th>
               <th>Zone</th>
               <th>Ekstra lande (ud over EU/EØS)</th>
             </tr>
