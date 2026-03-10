@@ -1,10 +1,9 @@
-name: Ugentlig konkurrentovervågning
+name: Daglig konkurrentovervågning
 
 on:
   schedule:
-    # Kører hver onsdag kl. 07:00 UTC = 08:00 dansk vintertid (CET)
-    # Skift til 06:00 UTC i sommertid (CEST) hvis ønsket
-    - cron: '0 7 * * 3'
+    # Kører hver dag kl. 07:00 UTC = 08:00 dansk vintertid (CET)
+    - cron: '0 7 * * *'
   workflow_dispatch:  # Tillader manuel kørsel fra GitHub Actions UI
 
 jobs:
