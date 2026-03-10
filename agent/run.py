@@ -32,6 +32,7 @@ from extractor import extract_subscriptions, extract_internet, extract_hardware,
 from dashboard import generate_dashboard, OPERATOR_COLORS
 from baseline_data import BASELINE
 from news_scraper import fetch_all_news
+from roaming_scraper import fetch_roaming_data
 
 logging.basicConfig(
     level=logging.INFO,
@@ -270,6 +271,14 @@ def run(baseline_only: bool = False):
         print(f"[NEWS] FEJL: {e}", flush=True)
         news = []
 
+    # Fetch roaming data
+    try:
+        roaming = fetch_roaming_data()
+        log.info(f"Roaming: {len(roaming)} abonnementer")
+    except Exception as e:
+        log.error(f"Roaming-hentning fejlede: {e}")
+        roaming = []
+
     # Build final data package
     output_data = {
         "scraped_at": now.isoformat(),
@@ -277,6 +286,7 @@ def run(baseline_only: bool = False):
         "year": year,
         "operators": operator_data,
         "news": news,
+        "roaming": roaming,
     }
 
     # Save snapshot (before building trends so this week is included)

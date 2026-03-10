@@ -57,6 +57,7 @@ def _build_html(data: dict, trends: dict = None) -> str:
     all_vas      = [s for op in operators.values() for s in op.get("vas", [])]
     all_hardware = [s for op in operators.values() for s in op.get("hardware", [])]
     all_news     = data.get("news", [])
+    all_roaming  = data.get("roaming", [])
 
     op_names = sorted(operators.keys(), key=lambda k: (operators[k].get("name", k) not in OWN_BRANDS, operators[k].get("name", k)))
     op_display_names = [operators[k].get("name", k) for k in op_names]
@@ -277,6 +278,64 @@ def _build_html(data: dict, trends: dict = None) -> str:
 
     if not hw_rows:
         hw_rows = '<tr><td colspan="6" style="text-align:center;color:#888;padding:2rem;">Hardware-data scraped ved næste kørsel</td></tr>'
+
+    # ── Roaming section ──────────────────────────────────────────────────────
+    # Find alle unikke ekstra-lande og tæl hvor mange operatører der har dem
+    from collections import Counter
+    extra_country_ops: dict[str, list] = {}
+    for plan in all_roaming:
+        op = plan.get("operator", "")
+        for country in plan.get("extra_countries", []):
+            extra_country_ops.setdefault(country, [])
+            if op not in extra_country_ops[country]:
+                extra_country_ops[country].append(op)
+
+    # Et land er "unikt" hvis kun én operatør tilbyder det
+    unique_countries = {c for c, ops in extra_country_ops.items() if len(ops) == 1}
+
+    def roaming_country_badge(country: str, operator: str) -> str:
+        color = OPERATOR_COLORS.get(operator, "#888")
+        if country in unique_countries:
+            return (f'<span class="roam-country unique" '
+                    f'style="background:{color}22;border-color:{color};color:{color}" '
+                    f'title="Kun {operator}">{country}</span>')
+        return f'<span class="roam-country">{country}</span>'
+
+    roaming_rows = ""
+    roaming_filter_ops = sorted({p["operator"] for p in all_roaming})
+    for plan in all_roaming:
+        op       = plan.get("operator", "")
+        sub      = plan.get("subscription", "")
+        price    = plan.get("price_dkk", "")
+        data_gb  = plan.get("data_eu_gb", "")
+        zone     = plan.get("roam_zone", "EU/EØS")
+        extras   = plan.get("extra_countries", [])
+        notes    = plan.get("notes", "")
+        color    = OPERATOR_COLORS.get(op, "#888")
+
+        data_str = "Ubegrænset" if data_gb == 999 else (f"{data_gb} GB" if data_gb else "—")
+        price_str = f"{price} kr/md" if price else "—"
+
+        extra_html = " ".join(roaming_country_badge(c, op) for c in extras) if extras else '<span style="color:var(--text-muted);font-size:0.8rem">Kun EU/EØS</span>'
+
+        roaming_rows += f"""
+        <tr class="data-row" data-operator="{op}">
+          <td>{op_badge(op)}</td>
+          <td style="font-weight:600">{sub}</td>
+          <td style="color:{color};font-weight:700">{price_str}</td>
+          <td style="text-align:center">{data_str}</td>
+          <td><span class="roam-zone-badge">{zone}</span></td>
+          <td class="roam-countries-cell">{extra_html}</td>
+        </tr>"""
+
+    if not roaming_rows:
+        roaming_rows = '<tr><td colspan="6" style="text-align:center;color:#888;padding:2rem">Roaming-data hentes ved næste kørsel</td></tr>'
+
+    # Filter-knapper til roaming (kun de 4 operatører)
+    roaming_filter_btns = '<button class="filter-btn active" data-filter="all">Alle</button>'
+    for op in roaming_filter_ops:
+        color = OPERATOR_COLORS.get(op, "#888")
+        roaming_filter_btns += f'<button class="filter-btn" data-filter="{op}" style="--op-color:{color}">{op}</button>'
 
     # ── Newsroom cards ───────────────────────────────────────────────────────
     news_cards = ""
@@ -503,6 +562,14 @@ def _build_html(data: dict, trends: dict = None) -> str:
     .news-source {{ font-size: 0.72rem; color: var(--text-muted); background: var(--surface2); border-radius: 3px; padding: 0.1rem 0.4rem; }}
     .news-card.hidden {{ display: none; }}
 
+    /* Roaming */
+    .roam-countries-cell {{ max-width: 520px; }}
+    .roam-country {{ display: inline-block; font-size: 0.75rem; padding: 0.15rem 0.5rem; border-radius: 4px; margin: 0.15rem 0.2rem 0.15rem 0; background: var(--surface2); border: 1px solid var(--border); color: var(--text-muted); white-space: nowrap; }}
+    .roam-country.unique {{ font-weight: 700; border-width: 1.5px; }}
+    .roam-zone-badge {{ display: inline-block; font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 20px; background: var(--surface2); border: 1px solid var(--border); color: var(--text); white-space: nowrap; }}
+    .roam-legend {{ display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1rem; }}
+    .roam-legend-dot {{ width: 10px; height: 10px; border-radius: 2px; display: inline-block; }}
+
     /* News pills bar */
     .news-pills-bar {{ display: flex; align-items: center; gap: 0.75rem; padding: 0.55rem 1.25rem; background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }}
     .news-pills-label {{ font-size: 0.68rem; font-weight: 700; color: var(--accent); letter-spacing: 0.07em; white-space: nowrap; text-transform: uppercase; }}
@@ -536,6 +603,7 @@ def _build_html(data: dict, trends: dict = None) -> str:
       <button class="nav-btn" onclick="showSection('internet')">🌐 Internet</button>
       <button class="nav-btn" onclick="showSection('hardware')">📲 Hardware</button>
       <button class="nav-btn" onclick="showSection('vas')">🎬 VAS</button>
+      <button class="nav-btn" onclick="showSection('roaming')">🌍 Roaming</button>
       <button class="nav-btn" onclick="showSection('newsroom')">📰 Newsroom</button>
     </div>
 
@@ -796,6 +864,39 @@ def _build_html(data: dict, trends: dict = None) -> str:
             <th onclick="sortTable(this)" class="center">Status</th>
           </tr></thead>
           <tbody>{vas_rows}</tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ══ ROAMING ═══════════════════════════════════════════════════════════ -->
+    <div id="section-roaming" class="section">
+      <div class="page-header">
+        <h1>🌍 Roaming</h1>
+        <p>Sammenligning af Roam Like Home-vilkår · data og lande pr. abonnement · opdateres ugentligt</p>
+      </div>
+      <div class="roam-legend">
+        <span class="roam-legend-dot" style="background:#FF620022;border:1.5px solid #FF6200"></span>
+        <strong style="color:var(--text)">Farvet badge</strong> = landet er unikt for denne operatør
+        &nbsp;·&nbsp;
+        <span class="roam-legend-dot" style="background:var(--surface2);border:1px solid var(--border)"></span>
+        Grå badge = delt med én eller flere andre operatører
+      </div>
+      <div class="filters" id="roaming-filters">
+        {roaming_filter_btns}
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Operatør</th>
+              <th>Abonnement</th>
+              <th>Pris/md</th>
+              <th style="text-align:center">Data i EU</th>
+              <th>Zone</th>
+              <th>Ekstra lande (ud over EU/EØS)</th>
+            </tr>
+          </thead>
+          <tbody>{roaming_rows}</tbody>
         </table>
       </div>
     </div>
