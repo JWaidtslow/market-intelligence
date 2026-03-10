@@ -325,7 +325,7 @@ def _build_html(data: dict, trends: dict = None) -> str:
 
         data_str  = "Ubegrænset" if data_gb == 999 else (f"{data_gb} GB" if data_gb else "—")
         price_str = f"{price} kr/md" if price else "—"
-        total_countries = _EU_EEA_COUNT + len(extras)
+        total_countries = plan.get("total_countries", _EU_EEA_COUNT + len(extras))
 
         extra_html = " ".join(roaming_country_badge(c, op) for c in extras) if extras else '<span style="color:var(--text-muted);font-size:0.8rem">Kun EU/EØS</span>'
 
