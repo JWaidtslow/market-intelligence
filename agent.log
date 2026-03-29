@@ -1,167 +1,167 @@
-2026-03-28 09:39:33,906 [INFO] ============================================================
-2026-03-28 09:39:33,906 [INFO] Market Intelligence Agent — START
-2026-03-28 09:39:33,906 [INFO] Tidspunkt: 2026-03-28T09:39:33.906209
-2026-03-28 09:39:33,906 [INFO] ============================================================
-2026-03-28 09:39:33,906 [INFO] Tilstand: live scraping
-2026-03-28 09:39:34,478 [INFO] ━━ Scraping 3 ━━
-2026-03-28 09:39:34,515 [INFO] Fetching: https://www.3.dk/abonnementer/
-2026-03-28 09:39:43,763 [INFO]   3: 0 abonnementer, 0 VAS
-2026-03-28 09:39:43,813 [INFO] Fetching: https://www.3.dk/internet/
-2026-03-28 09:39:53,185 [INFO]   3: 0 internetprodukter
-2026-03-28 09:39:53,214 [INFO] Fetching: https://www.3.dk/shop/mobiler/
-2026-03-28 09:40:07,392 [INFO]   3: 23 devices
-2026-03-28 09:40:07,392 [INFO] ━━ Scraping OiSTER ━━
-2026-03-28 09:40:07,425 [INFO] Fetching: https://oister.dk/abonnementer/
-2026-03-28 09:40:17,216 [INFO]   OiSTER: 0 abonnementer, 0 VAS
-2026-03-28 09:40:17,244 [INFO] Fetching: https://oister.dk/internet/
-2026-03-28 09:40:26,039 [INFO]   OiSTER: 0 internetprodukter
-2026-03-28 09:40:26,071 [INFO] Fetching: https://oister.dk/kundeshop/mobiler/
-2026-03-28 09:40:41,557 [INFO]   OiSTER: 0 devices
-2026-03-28 09:40:41,557 [INFO] ━━ Scraping Flexii ━━
-2026-03-28 09:40:41,589 [INFO] Fetching: https://flexii.dk/abonnementer/
-2026-03-28 09:40:49,375 [INFO]   Flexii: 0 abonnementer, 0 VAS
-2026-03-28 09:40:49,403 [INFO] Fetching: https://flexii.dk/internet/
-2026-03-28 09:40:57,194 [INFO]   Flexii: 0 internetprodukter
-2026-03-28 09:40:57,194 [INFO] ━━ Scraping Telenor ━━
-2026-03-28 09:40:57,223 [INFO] Fetching: https://www.telenor.dk/mobilabonnement/
-2026-03-28 09:41:05,397 [INFO]   Telenor: 0 abonnementer, 0 VAS
-2026-03-28 09:41:05,427 [INFO] Fetching: https://www.telenor.dk/internet/mobilt-bredbaand/
-2026-03-28 09:41:14,125 [INFO]   Telenor: 0 internetprodukter
-2026-03-28 09:41:14,158 [INFO] Fetching: https://www.telenor.dk/shop/mobiler/
-2026-03-28 09:41:44,159 [WARNING] Failed to fetch https://www.telenor.dk/shop/mobiler/: Page.goto: Timeout 30000ms exceeded.
+2026-03-29 09:38:39,097 [INFO] ============================================================
+2026-03-29 09:38:39,097 [INFO] Market Intelligence Agent — START
+2026-03-29 09:38:39,097 [INFO] Tidspunkt: 2026-03-29T09:38:39.097398
+2026-03-29 09:38:39,097 [INFO] ============================================================
+2026-03-29 09:38:39,097 [INFO] Tilstand: live scraping
+2026-03-29 09:38:39,681 [INFO] ━━ Scraping 3 ━━
+2026-03-29 09:38:39,722 [INFO] Fetching: https://www.3.dk/abonnementer/
+2026-03-29 09:38:48,004 [INFO]   3: 0 abonnementer, 0 VAS
+2026-03-29 09:38:48,066 [INFO] Fetching: https://www.3.dk/internet/
+2026-03-29 09:38:56,563 [INFO]   3: 0 internetprodukter
+2026-03-29 09:38:56,594 [INFO] Fetching: https://www.3.dk/shop/mobiler/
+2026-03-29 09:39:10,891 [INFO]   3: 23 devices
+2026-03-29 09:39:10,891 [INFO] ━━ Scraping OiSTER ━━
+2026-03-29 09:39:10,925 [INFO] Fetching: https://oister.dk/abonnementer/
+2026-03-29 09:39:19,146 [INFO]   OiSTER: 0 abonnementer, 0 VAS
+2026-03-29 09:39:19,176 [INFO] Fetching: https://oister.dk/internet/
+2026-03-29 09:39:27,402 [INFO]   OiSTER: 0 internetprodukter
+2026-03-29 09:39:27,434 [INFO] Fetching: https://oister.dk/kundeshop/mobiler/
+2026-03-29 09:39:42,576 [INFO]   OiSTER: 0 devices
+2026-03-29 09:39:42,576 [INFO] ━━ Scraping Flexii ━━
+2026-03-29 09:39:42,611 [INFO] Fetching: https://flexii.dk/abonnementer/
+2026-03-29 09:39:50,896 [INFO]   Flexii: 0 abonnementer, 0 VAS
+2026-03-29 09:39:50,926 [INFO] Fetching: https://flexii.dk/internet/
+2026-03-29 09:39:58,564 [INFO]   Flexii: 0 internetprodukter
+2026-03-29 09:39:58,564 [INFO] ━━ Scraping Telenor ━━
+2026-03-29 09:39:58,593 [INFO] Fetching: https://www.telenor.dk/mobilabonnement/
+2026-03-29 09:40:06,370 [INFO]   Telenor: 0 abonnementer, 0 VAS
+2026-03-29 09:40:06,402 [INFO] Fetching: https://www.telenor.dk/internet/mobilt-bredbaand/
+2026-03-29 09:40:15,110 [INFO]   Telenor: 0 internetprodukter
+2026-03-29 09:40:15,141 [INFO] Fetching: https://www.telenor.dk/shop/mobiler/
+2026-03-29 09:40:45,142 [WARNING] Failed to fetch https://www.telenor.dk/shop/mobiler/: Page.goto: Timeout 30000ms exceeded.
 Call log:
   - navigating to "https://www.telenor.dk/shop/mobiler/", waiting until "domcontentloaded"
 
-2026-03-28 09:41:44,164 [INFO] ━━ Scraping YouSee ━━
-2026-03-28 09:41:44,190 [INFO] Fetching: https://yousee.dk/mobil/abonnementer/
-2026-03-28 09:41:53,250 [INFO]   YouSee: 6 abonnementer, 1 VAS
-2026-03-28 09:41:53,279 [INFO] Fetching: https://yousee.dk/internet/mobilt/
-2026-03-28 09:42:02,241 [INFO]   YouSee: 0 internetprodukter
-2026-03-28 09:42:02,271 [INFO] Fetching: https://yousee.dk/shop/mobiltelefoner/
-2026-03-28 09:42:16,706 [INFO]   'Load more' klik #1
-2026-03-28 09:42:19,900 [INFO]   YouSee: 32 devices
-2026-03-28 09:42:19,901 [INFO] ━━ Scraping Norlys ━━
-2026-03-28 09:42:19,930 [INFO] Fetching: https://norlys.dk/mobil/
-2026-03-28 09:42:30,165 [INFO]   Norlys: 0 abonnementer, 4 VAS
-2026-03-28 09:42:30,194 [INFO] Fetching: https://norlys.dk/internet/
-2026-03-28 09:42:39,831 [INFO]   Norlys: 1 internetprodukter
-2026-03-28 09:42:39,861 [INFO] Fetching: https://shop.norlys.dk/privat/webshop/mobiler/
-2026-03-28 09:43:24,093 [INFO]   'Load more' klik #1
-2026-03-28 09:43:26,498 [INFO]   'Load more' klik #2
-2026-03-28 09:43:28,907 [INFO]   'Load more' klik #3
-2026-03-28 09:43:31,339 [INFO]   'Load more' klik #4
-2026-03-28 09:43:33,761 [INFO]   'Load more' klik #5
-2026-03-28 09:43:36,178 [INFO]   'Load more' klik #6
-2026-03-28 09:43:38,576 [INFO]   'Load more' klik #7
-2026-03-28 09:43:40,994 [INFO]   'Load more' klik #8
-2026-03-28 09:43:43,393 [INFO]   'Load more' klik #9
-2026-03-28 09:43:45,793 [INFO]   'Load more' klik #10
-2026-03-28 09:43:48,194 [INFO]   'Load more' klik #11
-2026-03-28 09:43:50,593 [INFO]   'Load more' klik #12
-2026-03-28 09:43:52,975 [INFO]   'Load more' klik #13
-2026-03-28 09:43:55,392 [INFO]   'Load more' klik #14
-2026-03-28 09:43:57,793 [INFO]   'Load more' klik #15
-2026-03-28 09:43:57,808 [INFO]   Norlys: 43 devices
-2026-03-28 09:43:57,808 [INFO] ━━ Scraping CBB ━━
-2026-03-28 09:43:57,839 [INFO] Fetching: https://www.cbb.dk/abonnementer/
-2026-03-28 09:44:12,794 [INFO]   CBB: 0 abonnementer, 0 VAS
-2026-03-28 09:44:12,823 [INFO] Fetching: https://www.cbb.dk/internet/
-2026-03-28 09:44:27,166 [INFO]   CBB: 0 internetprodukter
-2026-03-28 09:44:27,199 [INFO] Fetching: https://www.cbb.dk/shop/mobiltelefoner/
-2026-03-28 09:44:40,829 [INFO]   'Load more' klik #1
-2026-03-28 09:44:43,233 [INFO]   'Load more' klik #2
-2026-03-28 09:44:45,666 [INFO]   'Load more' klik #3
-2026-03-28 09:44:48,066 [INFO]   'Load more' klik #4
-2026-03-28 09:44:51,213 [INFO]   CBB: 57 devices
-2026-03-28 09:44:51,213 [INFO] ━━ Scraping Telmore ━━
-2026-03-28 09:44:51,245 [INFO] Fetching: https://www.telmore.dk/abonnementer/
-2026-03-28 09:45:02,425 [INFO]   Telmore: 0 abonnementer, 0 VAS
-2026-03-28 09:45:02,457 [INFO] Fetching: https://www.telmore.dk/internet/
-2026-03-28 09:45:13,603 [INFO]   Telmore: 2 internetprodukter
-2026-03-28 09:45:13,637 [INFO] Fetching: https://www.telmore.dk/shop/mobiltelefoner/
-2026-03-28 09:45:31,145 [INFO]   Telmore: 30 devices
-2026-03-28 09:45:31,145 [INFO] ━━ Scraping Eesy ━━
-2026-03-28 09:45:31,183 [INFO] Fetching: https://eesy.dk/abonnementer/
-2026-03-28 09:45:39,909 [INFO]   Eesy: 0 abonnementer, 0 VAS
-2026-03-28 09:45:39,941 [INFO] Fetching: https://eesy.dk/internet/
-2026-03-28 09:45:48,305 [INFO]   Eesy: 0 internetprodukter
-2026-03-28 09:45:48,305 [INFO] ━━ Scraping CallMe ━━
-2026-03-28 09:45:48,337 [INFO] Fetching: https://callme.dk/abonnementer/
-2026-03-28 09:45:59,026 [INFO]   CallMe: 0 abonnementer, 6 VAS
-2026-03-28 09:45:59,058 [INFO] Fetching: https://callme.dk/internet/
-2026-03-28 09:46:08,397 [INFO]   CallMe: 0 internetprodukter
-2026-03-28 09:46:08,427 [INFO] Fetching: https://callme.dk/webshop/mobiler/
-2026-03-28 09:46:24,357 [INFO]   CallMe: 51 devices
-2026-03-28 09:46:24,396 [INFO]   3 / subscriptions: bruger baseline (9 rækker)
-2026-03-28 09:46:24,396 [INFO]   3 / internet: bruger baseline (5 rækker)
-2026-03-28 09:46:24,396 [INFO]   3 / hardware: live data (23 rækker)
-2026-03-28 09:46:24,396 [INFO]   3 / vas: bruger baseline (4 rækker)
-2026-03-28 09:46:24,396 [INFO]   OiSTER / subscriptions: bruger baseline (8 rækker)
-2026-03-28 09:46:24,396 [INFO]   OiSTER / internet: bruger baseline (5 rækker)
-2026-03-28 09:46:24,396 [INFO]   OiSTER / vas: bruger baseline (5 rækker)
-2026-03-28 09:46:24,396 [INFO]   Telenor / subscriptions: bruger baseline (7 rækker)
-2026-03-28 09:46:24,396 [INFO]   Telenor / internet: bruger baseline (5 rækker)
-2026-03-28 09:46:24,396 [INFO]   YouSee / subscriptions: live data (6 rækker)
-2026-03-28 09:46:24,396 [INFO]   YouSee / internet: bruger baseline (6 rækker)
-2026-03-28 09:46:24,396 [INFO]   YouSee / hardware: live data (32 rækker)
-2026-03-28 09:46:24,396 [INFO]   YouSee / vas: live data (1 rækker)
-2026-03-28 09:46:24,396 [INFO]   Norlys / subscriptions: bruger baseline (8 rækker)
-2026-03-28 09:46:24,397 [INFO]   Norlys / internet: live data (1 rækker)
-2026-03-28 09:46:24,397 [INFO]   Norlys / hardware: live data (43 rækker)
-2026-03-28 09:46:24,397 [INFO]   Norlys / vas: live data (4 rækker)
-2026-03-28 09:46:24,397 [INFO]   CBB / subscriptions: bruger baseline (6 rækker)
-2026-03-28 09:46:24,397 [INFO]   CBB / internet: bruger baseline (6 rækker)
-2026-03-28 09:46:24,397 [INFO]   CBB / hardware: live data (57 rækker)
-2026-03-28 09:46:24,397 [INFO]   CBB / vas: bruger baseline (7 rækker)
-2026-03-28 09:46:24,397 [INFO]   Telmore / subscriptions: bruger baseline (8 rækker)
-2026-03-28 09:46:24,397 [INFO]   Telmore / internet: live data (2 rækker)
-2026-03-28 09:46:24,397 [INFO]   Telmore / hardware: live data (30 rækker)
-2026-03-28 09:46:24,397 [INFO]   Telmore / vas: bruger baseline (7 rækker)
-2026-03-28 09:46:24,397 [INFO]   Eesy / subscriptions: bruger baseline (3 rækker)
-2026-03-28 09:46:24,397 [INFO]   Eesy / internet: bruger baseline (1 rækker)
-2026-03-28 09:46:24,397 [INFO]   CallMe / subscriptions: bruger baseline (8 rækker)
-2026-03-28 09:46:24,397 [INFO]   CallMe / internet: bruger baseline (4 rækker)
-2026-03-28 09:46:24,397 [INFO]   CallMe / hardware: live data (51 rækker)
-2026-03-28 09:46:24,397 [INFO]   CallMe / vas: live data (6 rækker)
-2026-03-28 09:46:24,399 [INFO] Sammenligner med snapshot fra: 2026-03-27
-2026-03-28 09:46:24,400 [INFO] Henter nyheder…
-2026-03-28 09:46:24,400 [INFO] Henter nyheder fra danske medier…
-2026-03-28 09:46:24,934 [WARNING]   Computerworld RSS fejl: HTTP Error 404: Not Found
-2026-03-28 09:46:25,532 [WARNING]   Version2 RSS fejl: HTTP Error 404: Not Found
-2026-03-28 09:46:25,831 [INFO]   Finans: 0 artikler hentet
-2026-03-28 09:46:25,831 [INFO]   Finans: 0 operatør-matches
-2026-03-28 09:46:26,364 [INFO]   Børsen: 26 artikler hentet
-2026-03-28 09:46:26,365 [INFO]   Børsen: 0 operatør-matches
-2026-03-28 09:46:27,465 [WARNING]   TV2 Business RSS fejl: HTTP Error 404: Not Found
-2026-03-28 09:46:27,466 [INFO]   Danske medier total: 0 artikler
-2026-03-28 09:46:27,466 [INFO] Henter pressemeddelelser fra Mynewsdesk…
-2026-03-28 09:46:27,718 [WARNING]   Mynewsdesk fejl for 3: HTTP Error 404: Not Found
-2026-03-28 09:46:27,974 [WARNING]   Mynewsdesk fejl for Telenor: HTTP Error 404: Not Found
-2026-03-28 09:46:28,177 [WARNING]   Mynewsdesk fejl for YouSee: HTTP Error 404: Not Found
-2026-03-28 09:46:28,418 [WARNING]   Mynewsdesk fejl for Norlys: HTTP Error 404: Not Found
-2026-03-28 09:46:28,652 [WARNING]   Mynewsdesk fejl for CBB: HTTP Error 404: Not Found
-2026-03-28 09:46:28,877 [WARNING]   Mynewsdesk fejl for Telmore: HTTP Error 404: Not Found
-2026-03-28 09:46:28,878 [INFO]   Mynewsdesk total: 0 artikler
-2026-03-28 09:46:28,879 [INFO] Henter nyheder fra operatørers presserum…
-2026-03-28 09:46:31,783 [INFO]   Telenor presserum: 0 artikler (af 0 links)
-2026-03-28 09:46:35,810 [INFO]   YouSee presserum: 0 artikler (af 0 links)
-2026-03-28 09:46:38,820 [INFO]   Norlys presserum: 0 artikler (af 0 links)
-2026-03-28 09:46:41,687 [INFO]   3 presserum: 0 artikler (af 0 links)
-2026-03-28 09:46:47,577 [INFO]   Telmore presserum: 0 artikler (af 0 links)
-2026-03-28 09:46:55,893 [INFO]   CBB presserum: 0 artikler (af 0 links)
-2026-03-28 09:46:55,929 [INFO] Henter nyheder fra Google News (fallback)…
-2026-03-28 09:47:00,355 [INFO] Nyheder i alt: 0 artikler (efter cap)
-2026-03-28 09:47:00,355 [INFO] Nyheder i alt: 0 artikler
-2026-03-28 09:47:00,355 [INFO] Henter roaming-data…
-2026-03-28 09:47:06,487 [INFO]   Telenor: 36 ekstra lande, 75 total
-2026-03-28 09:47:13,168 [INFO]   3: 0 ekstra lande, 100 total
-2026-03-28 09:47:17,720 [INFO]   Norlys: 69 ekstra lande, 80 total
-2026-03-28 09:47:23,251 [INFO]   YouSee: 3 ekstra lande, 51 total
-2026-03-28 09:47:23,293 [INFO]   Roaming: 16 abonnementer hentet live
-2026-03-28 09:47:23,293 [INFO] Roaming: 16 abonnementer
-2026-03-28 09:47:23,298 [INFO] Snapshot gemt: /home/runner/work/market-intelligence/market-intelligence/data/snapshot-2026-03-28.json
-2026-03-28 09:47:23,316 [INFO] Trenddata: 20 uger
-2026-03-28 09:47:23,319 [INFO] ============================================================
-2026-03-28 09:47:23,320 [INFO] ✓ Dashboard klar: /home/runner/work/market-intelligence/market-intelligence/Claude Outputs/konkurrentovervaagning-uge13-2026.html
-2026-03-28 09:47:23,320 [INFO] Market Intelligence Agent — SLUT
-2026-03-28 09:47:23,320 [INFO] ============================================================
+2026-03-29 09:40:45,147 [INFO] ━━ Scraping YouSee ━━
+2026-03-29 09:40:45,173 [INFO] Fetching: https://yousee.dk/mobil/abonnementer/
+2026-03-29 09:40:54,348 [INFO]   YouSee: 6 abonnementer, 1 VAS
+2026-03-29 09:40:54,379 [INFO] Fetching: https://yousee.dk/internet/mobilt/
+2026-03-29 09:41:03,438 [INFO]   YouSee: 0 internetprodukter
+2026-03-29 09:41:03,467 [INFO] Fetching: https://yousee.dk/shop/mobiltelefoner/
+2026-03-29 09:41:18,557 [INFO]   'Load more' klik #1
+2026-03-29 09:41:21,730 [INFO]   YouSee: 32 devices
+2026-03-29 09:41:21,730 [INFO] ━━ Scraping Norlys ━━
+2026-03-29 09:41:21,762 [INFO] Fetching: https://norlys.dk/mobil/
+2026-03-29 09:41:31,378 [INFO]   Norlys: 0 abonnementer, 4 VAS
+2026-03-29 09:41:31,423 [INFO] Fetching: https://norlys.dk/internet/
+2026-03-29 09:41:40,709 [INFO]   Norlys: 1 internetprodukter
+2026-03-29 09:41:40,739 [INFO] Fetching: https://shop.norlys.dk/privat/webshop/mobiler/
+2026-03-29 09:42:25,006 [INFO]   'Load more' klik #1
+2026-03-29 09:42:27,412 [INFO]   'Load more' klik #2
+2026-03-29 09:42:29,818 [INFO]   'Load more' klik #3
+2026-03-29 09:42:32,332 [INFO]   'Load more' klik #4
+2026-03-29 09:42:34,756 [INFO]   'Load more' klik #5
+2026-03-29 09:42:37,157 [INFO]   'Load more' klik #6
+2026-03-29 09:42:39,572 [INFO]   'Load more' klik #7
+2026-03-29 09:42:41,955 [INFO]   'Load more' klik #8
+2026-03-29 09:42:44,356 [INFO]   'Load more' klik #9
+2026-03-29 09:42:46,756 [INFO]   'Load more' klik #10
+2026-03-29 09:42:49,156 [INFO]   'Load more' klik #11
+2026-03-29 09:42:51,555 [INFO]   'Load more' klik #12
+2026-03-29 09:42:53,972 [INFO]   'Load more' klik #13
+2026-03-29 09:42:56,372 [INFO]   'Load more' klik #14
+2026-03-29 09:42:58,771 [INFO]   'Load more' klik #15
+2026-03-29 09:42:58,787 [INFO]   Norlys: 44 devices
+2026-03-29 09:42:58,787 [INFO] ━━ Scraping CBB ━━
+2026-03-29 09:42:58,815 [INFO] Fetching: https://www.cbb.dk/abonnementer/
+2026-03-29 09:43:12,398 [INFO]   CBB: 0 abonnementer, 0 VAS
+2026-03-29 09:43:12,429 [INFO] Fetching: https://www.cbb.dk/internet/
+2026-03-29 09:43:26,751 [INFO]   CBB: 0 internetprodukter
+2026-03-29 09:43:26,782 [INFO] Fetching: https://www.cbb.dk/shop/mobiltelefoner/
+2026-03-29 09:43:40,596 [INFO]   'Load more' klik #1
+2026-03-29 09:43:43,052 [INFO]   'Load more' klik #2
+2026-03-29 09:43:45,473 [INFO]   'Load more' klik #3
+2026-03-29 09:43:47,879 [INFO]   'Load more' klik #4
+2026-03-29 09:43:51,055 [INFO]   CBB: 57 devices
+2026-03-29 09:43:51,055 [INFO] ━━ Scraping Telmore ━━
+2026-03-29 09:43:51,086 [INFO] Fetching: https://www.telmore.dk/abonnementer/
+2026-03-29 09:44:00,869 [INFO]   Telmore: 0 abonnementer, 0 VAS
+2026-03-29 09:44:00,900 [INFO] Fetching: https://www.telmore.dk/internet/
+2026-03-29 09:44:11,653 [INFO]   Telmore: 2 internetprodukter
+2026-03-29 09:44:11,690 [INFO] Fetching: https://www.telmore.dk/shop/mobiltelefoner/
+2026-03-29 09:44:29,142 [INFO]   Telmore: 30 devices
+2026-03-29 09:44:29,143 [INFO] ━━ Scraping Eesy ━━
+2026-03-29 09:44:29,179 [INFO] Fetching: https://eesy.dk/abonnementer/
+2026-03-29 09:44:37,680 [INFO]   Eesy: 0 abonnementer, 0 VAS
+2026-03-29 09:44:37,709 [INFO] Fetching: https://eesy.dk/internet/
+2026-03-29 09:44:45,756 [INFO]   Eesy: 0 internetprodukter
+2026-03-29 09:44:45,756 [INFO] ━━ Scraping CallMe ━━
+2026-03-29 09:44:45,790 [INFO] Fetching: https://callme.dk/abonnementer/
+2026-03-29 09:44:55,436 [INFO]   CallMe: 0 abonnementer, 6 VAS
+2026-03-29 09:44:55,465 [INFO] Fetching: https://callme.dk/internet/
+2026-03-29 09:45:05,043 [INFO]   CallMe: 0 internetprodukter
+2026-03-29 09:45:05,072 [INFO] Fetching: https://callme.dk/webshop/mobiler/
+2026-03-29 09:45:20,221 [INFO]   CallMe: 51 devices
+2026-03-29 09:45:20,261 [INFO]   3 / subscriptions: bruger baseline (9 rækker)
+2026-03-29 09:45:20,261 [INFO]   3 / internet: bruger baseline (5 rækker)
+2026-03-29 09:45:20,261 [INFO]   3 / hardware: live data (23 rækker)
+2026-03-29 09:45:20,262 [INFO]   3 / vas: bruger baseline (4 rækker)
+2026-03-29 09:45:20,262 [INFO]   OiSTER / subscriptions: bruger baseline (8 rækker)
+2026-03-29 09:45:20,262 [INFO]   OiSTER / internet: bruger baseline (5 rækker)
+2026-03-29 09:45:20,262 [INFO]   OiSTER / vas: bruger baseline (5 rækker)
+2026-03-29 09:45:20,262 [INFO]   Telenor / subscriptions: bruger baseline (7 rækker)
+2026-03-29 09:45:20,262 [INFO]   Telenor / internet: bruger baseline (5 rækker)
+2026-03-29 09:45:20,262 [INFO]   YouSee / subscriptions: live data (6 rækker)
+2026-03-29 09:45:20,262 [INFO]   YouSee / internet: bruger baseline (6 rækker)
+2026-03-29 09:45:20,262 [INFO]   YouSee / hardware: live data (32 rækker)
+2026-03-29 09:45:20,262 [INFO]   YouSee / vas: live data (1 rækker)
+2026-03-29 09:45:20,262 [INFO]   Norlys / subscriptions: bruger baseline (8 rækker)
+2026-03-29 09:45:20,262 [INFO]   Norlys / internet: live data (1 rækker)
+2026-03-29 09:45:20,262 [INFO]   Norlys / hardware: live data (44 rækker)
+2026-03-29 09:45:20,262 [INFO]   Norlys / vas: live data (4 rækker)
+2026-03-29 09:45:20,262 [INFO]   CBB / subscriptions: bruger baseline (6 rækker)
+2026-03-29 09:45:20,262 [INFO]   CBB / internet: bruger baseline (6 rækker)
+2026-03-29 09:45:20,262 [INFO]   CBB / hardware: live data (57 rækker)
+2026-03-29 09:45:20,262 [INFO]   CBB / vas: bruger baseline (7 rækker)
+2026-03-29 09:45:20,263 [INFO]   Telmore / subscriptions: bruger baseline (8 rækker)
+2026-03-29 09:45:20,263 [INFO]   Telmore / internet: live data (2 rækker)
+2026-03-29 09:45:20,263 [INFO]   Telmore / hardware: live data (30 rækker)
+2026-03-29 09:45:20,263 [INFO]   Telmore / vas: bruger baseline (7 rækker)
+2026-03-29 09:45:20,263 [INFO]   Eesy / subscriptions: bruger baseline (3 rækker)
+2026-03-29 09:45:20,263 [INFO]   Eesy / internet: bruger baseline (1 rækker)
+2026-03-29 09:45:20,263 [INFO]   CallMe / subscriptions: bruger baseline (8 rækker)
+2026-03-29 09:45:20,263 [INFO]   CallMe / internet: bruger baseline (4 rækker)
+2026-03-29 09:45:20,263 [INFO]   CallMe / hardware: live data (51 rækker)
+2026-03-29 09:45:20,263 [INFO]   CallMe / vas: live data (6 rækker)
+2026-03-29 09:45:20,265 [INFO] Sammenligner med snapshot fra: 2026-03-28
+2026-03-29 09:45:20,265 [INFO] Henter nyheder…
+2026-03-29 09:45:20,265 [INFO] Henter nyheder fra danske medier…
+2026-03-29 09:45:20,653 [WARNING]   Computerworld RSS fejl: HTTP Error 404: Not Found
+2026-03-29 09:45:21,182 [WARNING]   Version2 RSS fejl: HTTP Error 404: Not Found
+2026-03-29 09:45:21,510 [INFO]   Finans: 0 artikler hentet
+2026-03-29 09:45:21,510 [INFO]   Finans: 0 operatør-matches
+2026-03-29 09:45:22,307 [INFO]   Børsen: 25 artikler hentet
+2026-03-29 09:45:22,308 [INFO]   Børsen: 0 operatør-matches
+2026-03-29 09:45:23,176 [WARNING]   TV2 Business RSS fejl: HTTP Error 404: Not Found
+2026-03-29 09:45:23,177 [INFO]   Danske medier total: 0 artikler
+2026-03-29 09:45:23,178 [INFO] Henter pressemeddelelser fra Mynewsdesk…
+2026-03-29 09:45:23,385 [WARNING]   Mynewsdesk fejl for 3: HTTP Error 404: Not Found
+2026-03-29 09:45:23,592 [WARNING]   Mynewsdesk fejl for Telenor: HTTP Error 404: Not Found
+2026-03-29 09:45:23,769 [WARNING]   Mynewsdesk fejl for YouSee: HTTP Error 404: Not Found
+2026-03-29 09:45:23,944 [WARNING]   Mynewsdesk fejl for Norlys: HTTP Error 404: Not Found
+2026-03-29 09:45:24,122 [WARNING]   Mynewsdesk fejl for CBB: HTTP Error 404: Not Found
+2026-03-29 09:45:24,313 [WARNING]   Mynewsdesk fejl for Telmore: HTTP Error 404: Not Found
+2026-03-29 09:45:24,314 [INFO]   Mynewsdesk total: 0 artikler
+2026-03-29 09:45:24,315 [INFO] Henter nyheder fra operatørers presserum…
+2026-03-29 09:45:26,880 [INFO]   Telenor presserum: 0 artikler (af 0 links)
+2026-03-29 09:45:30,472 [INFO]   YouSee presserum: 0 artikler (af 0 links)
+2026-03-29 09:45:32,744 [INFO]   Norlys presserum: 0 artikler (af 0 links)
+2026-03-29 09:45:35,772 [INFO]   3 presserum: 0 artikler (af 0 links)
+2026-03-29 09:45:40,548 [INFO]   Telmore presserum: 0 artikler (af 0 links)
+2026-03-29 09:45:48,603 [INFO]   CBB presserum: 0 artikler (af 0 links)
+2026-03-29 09:45:48,640 [INFO] Henter nyheder fra Google News (fallback)…
+2026-03-29 09:45:51,768 [INFO] Nyheder i alt: 0 artikler (efter cap)
+2026-03-29 09:45:51,768 [INFO] Nyheder i alt: 0 artikler
+2026-03-29 09:45:51,768 [INFO] Henter roaming-data…
+2026-03-29 09:45:57,463 [INFO]   Telenor: 36 ekstra lande, 75 total
+2026-03-29 09:46:03,625 [INFO]   3: 0 ekstra lande, 100 total
+2026-03-29 09:46:07,782 [INFO]   Norlys: 69 ekstra lande, 80 total
+2026-03-29 09:46:13,171 [INFO]   YouSee: 3 ekstra lande, 51 total
+2026-03-29 09:46:13,217 [INFO]   Roaming: 16 abonnementer hentet live
+2026-03-29 09:46:13,217 [INFO] Roaming: 16 abonnementer
+2026-03-29 09:46:13,222 [INFO] Snapshot gemt: /home/runner/work/market-intelligence/market-intelligence/data/snapshot-2026-03-29.json
+2026-03-29 09:46:13,240 [INFO] Trenddata: 21 uger
+2026-03-29 09:46:13,245 [INFO] ============================================================
+2026-03-29 09:46:13,245 [INFO] ✓ Dashboard klar: /home/runner/work/market-intelligence/market-intelligence/Claude Outputs/konkurrentovervaagning-uge13-2026.html
+2026-03-29 09:46:13,245 [INFO] Market Intelligence Agent — SLUT
+2026-03-29 09:46:13,245 [INFO] ============================================================
